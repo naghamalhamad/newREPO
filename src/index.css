@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+@theme {
+  /* --- Color tokens --- */
+  --color-paper: #f5f6f8;
+  --color-paper-raised: #ffffff;
+  --color-ink: #14161f;
+  --color-ink-soft: #565a6e;
+  --color-ink-faint: #9297a8;
+  --color-line: #e2e4ea;
+
+  --color-spark: #2452ff;       /* charging module accent */
+  --color-spark-dim: #e7ecff;
+  --color-spark-ink: #10245e;
+
+  --color-tide: #0ea5a8;     /* wash module accent */
+  --color-tide-dim: #e1f5f5;
+  --color-tide-ink: #0a4c4d;
+
+  --color-copper: #c1622b;      /* shared cta / price accent */
+  --color-copper-dim: #fbe9dd;
+
+  --color-status: #1f9d63;      /* status dot only, never brand */
+  --color-status-dim: #dff3e8;
+  --color-alert: #d5423f;
+  --color-alert-dim: #fbe2e1;
+
+  /* --- Type --- */
+  --font-display: "Big Shoulders", "Arial Narrow", sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  /* --- Radius --- */
+  --radius-card: 18px;
+  --radius-pill: 999px;
+}
+
+html {
+  background: var(--color-paper);
+  color-scheme: light;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-ink);
+  background: var(--color-paper);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Instrument strip signature: thin tick-mark rule used behind readouts */
+.instrument-ticks {
+  background-image: repeating-linear-gradient(
+    to right,
+    var(--color-line) 0,
+    var(--color-line) 1px,
+    transparent 1px,
+    transparent 8px
+  );
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
