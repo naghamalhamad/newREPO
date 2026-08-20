@@ -7,7 +7,7 @@ export default function PaymentMethods() {
 
   return (
     <div className="min-h-dvh bg-stone pb-10">
-      <TopBar title="Wallet" back />
+      <TopBar title="Payment methods" back />
       <main className="mx-auto max-w-md px-4 pt-3">
         <div className="flex flex-col gap-3">
           {methods.map((m) => (

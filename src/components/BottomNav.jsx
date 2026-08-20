@@ -4,7 +4,6 @@ const items = [
   { to: '/home', label: 'Home', icon: HomeIcon },
   { to: '/charge', label: 'Charge', icon: BoltIcon },
   { to: '/wash', label: 'Care', icon: DropIcon },
-  { to: '/profile/payment-methods', label: 'Wallet', icon: WalletIcon },
   { to: '/profile', label: 'Account', icon: UserIcon },
 ]
 
@@ -16,9 +15,9 @@ export default function BottomNav() {
           <NavLink
             key={to}
             to={to}
-            end={to === '/home' || to === '/profile'}
+            end={to === '/home'}
             className={({ isActive }) =>
-              `flex flex-1 flex-col items-center gap-1 py-3 font-heading text-[10px] font-medium ${
+              `flex flex-1 flex-col items-center gap-1 py-3 font-heading text-[11px] font-medium ${
                 isActive ? 'text-ink' : 'text-mist'
               }`
             }
@@ -55,15 +54,6 @@ function DropIcon({ active }) {
   return (
     <svg width="22" height="22" viewBox="0 0 24 24" fill={active ? 'currentColor' : 'none'} stroke="currentColor" strokeWidth={1.6}>
       <path d="M12 3c3.5 4 6 7.4 6 10.5a6 6 0 1 1-12 0C6 10.4 8.5 7 12 3Z" strokeLinejoin="round" />
-    </svg>
-  )
-}
-function WalletIcon({ active }) {
-  return (
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={active ? 2.2 : 1.6}>
-      <rect x="3" y="6" width="18" height="13" rx="2.5" />
-      <path d="M3 10h18" strokeLinecap="round" />
-      <path d="M15 14.5h3" strokeLinecap="round" />
     </svg>
   )
 }
