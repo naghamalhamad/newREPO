@@ -19,9 +19,9 @@ export default function BookingFlow() {
             <path d="m5 13 4 4 10-10" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </span>
-        <h1 className="mt-4 font-display text-2xl font-semibold text-ink">Booking confirmed</h1>
+        <h1 className="mt-4 font-heading text-2xl font-semibold text-ink">Booking confirmed</h1>
         <p className="mt-1.5 text-ink-soft">{service.name} · {slot} · Suds & Co — Downtown</p>
-        <a href="/wash" className="mt-6 rounded-xl bg-tide px-6 py-3 font-semibold text-white">
+        <a href="/wash" className="mt-6 rounded-xl bg-tide px-6 py-3 font-heading font-semibold text-white">
           Back to Wash & Care
         </a>
       </div>
@@ -38,7 +38,7 @@ export default function BookingFlow() {
           </div>
         )}
         <div className="rounded-card border border-line bg-paper-raised p-4">
-          <p className="font-display text-xl font-semibold text-ink">{service.name}</p>
+          <p className="font-heading text-xl font-semibold text-ink">{service.name}</p>
           <p className="mt-0.5 text-sm text-ink-soft">{service.desc} · {service.mins} min</p>
           <p className="mt-2 font-mono text-sm font-semibold text-copper">
             {service.priceFrom === 0 ? 'Free' : `from $${service.priceFrom}`}
@@ -46,14 +46,14 @@ export default function BookingFlow() {
         </div>
 
         <section className="mt-6">
-          <h3 className="font-mono text-[11px] uppercase tracking-[0.14em] text-ink-faint">Vehicle</h3>
+          <h3 className="font-heading text-[11px] uppercase tracking-[0.08em] text-ink-faint">Vehicle</h3>
           <div className="mt-2 rounded-card border border-line bg-paper-raised p-3.5 font-semibold text-ink">
             My Model Y · EV 402 CC
           </div>
         </section>
 
         <section className="mt-6">
-          <h3 className="font-mono text-[11px] uppercase tracking-[0.14em] text-ink-faint">Today — pick a time</h3>
+          <h3 className="font-heading text-[11px] uppercase tracking-[0.08em] text-ink-faint">Today — pick a time</h3>
           <div className="mt-2 grid grid-cols-3 gap-2">
             {timeSlots.map((t) => (
               <button
@@ -72,17 +72,17 @@ export default function BookingFlow() {
         </section>
 
         <section className="mt-6">
-          <h3 className="font-mono text-[11px] uppercase tracking-[0.14em] text-ink-faint">Payment</h3>
+          <h3 className="font-heading text-[11px] uppercase tracking-[0.08em] text-ink-faint">Payment</h3>
           <div className="mt-2 flex items-center justify-between rounded-card border border-line bg-paper-raised p-3.5">
             <span className="font-semibold text-ink">Visa •••• 4821</span>
-            <button className="font-mono text-xs uppercase tracking-wide text-tide-ink">Change</button>
+            <button className="font-heading text-xs font-medium uppercase tracking-wide text-tide-ink">Change</button>
           </div>
         </section>
 
         <button
           disabled={!slot}
           onClick={() => setConfirmed(true)}
-          className="mt-7 w-full rounded-xl bg-tide py-3.5 text-center font-semibold text-white disabled:opacity-40"
+          className="mt-7 w-full rounded-xl bg-tide py-3.5 text-center font-heading font-semibold text-white disabled:opacity-40"
         >
           Confirm & pay {service.priceFrom > 0 ? `$${service.priceFrom}` : ''}
         </button>

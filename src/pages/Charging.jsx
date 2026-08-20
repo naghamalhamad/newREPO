@@ -42,15 +42,15 @@ export default function Charging() {
             </span>
           )
         })}
-        <span className="absolute bottom-2 right-3 font-mono text-[10px] uppercase tracking-wide text-spark-ink/60">
+        <span className="absolute bottom-2 right-3 font-heading text-[10px] uppercase tracking-wide text-spark-ink/60">
           Map preview
         </span>
       </div>
 
       <main className="mx-auto max-w-md px-4">
         <div className="mt-4 flex items-center justify-between">
-          <h2 className="font-display text-lg font-semibold text-ink">{stations.length} stations nearby</h2>
-          <button className="font-mono text-xs uppercase tracking-wide text-ink-soft">Filter</button>
+          <h2 className="font-heading text-lg font-semibold text-ink">{stations.length} stations nearby</h2>
+          <button className="font-heading text-xs font-medium uppercase tracking-wide text-ink-soft">Filter</button>
         </div>
 
         <motion.ul variants={list} initial="hidden" animate="show" className="mt-2 flex flex-col gap-2.5">

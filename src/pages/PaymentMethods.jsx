@@ -22,11 +22,11 @@ export default function PaymentMethods() {
                 </span>
               </span>
               {m.primary ? (
-                <span className="rounded-pill bg-status-dim px-2.5 py-1 font-mono text-[11px] text-status">default</span>
+                <span className="rounded-pill bg-status-dim px-2.5 py-1 font-heading text-[11px] font-medium text-status">default</span>
               ) : (
                 <button
                   onClick={() => setMethods((ms) => ms.map((x) => ({ ...x, primary: x.id === m.id })))}
-                  className="font-mono text-xs uppercase tracking-wide text-spark"
+                  className="font-heading text-xs font-medium uppercase tracking-wide text-spark"
                 >
                   Make default
                 </button>
@@ -35,7 +35,7 @@ export default function PaymentMethods() {
           ))}
         </div>
 
-        <button className="mt-4 w-full rounded-xl border border-dashed border-line py-3.5 font-semibold text-ink-soft">
+        <button className="mt-4 w-full rounded-xl border border-dashed border-line py-3.5 font-heading font-semibold text-ink-soft">
           + Add a card
         </button>
       </main>

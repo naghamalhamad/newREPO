@@ -55,7 +55,7 @@ export default function GaugeDial({ value, unit = '%', label, accent = '#2452ff'
           <line key={i} x1={inner.x} y1={inner.y} x2={outer.x} y2={outer.y} stroke="var(--color-ink-faint)" strokeWidth={major ? 2 : 1} />
         )
       })}
-      <text x={cx} y={cy - 4} textAnchor="middle" fontFamily="'Big Shoulders', sans-serif" fontWeight={600} fontSize={52} className="fill-ink tabular">
+      <text x={cx} y={cy - 4} textAnchor="middle" fontFamily="'Big Shoulders', sans-serif" fontWeight={700} fontSize={52} className="fill-ink tabular">
         {Math.round(display)}
       </text>
       <text x={cx} y={cy + 22} textAnchor="middle" fontFamily="'IBM Plex Mono', monospace" fontSize={14} className="fill-ink-soft">

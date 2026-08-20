@@ -33,7 +33,7 @@ export default function Wash() {
         />
 
         <div className="mt-2.5 flex justify-end">
-          <Link to="/wash/history" className="font-mono text-xs uppercase tracking-wide text-ink-soft">
+          <Link to="/wash/history" className="font-heading text-xs font-medium uppercase tracking-wide text-ink-soft">
             View bookings
           </Link>
         </div>
@@ -54,12 +54,12 @@ export default function Wash() {
             <span className="block font-semibold">2× per week wash</span>
             <span className="block text-paper/60">Subscribe & save 20%</span>
           </span>
-          <span className="font-mono">›</span>
+          <span>›</span>
         </Link>
 
         {groups.map((g) => (
           <section key={g.label} className="mt-7">
-            <h2 className="font-display text-lg font-semibold text-ink">{g.label}</h2>
+            <h2 className="font-heading text-lg font-semibold text-ink">{g.label}</h2>
             <motion.div variants={list} initial="hidden" animate="show" className="mt-2.5 flex flex-col gap-2.5">
               {g.items.map((s) => (
                 <motion.div key={s.id} variants={row}>

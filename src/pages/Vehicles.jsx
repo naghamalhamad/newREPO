@@ -41,7 +41,7 @@ export default function Vehicles() {
             }}
           >
             <label className="flex flex-col gap-1.5">
-              <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-ink-faint">Vehicle nickname</span>
+              <span className="font-heading text-[11px] uppercase tracking-[0.08em] text-ink-faint">Vehicle nickname</span>
               <input
                 autoFocus
                 value={name}
@@ -51,10 +51,10 @@ export default function Vehicles() {
               />
             </label>
             <div className="flex gap-2.5">
-              <button type="button" onClick={() => setAdding(false)} className="flex-1 rounded-xl border border-line py-3 font-semibold text-ink">
+              <button type="button" onClick={() => setAdding(false)} className="flex-1 rounded-xl border border-line py-3 font-heading font-semibold text-ink">
                 Cancel
               </button>
-              <button type="submit" className="flex-1 rounded-xl bg-spark py-3 font-semibold text-white">
+              <button type="submit" className="flex-1 rounded-xl bg-spark py-3 font-heading font-semibold text-white">
                 Add vehicle
               </button>
             </div>
@@ -62,7 +62,7 @@ export default function Vehicles() {
         ) : (
           <button
             onClick={() => setAdding(true)}
-            className="mt-4 w-full rounded-xl border border-dashed border-line py-3.5 font-semibold text-ink-soft"
+            className="mt-4 w-full rounded-xl border border-dashed border-line py-3.5 font-heading font-semibold text-ink-soft"
           >
             + Add a vehicle
           </button>

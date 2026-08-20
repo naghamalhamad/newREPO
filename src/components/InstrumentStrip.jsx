@@ -32,7 +32,7 @@ export default function InstrumentStrip({
         )}
       </div>
       <div className="mt-1 flex items-baseline gap-1.5">
-        <span className={`font-display text-[40px] leading-none font-semibold tabular ${a.text}`}>
+        <span className={`font-display text-[40px] leading-none font-bold tabular ${a.text}`}>
           {value}
         </span>
         {unit && <span className="font-mono text-sm text-ink-soft">{unit}</span>}

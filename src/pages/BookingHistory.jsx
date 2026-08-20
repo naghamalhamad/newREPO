@@ -13,7 +13,7 @@ export default function BookingHistory() {
       <TopBar title="Bookings" back />
       <main className="mx-auto max-w-md px-4 pt-3">
         <section>
-          <h2 className="font-mono text-[11px] uppercase tracking-[0.14em] text-ink-faint">Upcoming</h2>
+          <h2 className="font-heading text-[11px] uppercase tracking-[0.08em] text-ink-faint">Upcoming</h2>
           <div className="mt-2 flex flex-col gap-2.5">
             {upcoming.length === 0 && (
               <p className="rounded-card border border-dashed border-line px-4 py-6 text-center text-sm text-ink-soft">
@@ -31,7 +31,7 @@ export default function BookingHistory() {
                 </div>
                 <button
                   onClick={() => setCancelled((c) => [...c, b.id])}
-                  className="mt-2.5 w-full rounded-lg border border-alert/30 py-2 text-sm font-semibold text-alert"
+                  className="mt-2.5 w-full rounded-lg border border-alert/30 py-2 text-sm font-heading font-semibold text-alert"
                 >
                   Cancel booking
                 </button>
@@ -46,7 +46,7 @@ export default function BookingHistory() {
         </section>
 
         <section className="mt-7">
-          <h2 className="font-mono text-[11px] uppercase tracking-[0.14em] text-ink-faint">Past</h2>
+          <h2 className="font-heading text-[11px] uppercase tracking-[0.08em] text-ink-faint">Past</h2>
           <div className="mt-2 flex flex-col gap-2.5">
             {past.map((b) => (
               <div key={b.id} className="flex items-center justify-between rounded-card border border-line bg-paper-raised p-3.5">

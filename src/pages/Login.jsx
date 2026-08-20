@@ -12,9 +12,9 @@ export default function Login() {
                 <path d="M13 3 5 14h6l-1 7 8-11h-6l1-7Z" />
               </svg>
             </span>
-            <span className="font-display text-3xl font-semibold tracking-tight text-paper">Car Care</span>
+            <span className="font-heading text-3xl font-semibold tracking-tight text-paper">Car Care</span>
           </div>
-          <p className="mt-3 font-mono text-[13px] uppercase tracking-[0.14em] text-paper/50">
+          <p className="mt-3 font-heading text-[13px] uppercase tracking-[0.1em] text-paper/50">
             Charge. Wash. Maintain.
           </p>
         </div>
@@ -27,7 +27,7 @@ export default function Login() {
           }}
         >
           <label className="flex flex-col gap-1.5">
-            <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-paper/50">Email</span>
+            <span className="font-heading text-[11px] uppercase tracking-[0.08em] text-paper/50">Email</span>
             <input
               type="email"
               defaultValue="nagham@example.com"
@@ -36,7 +36,7 @@ export default function Login() {
             />
           </label>
           <label className="flex flex-col gap-1.5">
-            <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-paper/50">Password</span>
+            <span className="font-heading text-[11px] uppercase tracking-[0.08em] text-paper/50">Password</span>
             <input
               type="password"
               defaultValue="••••••••"
@@ -47,14 +47,14 @@ export default function Login() {
 
           <button
             type="submit"
-            className="mt-2 rounded-xl bg-spark py-3.5 text-center font-semibold text-white active:opacity-90"
+            className="mt-2 rounded-xl bg-spark py-3.5 text-center font-heading font-semibold text-white active:opacity-90"
           >
             Log in
           </button>
           <button
             type="button"
             onClick={() => navigate('/')}
-            className="rounded-xl border border-white/15 py-3.5 text-center font-semibold text-paper active:opacity-80"
+            className="rounded-xl border border-white/15 py-3.5 text-center font-heading font-semibold text-paper active:opacity-80"
           >
             Continue with Google
           </button>

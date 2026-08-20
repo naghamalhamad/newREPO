@@ -18,7 +18,7 @@ export default function Profile() {
       <TopBar title="Profile" />
       <main className="mx-auto max-w-md px-4 pt-3">
         <div className="flex items-center gap-3 rounded-card border border-line bg-paper-raised p-4">
-          <span className="flex h-12 w-12 items-center justify-center rounded-full bg-ink font-display text-lg font-semibold text-paper">
+          <span className="flex h-12 w-12 items-center justify-center rounded-full bg-ink font-heading text-lg font-semibold text-paper">
             N
           </span>
           <div>
@@ -41,7 +41,7 @@ export default function Profile() {
 
         <button
           onClick={() => navigate('/login')}
-          className="mt-5 w-full rounded-xl border border-line py-3.5 font-semibold text-alert"
+          className="mt-5 w-full rounded-xl border border-line py-3.5 font-heading font-semibold text-alert"
         >
           Log out
         </button>

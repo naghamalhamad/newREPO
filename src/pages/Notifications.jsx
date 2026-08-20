@@ -15,7 +15,7 @@ export default function Notifications() {
         title="Notifications"
         back
         action={
-          <Link to="/profile/notifications" className="font-mono text-xs uppercase tracking-wide text-ink-soft">
+          <Link to="/profile/notifications" className="font-heading text-xs font-medium uppercase tracking-wide text-ink-soft">
             Settings
           </Link>
         }

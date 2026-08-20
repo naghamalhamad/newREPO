@@ -15,7 +15,7 @@ export default function StationDetail() {
     <div className="min-h-dvh bg-paper pb-10">
       <TopBar title="Station" back />
       <main className="mx-auto max-w-md px-4 pt-3">
-        <h2 className="font-display text-2xl font-semibold text-ink">{s.name}</h2>
+        <h2 className="font-heading text-2xl font-semibold text-ink">{s.name}</h2>
         <p className="mt-0.5 text-sm text-ink-soft">{s.address}</p>
 
         <div className="mt-4 grid grid-cols-2 gap-3">
@@ -36,7 +36,7 @@ export default function StationDetail() {
         </div>
 
         <section className="mt-6">
-          <h3 className="font-mono text-[11px] uppercase tracking-[0.14em] text-ink-faint">Connectors</h3>
+          <h3 className="font-heading text-[11px] uppercase tracking-[0.08em] text-ink-faint">Connectors</h3>
           <div className="mt-2 flex flex-wrap gap-2">
             {s.connectors.map((c) => (
               <span key={c} className="rounded-pill border border-line bg-paper-raised px-3 py-1.5 font-mono text-xs text-ink">
@@ -53,7 +53,7 @@ export default function StationDetail() {
           </div>
           <div className="text-right">
             <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-ink-faint">Hours</p>
-            <p className="font-semibold text-ink">24 / 7</p>
+            <p className="font-mono font-semibold text-ink">24 / 7</p>
           </div>
         </section>
 
@@ -62,13 +62,13 @@ export default function StationDetail() {
             href={mapsUrl}
             target="_blank"
             rel="noreferrer"
-            className="flex flex-1 items-center justify-center gap-2 rounded-xl border border-line bg-paper-raised py-3.5 font-semibold text-ink active:bg-line/40"
+            className="flex flex-1 items-center justify-center gap-2 rounded-xl border border-line bg-paper-raised py-3.5 font-heading font-semibold text-ink active:bg-line/40"
           >
             Navigate
           </a>
           <button
             onClick={() => navigate(`/charge/${s.id}/session`)}
-            className="flex-1 rounded-xl bg-spark py-3.5 text-center font-semibold text-white active:opacity-90"
+            className="flex-1 rounded-xl bg-spark py-3.5 text-center font-heading font-semibold text-white active:opacity-90"
           >
             Start & pay
           </button>

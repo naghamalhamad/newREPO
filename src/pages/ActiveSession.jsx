@@ -55,17 +55,17 @@ export default function ActiveSession() {
         {!ending ? (
           <button
             onClick={() => setEnding(true)}
-            className="mt-7 w-full rounded-xl border border-alert/30 bg-alert-dim py-3.5 text-center font-semibold text-alert"
+            className="mt-7 w-full rounded-xl border border-alert/30 bg-alert-dim py-3.5 text-center font-heading font-semibold text-alert"
           >
             Stop charging
           </button>
         ) : (
           <div className="mt-7 rounded-card border border-line bg-paper-raised p-4 text-center">
-            <p className="font-display text-xl font-semibold text-ink">Session ended</p>
+            <p className="font-heading text-xl font-semibold text-ink">Session ended</p>
             <p className="mt-1 text-sm text-ink-soft">{kwh} kWh delivered · ${cost} charged to Visa •••• 4821</p>
             <button
               onClick={() => navigate('/charge/history')}
-              className="mt-4 w-full rounded-xl bg-spark py-3 text-center font-semibold text-white"
+              className="mt-4 w-full rounded-xl bg-spark py-3 text-center font-heading font-semibold text-white"
             >
               View receipt
             </button>
