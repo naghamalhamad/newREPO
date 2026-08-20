@@ -6,9 +6,9 @@ import { stations } from '../data/mock'
 
 function busyLabel(s) {
   const ratio = s.occupied / s.total
-  if (ratio >= 1) return { text: 'Full', tone: 'text-alert' }
-  if (ratio >= 0.6) return { text: 'Busy', tone: 'text-copper' }
-  return { text: 'Open', tone: 'text-status' }
+  if (ratio >= 1) return { text: 'Full', bg: 'bg-alert-dim', text_: 'text-alert' }
+  if (ratio >= 0.6) return { text: 'Busy', bg: 'bg-copper-dim', text_: 'text-copper' }
+  return { text: 'Open', bg: 'bg-status-dim', text_: 'text-status' }
 }
 
 const list = {
@@ -67,24 +67,23 @@ export default function Charging() {
               <motion.li key={s.id} variants={row}>
                 <Link
                   to={`/charge/${s.id}`}
-                  className="flex flex-col gap-2 rounded-card border border-line bg-paper-raised p-3.5 transition-colors active:bg-spark-dim/30"
+                  className="flex flex-col gap-3 rounded-card border border-line bg-paper-raised p-4 transition-colors active:bg-spark-dim/30"
                 >
-                  <div className="flex items-start justify-between gap-2">
+                  <div className="flex items-start justify-between gap-3">
                     <div>
                       <p className="font-semibold text-ink">{s.name}</p>
-                      <p className="text-sm text-ink-soft">{s.address}</p>
+                      <p className="mt-0.5 text-sm text-ink-soft">{s.address}</p>
                     </div>
                     <span className="whitespace-nowrap text-sm text-ink-soft">{s.distanceMi} mi</span>
                   </div>
-                  <div className="flex items-center gap-3 border-t border-line pt-2.5 text-xs">
-                    <span className={`font-semibold ${busy.tone}`}>{busy.text}</span>
-                    <span className="text-ink-faint">·</span>
-                    <span className="tabular text-ink-soft">{s.occupied}/{s.total} in use</span>
-                    <span className="text-ink-faint">·</span>
-                    <span className="tabular text-ink-soft">
-                      {s.etaFreeMin === 0 ? 'slot free now' : `free in ~${s.etaFreeMin}m`}
-                    </span>
-                    <span className="ml-auto tabular font-semibold text-copper">${s.priceKwh.toFixed(2)}/kWh</span>
+                  <div className="flex items-center justify-between border-t border-line pt-3">
+                    <div className="flex items-center gap-2">
+                      <span className={`rounded-pill px-2.5 py-1 text-xs font-semibold ${busy.bg} ${busy.text_}`}>
+                        {busy.text}
+                      </span>
+                      <span className="tabular text-sm text-ink-soft">{s.total - s.occupied}/{s.total} free</span>
+                    </div>
+                    <span className="tabular text-sm font-semibold text-copper">${s.priceKwh.toFixed(2)}/kWh</span>
                   </div>
                 </Link>
               </motion.li>
