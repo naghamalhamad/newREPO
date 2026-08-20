@@ -46,14 +46,14 @@ export default function BookingFlow() {
         </div>
 
         <section className="mt-6">
-          <h3 className="font-heading text-[11px] uppercase tracking-[0.08em] text-ink-faint">Vehicle</h3>
+          <h3 className="font-heading text-lg font-semibold text-ink">Vehicle</h3>
           <div className="mt-2 rounded-card border border-line bg-paper-raised p-3.5 font-semibold text-ink">
             My Model Y · EV 402 CC
           </div>
         </section>
 
         <section className="mt-6">
-          <h3 className="font-heading text-[11px] uppercase tracking-[0.08em] text-ink-faint">Today — pick a time</h3>
+          <h3 className="font-heading text-lg font-semibold text-ink">Today — pick a time</h3>
           <div className="mt-2 grid grid-cols-3 gap-2">
             {timeSlots.map((t) => (
               <button
@@ -72,7 +72,7 @@ export default function BookingFlow() {
         </section>
 
         <section className="mt-6">
-          <h3 className="font-heading text-[11px] uppercase tracking-[0.08em] text-ink-faint">Payment</h3>
+          <h3 className="font-heading text-lg font-semibold text-ink">Payment</h3>
           <div className="mt-2 flex items-center justify-between rounded-card border border-line bg-paper-raised p-3.5">
             <span className="font-semibold text-ink">Visa •••• 4821</span>
             <button className="font-heading text-xs font-medium uppercase tracking-wide text-tide-ink">Change</button>

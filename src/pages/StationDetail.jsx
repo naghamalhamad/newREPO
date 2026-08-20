@@ -36,7 +36,7 @@ export default function StationDetail() {
         </div>
 
         <section className="mt-6">
-          <h3 className="font-heading text-[11px] uppercase tracking-[0.08em] text-ink-faint">Connectors</h3>
+          <h3 className="font-heading text-lg font-semibold text-ink">Connectors</h3>
           <div className="mt-2 flex flex-wrap gap-2">
             {s.connectors.map((c) => (
               <span key={c} className="rounded-pill border border-line bg-paper-raised px-3 py-1.5 font-mono text-xs text-ink">
