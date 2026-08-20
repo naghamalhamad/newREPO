@@ -1,4 +1,4 @@
-import { useParams, useSearchParams } from 'react-router-dom'
+import { Link, useParams, useSearchParams } from 'react-router-dom'
 import { useState } from 'react'
 import TopBar from '../components/TopBar'
 import { services, timeSlots } from '../data/mock'
@@ -21,9 +21,9 @@ export default function BookingFlow() {
         </span>
         <h1 className="mt-4 font-heading text-xl font-medium uppercase tracking-wide text-ink">Booking confirmed</h1>
         <p className="mt-1.5 text-ink-soft">{service.name} · {slot} · Suds & Co — Downtown</p>
-        <a href="/wash" className="mt-6 rounded-xl bg-tide px-6 py-3 font-semibold text-white">
+        <Link to="/wash" className="mt-6 rounded-xl bg-tide px-6 py-3 font-semibold text-white">
           Back to Wash & Care
-        </a>
+        </Link>
       </div>
     )
   }

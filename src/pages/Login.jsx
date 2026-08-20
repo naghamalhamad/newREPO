@@ -23,7 +23,7 @@ export default function Login() {
           className="flex flex-col gap-3.5"
           onSubmit={(e) => {
             e.preventDefault()
-            navigate('/')
+            navigate('/home')
           }}
         >
           <label className="flex flex-col gap-1.5">
@@ -53,7 +53,7 @@ export default function Login() {
           </button>
           <button
             type="button"
-            onClick={() => navigate('/')}
+            onClick={() => navigate('/home')}
             className="rounded-xl border border-white/15 py-3.5 text-center font-semibold text-paper active:opacity-80"
           >
             Continue with Google

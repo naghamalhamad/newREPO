@@ -23,7 +23,7 @@ export default function Signup() {
           className="flex flex-col gap-3.5"
           onSubmit={(e) => {
             e.preventDefault()
-            navigate('/')
+            navigate('/home')
           }}
         >
           <label className="flex flex-col gap-1.5">

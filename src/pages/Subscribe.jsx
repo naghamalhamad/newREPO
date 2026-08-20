@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import TopBar from '../components/TopBar'
 
 const plans = [
@@ -17,9 +18,9 @@ export default function Subscribe() {
       <div className="flex min-h-dvh flex-col items-center justify-center bg-paper px-6 text-center">
         <h1 className="font-heading text-xl font-medium uppercase tracking-wide text-ink">You're subscribed</h1>
         <p className="mt-1.5 text-ink-soft">{plan.name} wash package · ${plan.price}/mo</p>
-        <a href="/wash" className="mt-6 rounded-xl bg-tide px-6 py-3 font-semibold text-white">
+        <Link to="/wash" className="mt-6 rounded-xl bg-tide px-6 py-3 font-semibold text-white">
           Back to Wash & Care
-        </a>
+        </Link>
       </div>
     )
   }
