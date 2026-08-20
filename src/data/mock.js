@@ -54,12 +54,12 @@ export const stations = [
 ]
 
 export const services = [
-  { id: 'sv-1', name: 'Full Wash', desc: 'Interior + exterior', priceFrom: 28, mins: 45, accent: 'tide' },
-  { id: 'sv-2', name: 'Interior Only', desc: 'Vacuum, wipe down, mats', priceFrom: 18, mins: 25, accent: 'tide' },
-  { id: 'sv-3', name: 'Exterior Only', desc: 'Hand wash + dry', priceFrom: 16, mins: 20, accent: 'tide' },
-  { id: 'sv-4', name: 'Oil Change', desc: 'Synthetic blend, up to 5qt', priceFrom: 59, mins: 30, accent: 'copper' },
-  { id: 'sv-5', name: 'Tire Rotation', desc: '4-wheel rotation + inspection', priceFrom: 24, mins: 20, accent: 'copper' },
-  { id: 'sv-6', name: 'Brake Inspection', desc: 'Pads, rotors, fluid check', priceFrom: 0, mins: 15, accent: 'copper' },
+  { id: 'sv-1', name: 'Full Wash', desc: 'Interior + exterior', priceFrom: 28, mins: 45, accent: 'care' },
+  { id: 'sv-2', name: 'Interior Only', desc: 'Vacuum, wipe down, mats', priceFrom: 18, mins: 25, accent: 'care' },
+  { id: 'sv-3', name: 'Exterior Only', desc: 'Hand wash + dry', priceFrom: 16, mins: 20, accent: 'care' },
+  { id: 'sv-4', name: 'Oil Change', desc: 'Synthetic blend, up to 5qt', priceFrom: 59, mins: 30, accent: 'maintenance' },
+  { id: 'sv-5', name: 'Tire Rotation', desc: '4-wheel rotation + inspection', priceFrom: 24, mins: 20, accent: 'maintenance' },
+  { id: 'sv-6', name: 'Brake Inspection', desc: 'Pads, rotors, fluid check', priceFrom: 0, mins: 15, accent: 'maintenance' },
 ]
 
 export const timeSlots = ['9:00 AM', '10:30 AM', '1:00 PM', '2:30 PM', '4:00 PM', '5:30 PM']

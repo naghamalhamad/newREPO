@@ -9,36 +9,36 @@ export default function BookingHistory() {
   const justCancelled = bookingHistory.filter((b) => cancelled.includes(b.id))
 
   return (
-    <div className="min-h-dvh bg-paper pb-10">
+    <div className="min-h-dvh bg-stone pb-10">
       <TopBar title="Bookings" back />
       <main className="mx-auto max-w-md px-4 pt-3">
         <section>
           <h2 className="font-heading text-base font-medium uppercase tracking-wide text-ink">Upcoming</h2>
-          <div className="mt-2 flex flex-col gap-2.5">
+          <div className="mt-2 flex flex-col gap-3">
             {upcoming.length === 0 && (
-              <p className="rounded-card border border-dashed border-line px-4 py-6 text-center text-sm text-ink-soft">
+              <p className="rounded-card border border-dashed border-line px-4 py-6 text-center text-sm text-graphite">
                 Nothing booked. Head to Wash & Care to book a service.
               </p>
             )}
             {upcoming.map((b) => (
-              <div key={b.id} className="rounded-card border border-line bg-paper-raised p-3.5">
+              <div key={b.id} className="rounded-card border border-line bg-surface p-4">
                 <div className="flex items-start justify-between">
                   <span>
                     <span className="block font-semibold text-ink">{b.service}</span>
-                    <span className="block text-sm text-ink-soft">{b.provider} · {b.when}</span>
+                    <span className="block text-sm text-graphite">{b.provider} · {b.when}</span>
                   </span>
-                  <span className="font-semibold text-copper">${b.cost}</span>
+                  <span className="font-mono font-semibold text-care">${b.cost}</span>
                 </div>
                 <button
                   onClick={() => setCancelled((c) => [...c, b.id])}
-                  className="mt-2.5 w-full rounded-xl border border-alert/30 bg-alert-dim py-3 text-sm font-semibold text-alert"
+                  className="mt-3 w-full rounded-xl border border-danger/30 bg-danger-tint py-3 text-sm font-heading font-semibold text-danger"
                 >
                   Cancel booking
                 </button>
               </div>
             ))}
             {justCancelled.map((b) => (
-              <div key={b.id} className="rounded-card border border-line bg-paper px-3.5 py-2.5 text-sm text-ink-faint line-through">
+              <div key={b.id} className="rounded-card border border-line bg-stone px-4 py-3 text-sm text-mist line-through">
                 {b.service} · {b.when} — cancelled
               </div>
             ))}
@@ -47,14 +47,14 @@ export default function BookingHistory() {
 
         <section className="mt-7">
           <h2 className="font-heading text-base font-medium uppercase tracking-wide text-ink">Past</h2>
-          <div className="mt-2 flex flex-col gap-2.5">
+          <div className="mt-2 flex flex-col gap-3">
             {past.map((b) => (
-              <div key={b.id} className="flex items-center justify-between rounded-card border border-line bg-paper-raised p-3.5">
+              <div key={b.id} className="flex items-center justify-between rounded-card border border-line bg-surface p-4">
                 <span>
                   <span className="block font-semibold text-ink">{b.service}</span>
-                  <span className="block text-sm text-ink-soft">{b.provider} · {b.when}</span>
+                  <span className="block text-sm text-graphite">{b.provider} · {b.when}</span>
                 </span>
-                <span className="text-sm text-ink-soft">${b.cost}</span>
+                <span className="font-mono text-sm text-graphite">${b.cost}</span>
               </div>
             ))}
           </div>

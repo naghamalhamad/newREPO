@@ -25,39 +25,39 @@ function greeting() {
 export default function Home() {
   const nearest = stations[0]
   return (
-    <div className="min-h-dvh bg-paper pb-24">
+    <div className="min-h-dvh bg-stone pb-24">
       <TopBar title="Home" action={<NotifBell />} />
       <motion.main variants={container} initial="hidden" animate="show" className="mx-auto max-w-md px-4 pt-4">
-        <motion.p variants={item} className="text-[11px] uppercase tracking-[0.1em] text-ink-faint">
+        <motion.p variants={item} className="text-[11px] uppercase tracking-[0.1em] text-mist">
           {greeting()}, Nagham
         </motion.p>
 
         <motion.section variants={item} className="mt-2">
-          <div className="rounded-card bg-ink p-5 text-paper">
+          <div className="rounded-card bg-ink p-5 text-stone">
             <div className="flex items-start justify-between">
               <div>
-                <p className="text-[11px] uppercase tracking-[0.1em] text-paper/45">Your vehicle</p>
-                <p className="mt-0.5 font-heading text-xl font-medium uppercase tracking-wide">{vehicle.name}</p>
+                <p className="text-[11px] uppercase tracking-[0.1em] text-stone/45">Your vehicle</p>
+                <p className="mt-1 font-heading text-xl font-medium uppercase tracking-wide">{vehicle.name}</p>
               </div>
-              <span className="rounded-pill border border-white/15 px-2.5 py-1 text-[11px] text-paper/70">
+              <span className="rounded-pill border border-white/15 px-3 py-1 font-mono text-[11px] text-stone/70">
                 {vehicle.plate}
               </span>
             </div>
 
             <div className="mt-6 flex items-end justify-between">
-              <div className="flex items-baseline gap-1">
+              <div className="flex items-baseline gap-1 font-mono">
                 <span className="text-5xl font-extrabold leading-none tabular">{vehicle.batteryPct}</span>
-                <span className="text-sm text-paper/50">%</span>
+                <span className="text-sm text-stone/50">%</span>
               </div>
               <div className="text-right">
-                <p className="text-sm text-paper/80">{vehicle.rangeMi} mi range</p>
-                <p className="mt-0.5 text-xs text-paper/45">{vehicle.connector} connector</p>
+                <p className="font-mono text-sm text-stone/80">{vehicle.rangeMi} mi range</p>
+                <p className="mt-1 text-xs text-stone/45">{vehicle.connector} connector</p>
               </div>
             </div>
 
             <div className="mt-3 h-1.5 w-full overflow-hidden rounded-full bg-white/10">
               <div
-                className="h-full rounded-full bg-spark transition-all duration-700"
+                className="h-full rounded-full bg-charge transition-all duration-700"
                 style={{ width: `${vehicle.batteryPct}%` }}
               />
             </div>
@@ -67,41 +67,41 @@ export default function Home() {
         <motion.section variants={item} className="mt-7">
           <div className="flex items-baseline justify-between">
             <h2 className="font-heading text-base font-medium uppercase tracking-wide text-ink">Nearest charger</h2>
-            <Link to="/charge" className="text-xs font-medium uppercase tracking-wide text-spark">
+            <Link to="/charge" className="font-heading text-xs font-medium uppercase tracking-wide text-charge">
               See map
             </Link>
           </div>
           <Link
             to={`/charge/${nearest.id}`}
-            className="mt-2.5 flex items-center gap-3 rounded-card border border-line bg-paper-raised p-3.5 transition-colors active:bg-spark-dim/40"
+            className="mt-3 flex items-center gap-3 rounded-card border border-line bg-surface p-4 transition-colors active:bg-charge-tint/40"
           >
-            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-spark-dim text-spark-ink">
+            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-charge-tint text-charge-ink">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M13 3 5 14h6l-1 7 8-11h-6l1-7Z" /></svg>
             </span>
             <span className="flex-1">
               <span className="block font-semibold text-ink">{nearest.name}</span>
-              <span className="block text-sm text-ink-soft">{nearest.distanceMi} mi · {nearest.total - nearest.occupied} of {nearest.total} free</span>
+              <span className="block text-sm text-graphite">{nearest.distanceMi} mi · {nearest.total - nearest.occupied} of {nearest.total} free</span>
             </span>
-            <span className="text-ink-faint">›</span>
+            <span className="text-mist">›</span>
           </Link>
         </motion.section>
 
         <motion.section variants={item} className="mt-7">
           <div className="flex items-baseline justify-between">
             <h2 className="font-heading text-base font-medium uppercase tracking-wide text-ink">Upcoming booking</h2>
-            <Link to="/wash" className="text-xs font-medium uppercase tracking-wide text-tide-ink">
+            <Link to="/wash" className="font-heading text-xs font-medium uppercase tracking-wide text-care-ink">
               Book more
             </Link>
           </div>
-          <div className="mt-2.5 flex items-center gap-3 rounded-card border border-line bg-paper-raised p-3.5">
-            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-tide-dim text-tide-ink">
+          <div className="mt-3 flex items-center gap-3 rounded-card border border-line bg-surface p-4">
+            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-care-tint text-care-ink">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3c3.5 4 6 7.4 6 10.5a6 6 0 1 1-12 0C6 10.4 8.5 7 12 3Z" /></svg>
             </span>
             <span className="flex-1">
               <span className="block font-semibold text-ink">{nextBooking.service}</span>
-              <span className="block text-sm text-ink-soft">{nextBooking.provider} · {nextBooking.when}</span>
+              <span className="block text-sm text-graphite">{nextBooking.provider} · {nextBooking.when}</span>
             </span>
-            <span className="rounded-pill bg-status-dim px-2 py-1 text-[11px] font-medium text-status">confirmed</span>
+            <span className="rounded-pill bg-success-tint px-2 py-1 text-[11px] font-medium text-success">confirmed</span>
           </div>
         </motion.section>
       </motion.main>

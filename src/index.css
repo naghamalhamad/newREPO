@@ -1,53 +1,61 @@
 @import "tailwindcss";
 
 @theme {
-  /* --- Color tokens --- */
-  --color-paper: #f5f6f8;
-  --color-paper-raised: #ffffff;
-  --color-ink: #14161f;
-  --color-ink-soft: #565a6e;
-  --color-ink-faint: #9297a8;
-  --color-line: #e2e4ea;
+  /* --- Circuit design system --- */
+  --color-brand: #0f5c56;        /* nav, headers, primary buttons, links (shared screens) */
+  --color-brand-ink: #0b403c;
+  --color-brand-tint: #dcebe8;   /* derived: light tint for shared-screen surfaces (not in source spec) */
 
-  --color-spark: #2452ff;       /* charging module accent */
-  --color-spark-dim: #e7ecff;
-  --color-spark-ink: #10245e;
+  --color-charge: #c97a3b;       /* charging feature area */
+  --color-charge-ink: #7a4a22;
+  --color-charge-tint: #f6e7d9;
 
-  --color-tide: #0ea5a8;     /* wash module accent */
-  --color-tide-dim: #e1f5f5;
-  --color-tide-ink: #0a4c4d;
+  --color-care: #3e93a6;         /* car care feature area */
+  --color-care-ink: #235c6b;
+  --color-care-tint: #deeff2;
 
-  --color-copper: #c1622b;      /* shared cta / price accent */
-  --color-copper-dim: #fbe9dd;
+  --color-stone: #f5f3ec;        /* page background */
+  --color-surface: #ffffff;      /* card background */
+  --color-ink: #16211f;          /* primary text */
+  --color-graphite: #4b5751;     /* secondary text */
+  --color-mist: #8b958f;         /* tertiary text, placeholders */
+  --color-line: #e4e0d3;         /* borders, dividers */
 
-  --color-status: #1f9d63;      /* status dot only, never brand */
-  --color-status-dim: #dff3e8;
-  --color-alert: #d5423f;
-  --color-alert-dim: #fbe2e1;
+  --color-success: #3f8f5f;
+  --color-success-tint: #e3f1e8;
+  --color-danger: #c64545;
+  --color-danger-tint: #fae3e3;
+  --color-warning: #d9a441;
+  --color-warning-tint: #faf0dc;
 
-  /* --- Type — two-tier system ---
-     heading = Poppins ExtraBold, uppercase, tracked — screen titles, section
-               headers, status headlines. The only place the display face appears.
-     body    = Inter — everything else: card labels, big numbers/metrics
-               (bold/extrabold), captions (regular, muted), buttons, inputs.
+  /* --- Type ---
+     heading = Space Grotesk — display, headings, buttons
+     body    = IBM Plex Sans — UI text, body copy
+     mono    = IBM Plex Mono — numeric readouts only: price, kWh, distance,
+               timers, countdowns — anything the user is measuring
   */
-  --font-heading: "Poppins", "Inter", sans-serif;
-  --font-body: "Inter", system-ui, sans-serif;
+  --font-heading: "Space Grotesk", "Inter", sans-serif;
+  --font-body: "IBM Plex Sans", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
 
-  /* --- Radius --- */
-  --radius-card: 18px;
+  /* --- Radius: three values only ---
+     8px controls  -> Tailwind's built-in rounded-lg
+     12px buttons  -> Tailwind's built-in rounded-xl
+     16px cards    -> rounded-card (alias below, same as built-in rounded-2xl)
+  */
+  --radius-card: 16px;
   --radius-pill: 999px;
 }
 
 html {
-  background: var(--color-paper);
+  background: var(--color-stone);
   color-scheme: light;
 }
 
 body {
   font-family: var(--font-body);
   color: var(--color-ink);
-  background: var(--color-paper);
+  background: var(--color-stone);
   -webkit-font-smoothing: antialiased;
 }
 

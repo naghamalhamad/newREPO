@@ -6,27 +6,27 @@ export default function PaymentMethods() {
   const [methods, setMethods] = useState(initial)
 
   return (
-    <div className="min-h-dvh bg-paper pb-10">
-      <TopBar title="Payment methods" back />
+    <div className="min-h-dvh bg-stone pb-10">
+      <TopBar title="Wallet" back />
       <main className="mx-auto max-w-md px-4 pt-3">
-        <div className="flex flex-col gap-2.5">
+        <div className="flex flex-col gap-3">
           {methods.map((m) => (
-            <div key={m.id} className="flex items-center justify-between rounded-card border border-line bg-paper-raised p-3.5">
+            <div key={m.id} className="flex items-center justify-between rounded-card border border-line bg-surface p-4">
               <span className="flex items-center gap-3">
-                <span className="flex h-9 w-12 items-center justify-center rounded-md bg-ink text-[10px] font-semibold text-paper">
+                <span className="flex h-9 w-12 items-center justify-center rounded-lg bg-ink text-[10px] font-semibold text-stone">
                   {m.brand.slice(0, 4).toUpperCase()}
                 </span>
                 <span>
                   <span className="block font-semibold text-ink">•••• {m.last4}</span>
-                  <span className="block text-sm text-ink-soft">Expires {m.expiry}</span>
+                  <span className="block text-sm text-graphite">Expires {m.expiry}</span>
                 </span>
               </span>
               {m.primary ? (
-                <span className="rounded-pill bg-status-dim px-2.5 py-1 text-[11px] font-medium text-status">default</span>
+                <span className="rounded-pill bg-success-tint px-3 py-1 text-[11px] font-medium text-success">default</span>
               ) : (
                 <button
                   onClick={() => setMethods((ms) => ms.map((x) => ({ ...x, primary: x.id === m.id })))}
-                  className="text-xs font-medium uppercase tracking-wide text-spark"
+                  className="font-heading text-xs font-medium uppercase tracking-wide text-brand"
                 >
                   Make default
                 </button>
@@ -35,7 +35,7 @@ export default function PaymentMethods() {
           ))}
         </div>
 
-        <button className="mt-4 w-full rounded-xl border border-dashed border-line py-3.5 font-semibold text-ink-soft">
+        <button className="mt-4 w-full rounded-xl border border-dashed border-line py-4 font-heading font-semibold text-graphite">
           + Add a card
         </button>
       </main>

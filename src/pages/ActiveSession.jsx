@@ -28,44 +28,44 @@ export default function ActiveSession() {
   const done = pct >= activeSession.targetBatteryPct
 
   return (
-    <div className="min-h-dvh bg-paper pb-10">
+    <div className="min-h-dvh bg-stone pb-10">
       <TopBar title="Charging" back />
       <main className="mx-auto max-w-md px-4 pt-2">
-        <p className="text-center text-sm text-ink-soft">{station.name} · {activeSession.connector}</p>
+        <p className="text-center text-sm text-graphite">{station.name} · {activeSession.connector}</p>
 
         <div className="mt-4">
-          <GaugeDial value={pct} unit="%" label={done ? 'target reached' : 'battery'} accent="#2452ff" />
+          <GaugeDial value={pct} unit="%" label={done ? 'target reached' : 'battery'} accent="#c97a3b" />
         </div>
 
-        <div className="mt-2 grid grid-cols-3 gap-2.5 text-center">
-          <div className="rounded-card border border-line bg-paper-raised py-3">
-            <p className="tabular text-lg font-semibold text-ink">{mins}:{secs}</p>
-            <p className="mt-0.5 text-[10px] uppercase tracking-wide text-ink-faint">elapsed</p>
+        <div className="mt-2 grid grid-cols-3 gap-3 text-center">
+          <div className="rounded-card border border-line bg-surface py-3">
+            <p className="font-mono tabular text-lg font-semibold text-ink">{mins}:{secs}</p>
+            <p className="mt-1 text-[10px] uppercase tracking-wide text-mist">elapsed</p>
           </div>
-          <div className="rounded-card border border-line bg-paper-raised py-3">
-            <p className="tabular text-lg font-semibold text-ink">{kwh}</p>
-            <p className="mt-0.5 text-[10px] uppercase tracking-wide text-ink-faint">kWh</p>
+          <div className="rounded-card border border-line bg-surface py-3">
+            <p className="font-mono tabular text-lg font-semibold text-ink">{kwh}</p>
+            <p className="mt-1 text-[10px] uppercase tracking-wide text-mist">kWh</p>
           </div>
-          <div className="rounded-card border border-line bg-paper-raised py-3">
-            <p className="tabular text-lg font-semibold text-copper">${cost}</p>
-            <p className="mt-0.5 text-[10px] uppercase tracking-wide text-ink-faint">cost</p>
+          <div className="rounded-card border border-line bg-surface py-3">
+            <p className="font-mono tabular text-lg font-semibold text-charge">${cost}</p>
+            <p className="mt-1 text-[10px] uppercase tracking-wide text-mist">cost</p>
           </div>
         </div>
 
         {!ending ? (
           <button
             onClick={() => setEnding(true)}
-            className="mt-7 w-full rounded-xl border border-alert/30 bg-alert-dim py-3.5 text-center font-semibold text-alert"
+            className="mt-7 w-full rounded-xl border border-danger/30 bg-danger-tint py-4 text-center font-heading font-semibold text-danger"
           >
             Stop charging
           </button>
         ) : (
-          <div className="mt-7 rounded-card border border-line bg-paper-raised p-4 text-center">
+          <div className="mt-7 rounded-card border border-line bg-surface p-4 text-center">
             <p className="font-heading text-lg font-medium uppercase tracking-wide text-ink">Session ended</p>
-            <p className="mt-1 text-sm text-ink-soft">{kwh} kWh delivered · ${cost} charged to Visa •••• 4821</p>
+            <p className="mt-1 text-sm text-graphite">{kwh} kWh delivered · ${cost} charged to Visa •••• 4821</p>
             <button
               onClick={() => navigate('/charge/history')}
-              className="mt-4 w-full rounded-xl bg-spark py-3 text-center font-semibold text-white"
+              className="mt-4 w-full rounded-xl bg-charge py-3 text-center font-heading font-semibold text-white"
             >
               View receipt
             </button>

@@ -5,8 +5,8 @@ import BottomNav from '../components/BottomNav'
 import { services, nextBooking } from '../data/mock'
 
 const groups = [
-  { label: 'Wash', items: services.filter((s) => s.accent === 'tide') },
-  { label: 'Maintenance', items: services.filter((s) => s.accent === 'copper') },
+  { label: 'Wash', items: services.filter((s) => s.accent === 'care') },
+  { label: 'Maintenance', items: services.filter((s) => s.accent === 'maintenance') },
 ]
 
 const list = {
@@ -20,14 +20,14 @@ const row = {
 
 export default function Wash() {
   return (
-    <div className="min-h-dvh bg-paper pb-24">
+    <div className="min-h-dvh bg-stone pb-24">
       <TopBar title="Wash & Care" />
       <main className="mx-auto max-w-md px-4 pt-3">
-        <div className="rounded-card bg-tide p-5 text-white">
+        <div className="rounded-card bg-care p-5 text-white">
           <div className="flex items-center justify-between gap-4">
             <div>
               <p className="text-xs font-semibold uppercase tracking-wide text-white/70">Next in queue</p>
-              <p className="mt-1 text-5xl font-extrabold leading-none tabular">{nextBooking.queuePosition}</p>
+              <p className="mt-1 font-mono text-5xl font-extrabold leading-none tabular">{nextBooking.queuePosition}</p>
               <p className="mt-2 text-sm text-white/85">{nextBooking.when}</p>
             </div>
             <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-white/15">
@@ -36,15 +36,15 @@ export default function Wash() {
           </div>
         </div>
 
-        <div className="mt-2.5 flex justify-end">
-          <Link to="/wash/history" className="text-xs font-medium uppercase tracking-wide text-ink-soft">
+        <div className="mt-3 flex justify-end">
+          <Link to="/wash/history" className="font-heading text-xs font-medium uppercase tracking-wide text-graphite">
             View bookings
           </Link>
         </div>
 
         <Link
           to="/wash/rebook?rebook=1"
-          className="mt-2 flex items-center justify-between rounded-card border border-dashed border-tide/40 bg-tide-dim/40 px-4 py-3 text-sm font-semibold text-tide-ink"
+          className="mt-2 flex items-center justify-between rounded-card border border-dashed border-care/40 bg-care-tint/40 px-4 py-3 font-heading text-sm font-semibold text-care-ink"
         >
           Rebook “{nextBooking.service}” in one tap
           <span>›</span>
@@ -52,11 +52,11 @@ export default function Wash() {
 
         <Link
           to="/wash/subscribe"
-          className="mt-2.5 flex items-center justify-between rounded-card bg-ink px-4 py-3.5 text-sm text-paper"
+          className="mt-3 flex items-center justify-between rounded-card bg-ink px-4 py-4 font-heading text-sm text-stone"
         >
           <span>
             <span className="block font-semibold">2× per week wash</span>
-            <span className="block text-paper/60">Subscribe & save 20%</span>
+            <span className="block text-stone/60">Subscribe & save 20%</span>
           </span>
           <span>›</span>
         </Link>
@@ -64,18 +64,18 @@ export default function Wash() {
         {groups.map((g) => (
           <section key={g.label} className="mt-7">
             <h2 className="font-heading text-base font-medium uppercase tracking-wide text-ink">{g.label}</h2>
-            <motion.div variants={list} initial="hidden" animate="show" className="mt-2.5 flex flex-col gap-2.5">
+            <motion.div variants={list} initial="hidden" animate="show" className="mt-3 flex flex-col gap-3">
               {g.items.map((s) => (
                 <motion.div key={s.id} variants={row}>
                   <Link
                     to={`/wash/book/${s.id}`}
-                    className="flex items-center justify-between rounded-card border border-line bg-paper-raised p-3.5 transition-colors active:bg-tide-dim/30"
+                    className="flex items-center justify-between rounded-card border border-line bg-surface p-4 transition-colors active:bg-care-tint/30"
                   >
                     <span>
                       <span className="block font-semibold text-ink">{s.name}</span>
-                      <span className="block text-sm text-ink-soft">{s.desc} · {s.mins} min</span>
+                      <span className="block text-sm text-graphite">{s.desc} · {s.mins} min</span>
                     </span>
-                    <span className="text-sm font-semibold text-copper">
+                    <span className="font-mono text-sm font-semibold text-care">
                       {s.priceFrom === 0 ? 'Free' : `from $${s.priceFrom}`}
                     </span>
                   </Link>

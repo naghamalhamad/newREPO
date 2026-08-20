@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 export default function TopBar({ title, back, action }) {
   const navigate = useNavigate()
   return (
-    <header className="sticky top-0 z-10 flex items-center gap-3 border-b border-line bg-paper/90 px-4 py-3.5 backdrop-blur">
+    <header className="sticky top-0 z-10 flex items-center gap-3 border-b border-line bg-stone/90 px-4 py-4 backdrop-blur">
       {back && (
         <button
           onClick={() => navigate(-1)}

@@ -15,10 +15,10 @@ export default function Subscribe() {
   if (confirmed) {
     const plan = plans.find((p) => p.id === picked)
     return (
-      <div className="flex min-h-dvh flex-col items-center justify-center bg-paper px-6 text-center">
+      <div className="flex min-h-dvh flex-col items-center justify-center bg-stone px-6 text-center">
         <h1 className="font-heading text-xl font-medium uppercase tracking-wide text-ink">You're subscribed</h1>
-        <p className="mt-1.5 text-ink-soft">{plan.name} wash package · ${plan.price}/mo</p>
-        <Link to="/wash" className="mt-6 rounded-xl bg-tide px-6 py-3 font-semibold text-white">
+        <p className="mt-2 text-graphite">{plan.name} wash package · ${plan.price}/mo</p>
+        <Link to="/wash" className="mt-6 rounded-xl bg-care px-6 py-3 font-heading font-semibold text-white">
           Back to Wash & Care
         </Link>
       </div>
@@ -26,30 +26,30 @@ export default function Subscribe() {
   }
 
   return (
-    <div className="min-h-dvh bg-paper pb-10">
+    <div className="min-h-dvh bg-stone pb-10">
       <TopBar title="Subscribe" back />
       <main className="mx-auto max-w-md px-4 pt-3">
-        <p className="text-ink-soft">Pick a recurring full-wash package, billed monthly. Cancel anytime.</p>
-        <div className="mt-4 flex flex-col gap-2.5">
+        <p className="text-graphite">Pick a recurring full-wash package, billed monthly. Cancel anytime.</p>
+        <div className="mt-4 flex flex-col gap-3">
           {plans.map((p) => (
             <button
               key={p.id}
               onClick={() => setPicked(p.id)}
               className={`flex items-center justify-between rounded-card border p-4 text-left ${
-                picked === p.id ? 'border-tide bg-tide-dim/50' : 'border-line bg-paper-raised'
+                picked === p.id ? 'border-care bg-care-tint/50' : 'border-line bg-surface'
               }`}
             >
               <span>
                 <span className="block font-semibold text-ink">{p.name}</span>
-                {p.save && <span className="block text-sm text-tide-ink">Save {p.save}</span>}
+                {p.save && <span className="block text-sm text-care-ink">Save {p.save}</span>}
               </span>
-              <span className="font-semibold text-copper">${p.price}/mo</span>
+              <span className="font-mono font-semibold text-care">${p.price}/mo</span>
             </button>
           ))}
         </div>
         <button
           onClick={() => setConfirmed(true)}
-          className="mt-7 w-full rounded-xl bg-tide py-3.5 text-center font-semibold text-white"
+          className="mt-7 w-full rounded-xl bg-care py-4 text-center font-heading font-semibold text-white"
         >
           Subscribe
         </button>

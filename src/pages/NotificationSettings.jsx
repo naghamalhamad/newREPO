@@ -11,23 +11,23 @@ const initial = [
 export default function NotificationSettings() {
   const [rows, setRows] = useState(initial)
   return (
-    <div className="min-h-dvh bg-paper pb-10">
+    <div className="min-h-dvh bg-stone pb-10">
       <TopBar title="Notifications" back />
       <main className="mx-auto max-w-md px-4 pt-3">
-        <div className="divide-y divide-line overflow-hidden rounded-card border border-line bg-paper-raised">
+        <div className="divide-y divide-line overflow-hidden rounded-card border border-line bg-surface">
           {rows.map((r) => (
-            <div key={r.id} className="flex items-center justify-between px-4 py-3.5">
+            <div key={r.id} className="flex items-center justify-between px-4 py-4">
               <span>
                 <span className="block font-medium text-ink">{r.label}</span>
-                <span className="block text-sm text-ink-soft">{r.desc}</span>
+                <span className="block text-sm text-graphite">{r.desc}</span>
               </span>
               <button
                 role="switch"
                 aria-checked={r.on}
                 onClick={() => setRows((rs) => rs.map((x) => (x.id === r.id ? { ...x, on: !x.on } : x)))}
-                className={`relative h-6 w-10 shrink-0 rounded-pill transition-colors ${r.on ? 'bg-spark' : 'bg-line'}`}
+                className={`relative h-6 w-10 shrink-0 rounded-pill transition-colors ${r.on ? 'bg-brand' : 'bg-line'}`}
               >
-                <span className={`absolute top-0.5 h-5 w-5 rounded-full bg-white shadow transition-transform ${r.on ? 'translate-x-[18px]' : 'translate-x-0.5'}`} />
+                <span className={`absolute top-1 h-5 w-5 rounded-full bg-white shadow transition-transform ${r.on ? 'translate-x-[18px]' : 'translate-x-0.5'}`} />
               </button>
             </div>
           ))}

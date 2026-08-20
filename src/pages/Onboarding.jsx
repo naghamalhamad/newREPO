@@ -4,21 +4,21 @@ import { AnimatePresence, motion } from 'framer-motion'
 
 const slides = [
   {
-    accent: 'spark',
+    accent: 'charge',
     eyebrow: 'Charging',
     title: 'Charge anywhere, without the guesswork',
     body: 'Find nearby stations, see how busy they are right now, and pay for your session in the app — no card, no app-switching.',
     icon: BoltIcon,
   },
   {
-    accent: 'tide',
+    accent: 'care',
     eyebrow: 'Wash & care',
     title: 'Wash and maintenance, booked in seconds',
     body: 'Pick a service, choose a time, and rebook your usual in one tap. Subscribe to a recurring wash and save.',
     icon: DropIcon,
   },
   {
-    accent: 'copper',
+    accent: 'brand',
     eyebrow: 'Your account',
     title: 'One account for your whole car',
     body: 'Manage your vehicles, payment methods, and notifications in one place — for charging and car care alike.',
@@ -27,9 +27,9 @@ const slides = [
 ]
 
 const accents = {
-  spark: { bg: 'bg-spark', dim: 'bg-spark-dim', text: 'text-spark-ink', ring: 'border-spark', wash: 'from-spark-dim' },
-  tide: { bg: 'bg-tide', dim: 'bg-tide-dim', text: 'text-tide-ink', ring: 'border-tide', wash: 'from-tide-dim' },
-  copper: { bg: 'bg-copper', dim: 'bg-copper-dim', text: 'text-copper', ring: 'border-copper', wash: 'from-copper-dim' },
+  charge: { bg: 'bg-charge', dim: 'bg-charge-tint', text: 'text-charge-ink', ring: 'border-charge', wash: 'from-charge-tint' },
+  care: { bg: 'bg-care', dim: 'bg-care-tint', text: 'text-care-ink', ring: 'border-care', wash: 'from-care-tint' },
+  brand: { bg: 'bg-brand', dim: 'bg-brand-tint', text: 'text-brand-ink', ring: 'border-brand', wash: 'from-brand-tint' },
 }
 
 const textIn = {
@@ -55,11 +55,11 @@ export default function Onboarding() {
   }
 
   return (
-    <div className="relative flex min-h-dvh flex-col overflow-hidden bg-paper">
-      <div className={`pointer-events-none absolute inset-x-0 top-0 h-96 bg-linear-to-b ${a.wash} to-paper opacity-70 transition-colors duration-500`} />
+    <div className="relative flex min-h-dvh flex-col overflow-hidden bg-stone">
+      <div className={`pointer-events-none absolute inset-x-0 top-0 h-96 bg-linear-to-b ${a.wash} to-stone opacity-70 transition-colors duration-500`} />
 
       <div className="relative flex justify-end px-5 pt-5">
-        <button onClick={() => navigate('/login')} className="text-sm font-medium text-ink-soft">
+        <button onClick={() => navigate('/login')} className="text-sm font-medium text-graphite">
           Skip
         </button>
       </div>
@@ -97,7 +97,7 @@ export default function Onboarding() {
               <motion.h1 variants={textItem} className="mt-2 font-heading text-[26px] font-semibold leading-tight text-ink">
                 {slide.title}
               </motion.h1>
-              <motion.p variants={textItem} className="mt-3 text-[15px] leading-relaxed text-ink-soft">
+              <motion.p variants={textItem} className="mt-3 text-[15px] leading-relaxed text-graphite">
                 {slide.body}
               </motion.p>
             </motion.div>
@@ -122,14 +122,14 @@ export default function Onboarding() {
         {isLast ? (
           <button
             onClick={() => navigate('/login')}
-            className="w-full rounded-xl bg-ink py-3.5 text-center font-semibold text-paper active:opacity-90"
+            className="w-full rounded-xl bg-ink py-4 text-center font-heading font-semibold text-stone active:opacity-90"
           >
             Get started
           </button>
         ) : (
           <button
             onClick={() => go(index + 1)}
-            className={`flex w-full items-center justify-center gap-1.5 rounded-xl py-3.5 text-center font-semibold text-white active:opacity-90 ${a.bg}`}
+            className={`flex w-full items-center justify-center gap-2 rounded-xl py-4 text-center font-heading font-semibold text-white active:opacity-90 ${a.bg}`}
           >
             Next
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.4}>

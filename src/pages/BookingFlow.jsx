@@ -13,15 +13,15 @@ export default function BookingFlow() {
 
   if (confirmed) {
     return (
-      <div className="flex min-h-dvh flex-col items-center justify-center bg-paper px-6 text-center">
-        <span className="flex h-16 w-16 items-center justify-center rounded-full bg-tide-dim text-tide-ink">
+      <div className="flex min-h-dvh flex-col items-center justify-center bg-stone px-6 text-center">
+        <span className="flex h-16 w-16 items-center justify-center rounded-full bg-care-tint text-care-ink">
           <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.2}>
             <path d="m5 13 4 4 10-10" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </span>
         <h1 className="mt-4 font-heading text-xl font-medium uppercase tracking-wide text-ink">Booking confirmed</h1>
-        <p className="mt-1.5 text-ink-soft">{service.name} · {slot} · Suds & Co — Downtown</p>
-        <Link to="/wash" className="mt-6 rounded-xl bg-tide px-6 py-3 font-semibold text-white">
+        <p className="mt-2 text-graphite">{service.name} · {slot} · Suds & Co — Downtown</p>
+        <Link to="/wash" className="mt-6 rounded-xl bg-care px-6 py-3 font-heading font-semibold text-white">
           Back to Wash & Care
         </Link>
       </div>
@@ -29,25 +29,25 @@ export default function BookingFlow() {
   }
 
   return (
-    <div className="min-h-dvh bg-paper pb-10">
+    <div className="min-h-dvh bg-stone pb-10">
       <TopBar title="Book service" back />
       <main className="mx-auto max-w-md px-4 pt-3">
         {isRebook && (
-          <div className="mb-3 rounded-card border border-tide/30 bg-tide-dim/50 px-3.5 py-2.5 text-sm text-tide-ink">
+          <div className="mb-3 rounded-card border border-care/30 bg-care-tint/50 px-4 py-3 text-sm text-care-ink">
             Rebooking your usual — same vehicle, same provider.
           </div>
         )}
-        <div className="rounded-card border border-line bg-paper-raised p-4">
+        <div className="rounded-card border border-line bg-surface p-4">
           <p className="font-heading text-lg font-medium uppercase tracking-wide text-ink">{service.name}</p>
-          <p className="mt-0.5 text-sm text-ink-soft">{service.desc} · {service.mins} min</p>
-          <p className="mt-2 text-sm font-semibold text-copper">
+          <p className="mt-1 text-sm text-graphite">{service.desc} · {service.mins} min</p>
+          <p className="mt-2 font-mono text-sm font-semibold text-care">
             {service.priceFrom === 0 ? 'Free' : `from $${service.priceFrom}`}
           </p>
         </div>
 
         <section className="mt-6">
           <h3 className="font-heading text-base font-medium uppercase tracking-wide text-ink">Vehicle</h3>
-          <div className="mt-2 rounded-card border border-line bg-paper-raised p-3.5 font-semibold text-ink">
+          <div className="mt-2 rounded-card border border-line bg-surface p-4 font-semibold text-ink">
             My Model Y · EV 402 CC
           </div>
         </section>
@@ -59,10 +59,10 @@ export default function BookingFlow() {
               <button
                 key={t}
                 onClick={() => setSlot(t)}
-                className={`rounded-xl border px-2 py-2.5 text-sm ${
+                className={`rounded-xl border px-2 py-3 font-mono text-sm ${
                   slot === t
-                    ? 'border-tide bg-tide text-white'
-                    : 'border-line bg-paper-raised text-ink-soft'
+                    ? 'border-care bg-care text-white'
+                    : 'border-line bg-surface text-graphite'
                 }`}
               >
                 {t}
@@ -73,16 +73,16 @@ export default function BookingFlow() {
 
         <section className="mt-6">
           <h3 className="font-heading text-base font-medium uppercase tracking-wide text-ink">Payment</h3>
-          <div className="mt-2 flex items-center justify-between rounded-card border border-line bg-paper-raised p-3.5">
-            <span className="font-semibold text-ink">Visa •••• 4821</span>
-            <button className="text-xs font-medium uppercase tracking-wide text-tide-ink">Change</button>
+          <div className="mt-2 flex items-center justify-between rounded-card border border-line bg-surface p-4">
+            <span className="font-mono font-semibold text-ink">Visa •••• 4821</span>
+            <button className="font-heading text-xs font-medium uppercase tracking-wide text-care-ink">Change</button>
           </div>
         </section>
 
         <button
           disabled={!slot}
           onClick={() => setConfirmed(true)}
-          className="mt-7 w-full rounded-xl bg-tide py-3.5 text-center font-semibold text-white disabled:opacity-40"
+          className="mt-7 w-full rounded-xl bg-care py-4 text-center font-heading font-semibold text-white disabled:opacity-40"
         >
           Confirm & pay {service.priceFrom > 0 ? `$${service.priceFrom}` : ''}
         </button>
