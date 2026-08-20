@@ -27,9 +27,18 @@ const slides = [
 ]
 
 const accents = {
-  spark: { bg: 'bg-spark', dim: 'bg-spark-dim', text: 'text-spark-ink' },
-  tide: { bg: 'bg-tide', dim: 'bg-tide-dim', text: 'text-tide-ink' },
-  copper: { bg: 'bg-copper', dim: 'bg-copper-dim', text: 'text-copper' },
+  spark: { bg: 'bg-spark', dim: 'bg-spark-dim', text: 'text-spark-ink', ring: 'border-spark', wash: 'from-spark-dim' },
+  tide: { bg: 'bg-tide', dim: 'bg-tide-dim', text: 'text-tide-ink', ring: 'border-tide', wash: 'from-tide-dim' },
+  copper: { bg: 'bg-copper', dim: 'bg-copper-dim', text: 'text-copper', ring: 'border-copper', wash: 'from-copper-dim' },
+}
+
+const textIn = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.07, delayChildren: 0.1 } },
+}
+const textItem = {
+  hidden: { opacity: 0, y: 12 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.4, ease: [0.16, 1, 0.3, 1] } },
 }
 
 export default function Onboarding() {
@@ -46,12 +55,11 @@ export default function Onboarding() {
   }
 
   return (
-    <div className="flex min-h-dvh flex-col bg-paper">
-      <div className="flex justify-end px-5 pt-5">
-        <button
-          onClick={() => navigate('/login')}
-          className="text-sm font-medium text-ink-soft"
-        >
+    <div className="relative flex min-h-dvh flex-col overflow-hidden bg-paper">
+      <div className={`pointer-events-none absolute inset-x-0 top-0 h-96 bg-linear-to-b ${a.wash} to-paper opacity-70 transition-colors duration-500`} />
+
+      <div className="relative flex justify-end px-5 pt-5">
+        <button onClick={() => navigate('/login')} className="text-sm font-medium text-ink-soft">
           Skip
         </button>
       </div>
@@ -75,30 +83,36 @@ export default function Onboarding() {
             className="flex w-full max-w-sm flex-col items-center text-center"
           >
             <div className="relative flex h-44 w-44 items-center justify-center">
-              <span className={`absolute h-44 w-44 rounded-full ${a.dim}`} />
-              <span className={`absolute h-28 w-28 -translate-x-6 -translate-y-4 rounded-full ${a.dim} opacity-60`} />
+              <span className={`absolute inset-2 animate-ping rounded-full border-2 ${a.ring} opacity-30`} style={{ animationDuration: '2.6s' }} />
+              <span className={`absolute inset-7 animate-ping rounded-full border-2 ${a.ring} opacity-30`} style={{ animationDuration: '2.6s', animationDelay: '0.7s' }} />
               <span className={`relative flex h-24 w-24 items-center justify-center rounded-full ${a.bg} text-white shadow-lg`}>
                 <slide.icon />
               </span>
             </div>
 
-            <p className={`mt-8 text-xs font-semibold uppercase tracking-wide ${a.text}`}>{slide.eyebrow}</p>
-            <h1 className="mt-2 font-heading text-2xl font-medium uppercase tracking-wide text-ink">
-              {slide.title}
-            </h1>
-            <p className="mt-3 text-[15px] leading-relaxed text-ink-soft">{slide.body}</p>
+            <motion.div variants={textIn} initial="hidden" animate="show">
+              <motion.p variants={textItem} className={`mt-8 text-xs font-semibold uppercase tracking-wide ${a.text}`}>
+                {slide.eyebrow}
+              </motion.p>
+              <motion.h1 variants={textItem} className="mt-2 font-heading text-[26px] font-semibold leading-tight text-ink">
+                {slide.title}
+              </motion.h1>
+              <motion.p variants={textItem} className="mt-3 text-[15px] leading-relaxed text-ink-soft">
+                {slide.body}
+              </motion.p>
+            </motion.div>
           </motion.div>
         </AnimatePresence>
       </div>
 
-      <div className="px-6 pb-8">
+      <div className="relative px-6 pb-8">
         <div className="mb-6 flex items-center justify-center gap-2">
           {slides.map((s, i) => (
             <button
               key={s.eyebrow}
               aria-label={`Go to slide ${i + 1}`}
               onClick={() => go(i)}
-              className={`h-1.5 rounded-full transition-all ${
+              className={`h-1.5 rounded-full transition-all duration-300 ${
                 i === index ? `w-6 ${accents[s.accent].bg}` : 'w-1.5 bg-line'
               }`}
             />
@@ -115,9 +129,12 @@ export default function Onboarding() {
         ) : (
           <button
             onClick={() => go(index + 1)}
-            className={`w-full rounded-xl py-3.5 text-center font-semibold text-white active:opacity-90 ${a.bg}`}
+            className={`flex w-full items-center justify-center gap-1.5 rounded-xl py-3.5 text-center font-semibold text-white active:opacity-90 ${a.bg}`}
           >
             Next
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.4}>
+              <path d="M9 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
           </button>
         )}
       </div>
