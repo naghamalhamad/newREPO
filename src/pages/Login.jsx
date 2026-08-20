@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 export default function Login() {
   const navigate = useNavigate()
   return (
-    <div className="flex min-h-dvh flex-col bg-ink px-6">
+    <div className="flex min-h-dvh flex-col bg-stone px-6">
       <div className="flex flex-1 flex-col justify-center pb-10">
         <div className="mb-10">
           <div className="flex items-center gap-2">
@@ -12,9 +12,9 @@ export default function Login() {
                 <path d="M12 3a9 9 0 1 1-6.36 2.64" />
               </svg>
             </span>
-            <span className="font-heading text-2xl font-medium uppercase tracking-wide text-stone">Car Care</span>
+            <span className="font-heading text-2xl font-medium uppercase tracking-wide text-ink">Car Care</span>
           </div>
-          <p className="mt-3 text-[13px] uppercase tracking-[0.1em] text-stone/50">
+          <p className="mt-3 text-[13px] uppercase tracking-[0.1em] text-mist">
             Charge. Wash. Maintain.
           </p>
         </div>
@@ -27,20 +27,20 @@ export default function Login() {
           }}
         >
           <label className="flex flex-col gap-2">
-            <span className="text-[11px] uppercase tracking-[0.08em] text-stone/50">Email</span>
+            <span className="text-[11px] uppercase tracking-[0.08em] text-mist">Email</span>
             <input
               type="email"
               defaultValue="nagham@example.com"
-              className="rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-stone outline-none placeholder:text-stone/30 focus:border-brand"
+              className="rounded-xl border border-line bg-surface px-4 py-3 text-ink outline-none placeholder:text-mist focus:border-brand"
               placeholder="you@example.com"
             />
           </label>
           <label className="flex flex-col gap-2">
-            <span className="text-[11px] uppercase tracking-[0.08em] text-stone/50">Password</span>
+            <span className="text-[11px] uppercase tracking-[0.08em] text-mist">Password</span>
             <input
               type="password"
               defaultValue="••••••••"
-              className="rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-stone outline-none placeholder:text-stone/30 focus:border-brand"
+              className="rounded-xl border border-line bg-surface px-4 py-3 text-ink outline-none placeholder:text-mist focus:border-brand"
               placeholder="Password"
             />
           </label>
@@ -54,13 +54,13 @@ export default function Login() {
           <button
             type="button"
             onClick={() => navigate('/home')}
-            className="rounded-xl border border-white/15 py-4 text-center font-heading font-semibold text-stone active:opacity-80"
+            className="rounded-xl border border-line py-4 text-center font-heading font-semibold text-ink active:bg-line/30"
           >
             Continue with Google
           </button>
         </form>
 
-        <p className="mt-6 text-center text-sm text-stone/50">
+        <p className="mt-6 text-center text-sm text-graphite">
           New here?{' '}
           <button onClick={() => navigate('/signup')} className="font-semibold text-brand underline underline-offset-2">
             Create an account

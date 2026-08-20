@@ -50,14 +50,14 @@ export default function GaugeDial({ value, unit = '%', label, accent = '#c97a3b'
         strokeDashoffset={offset}
         transform={`rotate(-90 ${cx} ${cy})`}
       />
-      <text x={cx} y={cy - 4} textAnchor="middle" fontFamily="'IBM Plex Mono', monospace" fontWeight={600} fontSize={48} className="fill-ink tabular">
+      <text x={cx} y={cy - 4} textAnchor="middle" fontFamily="'Poppins', sans-serif" fontWeight={600} fontSize={48} className="fill-ink tabular">
         {Math.round(display)}
       </text>
-      <text x={cx} y={cy + 22} textAnchor="middle" fontFamily="'IBM Plex Mono', monospace" fontWeight={500} fontSize={14} className="fill-graphite">
+      <text x={cx} y={cy + 22} textAnchor="middle" fontFamily="'Poppins', sans-serif" fontWeight={500} fontSize={14} className="fill-graphite">
         {unit}
       </text>
       {label && (
-        <text x={cx} y={cy + 50} textAnchor="middle" fontFamily="'IBM Plex Sans', sans-serif" fontWeight={500} fontSize={11} letterSpacing="1.2" className="fill-mist">
+        <text x={cx} y={cy + 50} textAnchor="middle" fontFamily="'Poppins', sans-serif" fontWeight={500} fontSize={11} letterSpacing="1.2" className="fill-mist">
           {label}
         </text>
       )}

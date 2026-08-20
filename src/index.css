@@ -29,14 +29,13 @@
   --color-warning-tint: #faf0dc;
 
   /* --- Type ---
-     heading = Space Grotesk — display, headings, buttons
-     body    = IBM Plex Sans — UI text, body copy
-     mono    = IBM Plex Mono — numeric readouts only: price, kWh, distance,
-               timers, countdowns — anything the user is measuring
+     One typeface, Poppins, across every role. Weight still carries the
+     hierarchy: bold/extrabold for headings, buttons and numeric readouts,
+     regular/medium for body copy.
   */
-  --font-heading: "Space Grotesk", "Inter", sans-serif;
-  --font-body: "IBM Plex Sans", system-ui, sans-serif;
-  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --font-heading: "Poppins", "Inter", sans-serif;
+  --font-body: "Poppins", system-ui, sans-serif;
+  --font-mono: "Poppins", system-ui, sans-serif;
 
   /* --- Radius: three values only ---
      8px controls  -> Tailwind's built-in rounded-lg
