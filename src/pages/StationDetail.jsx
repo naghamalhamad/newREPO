@@ -1,12 +1,11 @@
-import { useParams } from 'react-router-dom'
-import { useState } from 'react'
+import { useParams, useNavigate } from 'react-router-dom'
 import TopBar from '../components/TopBar'
 import InstrumentStrip from '../components/InstrumentStrip'
 import { stations } from '../data/mock'
 
 export default function StationDetail() {
   const { id } = useParams()
-  const [started, setStarted] = useState(false)
+  const navigate = useNavigate()
   const s = stations.find((st) => st.id === id) ?? stations[0]
   const freeSlots = s.total - s.occupied
 
@@ -26,6 +25,7 @@ export default function StationDetail() {
             detail="free now"
             fillPct={(s.occupied / s.total) * 100}
             accent="spark"
+            live
           />
           <InstrumentStrip
             eyebrow="Next slot"
@@ -67,19 +67,12 @@ export default function StationDetail() {
             Navigate
           </a>
           <button
-            onClick={() => setStarted(true)}
-            disabled={started}
-            className="flex-1 rounded-xl bg-spark py-3.5 text-center font-semibold text-white active:opacity-90 disabled:opacity-60"
+            onClick={() => navigate(`/charge/${s.id}/session`)}
+            className="flex-1 rounded-xl bg-spark py-3.5 text-center font-semibold text-white active:opacity-90"
           >
-            {started ? 'Session started' : 'Start & pay'}
+            Start & pay
           </button>
         </div>
-
-        {started && (
-          <div className="mt-3 rounded-card border border-status/30 bg-status-dim px-4 py-3 text-sm text-status">
-            Charging started — payment method on file will be charged at ${s.priceKwh.toFixed(2)}/kWh.
-          </div>
-        )}
       </main>
     </div>
   )

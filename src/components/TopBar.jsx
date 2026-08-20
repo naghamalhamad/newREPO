@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 
-export default function TopBar({ title, back }) {
+export default function TopBar({ title, back, action }) {
   const navigate = useNavigate()
   return (
     <header className="sticky top-0 z-10 flex items-center gap-3 border-b border-line bg-paper/90 px-4 py-3.5 backdrop-blur">
@@ -15,7 +15,8 @@ export default function TopBar({ title, back }) {
           </svg>
         </button>
       )}
-      <h1 className="font-display text-2xl font-semibold tracking-tight text-ink">{title}</h1>
+      <h1 className="flex-1 font-display text-2xl font-semibold tracking-tight text-ink">{title}</h1>
+      {action}
     </header>
   )
 }

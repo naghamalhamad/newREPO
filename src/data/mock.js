@@ -70,3 +70,41 @@ export const nextBooking = {
   when: 'Today, 2:30 PM',
   queuePosition: 2,
 }
+
+export const vehicles = [
+  { id: 'v-1', name: 'My Model Y', plate: 'EV 402 CC', connector: 'NACS', color: 'Pearl White' },
+  { id: 'v-2', name: 'Weekend Bolt', plate: 'EV 118 KX', connector: 'CCS', color: 'Slate Blue' },
+]
+
+export const paymentMethods = [
+  { id: 'pm-1', brand: 'Visa', last4: '4821', expiry: '09/28', primary: true },
+  { id: 'pm-2', brand: 'Mastercard', last4: '2290', expiry: '02/27', primary: false },
+]
+
+export const chargingHistory = [
+  { id: 'rc-1', station: 'Cedar Ave Supercharge', date: 'Aug 18, 2026', kwh: 42.6, cost: 17.89, mins: 38 },
+  { id: 'rc-2', station: 'Riverside Charge Hub', date: 'Aug 14, 2026', kwh: 31.2, cost: 11.86, mins: 29 },
+  { id: 'rc-3', station: 'Harbor Point Fast Charge', date: 'Aug 9, 2026', kwh: 55.0, cost: 22.0, mins: 44 },
+]
+
+export const bookingHistory = [
+  { id: 'bk-1', service: 'Full Wash', provider: 'Suds & Co — Downtown', when: 'Today, 2:30 PM', status: 'upcoming', cost: 28 },
+  { id: 'bk-2', service: 'Oil Change', provider: 'QuickTech Auto', when: 'Aug 22, 10:30 AM', status: 'upcoming', cost: 59 },
+  { id: 'bk-3', service: 'Interior Only', provider: 'Suds & Co — Downtown', when: 'Aug 12, 2026', status: 'completed', cost: 18 },
+  { id: 'bk-4', service: 'Full Wash', provider: 'Suds & Co — Downtown', when: 'Aug 5, 2026', status: 'completed', cost: 28 },
+]
+
+export const notifications = [
+  { id: 'nt-1', kind: 'charging', title: 'Charging complete', body: 'Cedar Ave Supercharge — 42.6 kWh delivered, $17.89 charged.', when: '2h ago', unread: true },
+  { id: 'nt-2', kind: 'booking', title: 'Booking reminder', body: 'Full Wash at Suds & Co — Downtown starts in 1 hour.', when: '4h ago', unread: true },
+  { id: 'nt-3', kind: 'charging', title: 'Slot available', body: 'A connector just opened up at Uptown Parkade EV.', when: 'Yesterday', unread: false },
+  { id: 'nt-4', kind: 'subscription', title: 'Subscription renews soon', body: '2× per week wash renews on Aug 24 — $38.00.', when: '2 days ago', unread: false },
+]
+
+export const activeSession = {
+  station: 'Cedar Ave Supercharge',
+  connector: 'NACS',
+  priceKwh: 0.42,
+  startBatteryPct: 41,
+  targetBatteryPct: 90,
+}

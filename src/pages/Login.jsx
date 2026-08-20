@@ -62,7 +62,7 @@ export default function Login() {
 
         <p className="mt-6 text-center text-sm text-paper/50">
           New here?{' '}
-          <button onClick={() => navigate('/')} className="font-semibold text-spark underline underline-offset-2">
+          <button onClick={() => navigate('/signup')} className="font-semibold text-spark underline underline-offset-2">
             Create an account
           </button>
         </p>

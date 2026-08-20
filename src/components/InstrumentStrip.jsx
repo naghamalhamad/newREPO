@@ -13,12 +13,16 @@ export default function InstrumentStrip({
   detail,
   fillPct,
   accent = 'spark',
+  live = false,
 }) {
   const a = accents[accent]
   return (
-    <div className="instrument-ticks rounded-card border border-line bg-paper-raised px-4 py-3">
+    <div
+      className={`instrument-ticks rounded-card border border-line bg-paper-raised px-4 py-3 ${live ? 'instrument-live' : ''}`}
+    >
       <div className="flex items-baseline justify-between gap-3">
-        <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-ink-faint">
+        <span className="flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-[0.14em] text-ink-faint">
+          {live && <span className={`pulse-dot h-1.5 w-1.5 rounded-full ${a.bar}`} aria-hidden="true" />}
           {eyebrow}
         </span>
         {detail && (
