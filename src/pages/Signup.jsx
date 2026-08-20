@@ -12,9 +12,9 @@ export default function Signup() {
                 <path d="M12 3a9 9 0 1 1-6.36 2.64" />
               </svg>
             </span>
-            <span className="font-heading text-2xl font-medium uppercase tracking-wide text-ink">Create account</span>
+ <span className="font-heading text-2xl font-medium text-ink">Create account</span>
           </div>
-          <p className="mt-3 text-[13px] uppercase tracking-[0.1em] text-mist">
+ <p className="mt-3 text-[13px] tracking-[0.1em] text-mist">
             One account, two modules.
           </p>
         </div>
@@ -27,15 +27,15 @@ export default function Signup() {
           }}
         >
           <label className="flex flex-col gap-2">
-            <span className="text-[11px] uppercase tracking-[0.08em] text-mist">Full name</span>
+ <span className="text-[11px] tracking-[0.08em] text-mist">Full name</span>
             <input required className="rounded-xl border border-line bg-surface px-4 py-3 text-ink outline-none placeholder:text-mist focus:border-brand" placeholder="Nagham Alhamad" />
           </label>
           <label className="flex flex-col gap-2">
-            <span className="text-[11px] uppercase tracking-[0.08em] text-mist">Email</span>
+ <span className="text-[11px] tracking-[0.08em] text-mist">Email</span>
             <input type="email" required className="rounded-xl border border-line bg-surface px-4 py-3 text-ink outline-none placeholder:text-mist focus:border-brand" placeholder="you@example.com" />
           </label>
           <label className="flex flex-col gap-2">
-            <span className="text-[11px] uppercase tracking-[0.08em] text-mist">Password</span>
+ <span className="text-[11px] tracking-[0.08em] text-mist">Password</span>
             <input type="password" required className="rounded-xl border border-line bg-surface px-4 py-3 text-ink outline-none placeholder:text-mist focus:border-brand" placeholder="At least 8 characters" />
           </label>
 

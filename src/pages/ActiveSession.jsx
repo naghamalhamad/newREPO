@@ -34,21 +34,21 @@ export default function ActiveSession() {
         <p className="text-center text-sm text-graphite">{station.name} · {activeSession.connector}</p>
 
         <div className="mt-4">
-          <GaugeDial value={pct} unit="%" label={done ? 'target reached' : 'battery'} accent="#c97a3b" />
+          <GaugeDial value={pct} unit="%" label={done ? 'target reached' : 'battery'} />
         </div>
 
         <div className="mt-2 grid grid-cols-3 gap-3 text-center">
           <div className="rounded-card border border-line bg-surface py-3">
             <p className="font-mono tabular text-lg font-semibold text-ink">{mins}:{secs}</p>
-            <p className="mt-1 text-[10px] uppercase tracking-wide text-mist">elapsed</p>
+ <p className="mt-1 text-[10px] text-mist">elapsed</p>
           </div>
           <div className="rounded-card border border-line bg-surface py-3">
             <p className="font-mono tabular text-lg font-semibold text-ink">{kwh}</p>
-            <p className="mt-1 text-[10px] uppercase tracking-wide text-mist">kWh</p>
+ <p className="mt-1 text-[10px] text-mist">kWh</p>
           </div>
           <div className="rounded-card border border-line bg-surface py-3">
-            <p className="font-mono tabular text-lg font-semibold text-charge">${cost}</p>
-            <p className="mt-1 text-[10px] uppercase tracking-wide text-mist">cost</p>
+            <p className="font-mono tabular text-lg font-semibold text-brand-mid">${cost}</p>
+ <p className="mt-1 text-[10px] text-mist">cost</p>
           </div>
         </div>
 
@@ -61,11 +61,11 @@ export default function ActiveSession() {
           </button>
         ) : (
           <div className="mt-7 rounded-card border border-line bg-surface p-4 text-center">
-            <p className="font-heading text-lg font-medium uppercase tracking-wide text-ink">Session ended</p>
+ <p className="font-heading text-lg font-medium text-ink">Session ended</p>
             <p className="mt-1 text-sm text-graphite">{kwh} kWh delivered · ${cost} charged to Visa •••• 4821</p>
             <button
               onClick={() => navigate('/charge/history')}
-              className="mt-4 w-full rounded-xl bg-charge py-3 text-center font-heading font-semibold text-white"
+              className="mt-4 w-full rounded-xl bg-brand py-3 text-center font-heading font-semibold text-white"
             >
               View receipt
             </button>

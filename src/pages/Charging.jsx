@@ -25,9 +25,9 @@ export default function Charging() {
     <div className="min-h-dvh bg-stone pb-24">
       <TopBar title="Charging" />
 
-      <div className="relative mx-4 mt-3 h-44 overflow-hidden rounded-card border border-line bg-charge-tint">
+      <div className="relative mx-4 mt-3 h-44 overflow-hidden rounded-card border border-line bg-brand-tint">
         <svg className="absolute inset-0 h-full w-full" viewBox="0 0 400 180" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-          <rect x="0" y="0" width="400" height="180" fill="var(--color-charge-tint)" />
+          <rect x="0" y="0" width="400" height="180" fill="var(--color-brand-tint)" />
           <rect x="-20" y="10" width="150" height="90" rx="16" fill="#ffffff" opacity="0.55" />
           <rect x="210" y="95" width="130" height="100" rx="16" fill="#ffffff" opacity="0.4" />
           <rect x="150" y="-10" width="110" height="70" rx="14" fill="#ffffff" opacity="0.35" />
@@ -42,22 +42,22 @@ export default function Charging() {
               className="absolute flex h-7 w-7 items-center justify-center"
               style={{ left: `${18 + i * 22}%`, top: `${30 + (i % 2) * 34}%` }}
             >
-              {open && <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-charge/40" />}
-              <span className="relative flex h-7 w-7 items-center justify-center rounded-full border-2 border-white bg-charge text-[10px] font-bold text-white shadow">
+              {open && <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand/40" />}
+              <span className="relative flex h-7 w-7 items-center justify-center rounded-full border-2 border-white bg-brand text-[10px] font-bold text-white shadow">
                 {s.total - s.occupied}
               </span>
             </span>
           )
         })}
-        <span className="absolute bottom-2 right-3 rounded-pill bg-white/70 px-2 py-1 text-[10px] font-medium uppercase tracking-wide text-charge-ink/70 backdrop-blur-sm">
+ <span className="absolute bottom-2 right-3 rounded-pill bg-white/70 px-2 py-1 text-[10px] font-medium text-brand-mid/70 backdrop-blur-sm">
           Map preview
         </span>
       </div>
 
       <main className="mx-auto max-w-md px-4">
         <div className="mt-4 flex items-center justify-between">
-          <h2 className="font-heading text-base font-medium uppercase tracking-wide text-ink">{stations.length} stations nearby</h2>
-          <button className="font-heading text-xs font-medium uppercase tracking-wide text-graphite">Filter</button>
+ <h2 className="font-heading text-base font-medium text-ink">{stations.length} stations nearby</h2>
+ <button className="font-heading text-xs font-medium text-graphite">Filter</button>
         </div>
 
         <motion.ul variants={list} initial="hidden" animate="show" className="mt-2 flex flex-col gap-3">
@@ -67,7 +67,7 @@ export default function Charging() {
               <motion.li key={s.id} variants={row}>
                 <Link
                   to={`/charge/${s.id}`}
-                  className="flex flex-col gap-3 rounded-card border border-line bg-surface p-4 transition-colors active:bg-charge-tint/30"
+                  className="flex flex-col gap-3 rounded-card border border-line bg-surface p-4 transition-colors active:bg-brand-tint/30"
                 >
                   <div className="flex items-start justify-between gap-3">
                     <div>
@@ -83,7 +83,7 @@ export default function Charging() {
                       </span>
                       <span className="tabular font-mono text-sm text-graphite">{s.total - s.occupied}/{s.total} free</span>
                     </div>
-                    <span className="tabular font-mono text-sm font-semibold text-charge">${s.priceKwh.toFixed(2)}/kWh</span>
+                    <span className="tabular font-mono text-sm font-semibold text-brand-mid">${s.priceKwh.toFixed(2)}/kWh</span>
                   </div>
                 </Link>
               </motion.li>

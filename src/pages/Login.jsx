@@ -12,9 +12,9 @@ export default function Login() {
                 <path d="M12 3a9 9 0 1 1-6.36 2.64" />
               </svg>
             </span>
-            <span className="font-heading text-2xl font-medium uppercase tracking-wide text-ink">Car Care</span>
+ <span className="font-heading text-2xl font-medium text-ink">Car Care</span>
           </div>
-          <p className="mt-3 text-[13px] uppercase tracking-[0.1em] text-mist">
+ <p className="mt-3 text-[13px] tracking-[0.1em] text-mist">
             Charge. Wash. Maintain.
           </p>
         </div>
@@ -27,7 +27,7 @@ export default function Login() {
           }}
         >
           <label className="flex flex-col gap-2">
-            <span className="text-[11px] uppercase tracking-[0.08em] text-mist">Email</span>
+ <span className="text-[11px] tracking-[0.08em] text-mist">Email</span>
             <input
               type="email"
               defaultValue="nagham@example.com"
@@ -36,7 +36,7 @@ export default function Login() {
             />
           </label>
           <label className="flex flex-col gap-2">
-            <span className="text-[11px] uppercase tracking-[0.08em] text-mist">Password</span>
+ <span className="text-[11px] tracking-[0.08em] text-mist">Password</span>
             <input
               type="password"
               defaultValue="••••••••"
@@ -54,7 +54,7 @@ export default function Login() {
           <button
             type="button"
             onClick={() => navigate('/home')}
-            className="rounded-xl border border-line py-4 text-center font-heading font-semibold text-ink active:bg-line/30"
+            className="rounded-xl border border-brand py-4 text-center font-heading font-semibold text-brand active:bg-brand-tint/40"
           >
             Continue with Google
           </button>

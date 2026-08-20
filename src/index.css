@@ -1,41 +1,35 @@
 @import "tailwindcss";
 
 @theme {
-  /* --- Circuit design system --- */
-  --color-brand: #0f5c56;        /* nav, headers, primary buttons, links (shared screens) */
-  --color-brand-ink: #0b403c;
-  --color-brand-tint: #dcebe8;   /* derived: light tint for shared-screen surfaces (not in source spec) */
-
-  --color-charge: #c97a3b;       /* charging feature area */
-  --color-charge-ink: #7a4a22;
-  --color-charge-tint: #f6e7d9;
-
-  --color-care: #3e93a6;         /* car care feature area */
-  --color-care-ink: #235c6b;
-  --color-care-tint: #deeff2;
+  /* --- Teal design system (single brand color, no per-module accents) --- */
+  --color-brand: #0a3f3b;        /* dark teal — primary buttons, primary fills, outline borders */
+  --color-brand-mid: #0f5c56;    /* teal — links, active nav/tab state, inline accents */
+  --color-brand-light: #bfe3e0;  /* light teal — badge/chip borders */
+  --color-brand-tint: #eaf6f5;   /* teal tint — badge/chip fill, subtle backgrounds */
 
   --color-stone: #f5f3ec;        /* page background */
   --color-surface: #ffffff;      /* card background */
-  --color-ink: #16211f;          /* primary text */
-  --color-graphite: #4b5751;     /* secondary text */
-  --color-mist: #8b958f;         /* tertiary text, placeholders */
-  --color-line: #e4e0d3;         /* borders, dividers */
+  --color-panel: #f6f8f8;        /* secondary panel background */
 
-  --color-success: #3f8f5f;
-  --color-success-tint: #e3f1e8;
-  --color-danger: #c64545;
-  --color-danger-tint: #fae3e3;
-  --color-warning: #d9a441;
-  --color-warning-tint: #faf0dc;
+  --color-ink: #14171c;          /* primary text (text-hi) */
+  --color-graphite: #667085;     /* secondary text (text-lo) */
+  --color-mist: #a6b1c2;         /* tertiary text, placeholders (grey-300) */
+  --color-line: #d4ddea;         /* borders, dividers, disabled fill (grey-200) */
+  --color-disabled-text: #6e7686; /* disabled button text (grey-400) */
 
-  /* --- Type ---
-     One typeface, Poppins, across every role. Weight still carries the
-     hierarchy: bold/extrabold for headings, buttons and numeric readouts,
-     regular/medium for body copy.
-  */
-  --font-heading: "Poppins", "Inter", sans-serif;
-  --font-body: "Poppins", system-ui, sans-serif;
-  --font-mono: "Poppins", system-ui, sans-serif;
+  --color-success: #1e9e70;
+  --color-success-tint: #e1f5ec;
+  --color-danger: #e23b2e;
+  --color-danger-tint: #fbe4e2;
+  --color-warning: #e6a421;
+  --color-warning-tint: #fcf0dd;
+
+  /* --- Type: Inter, single typeface. Weight carries the hierarchy per the
+     reference scale (H1 32/Bold ... Button Small 13/Medium). No forced
+     uppercase anywhere — text renders in its natural sentence case. */
+  --font-heading: "Inter", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "Inter", system-ui, sans-serif;
 
   /* --- Radius: three values only ---
      8px controls  -> Tailwind's built-in rounded-lg

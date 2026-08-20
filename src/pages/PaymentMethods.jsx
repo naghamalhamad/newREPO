@@ -26,7 +26,7 @@ export default function PaymentMethods() {
               ) : (
                 <button
                   onClick={() => setMethods((ms) => ms.map((x) => ({ ...x, primary: x.id === m.id })))}
-                  className="font-heading text-xs font-medium uppercase tracking-wide text-brand"
+ className="font-heading text-xs font-medium text-brand"
                 >
                   Make default
                 </button>

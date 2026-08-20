@@ -23,10 +23,10 @@ export default function Wash() {
     <div className="min-h-dvh bg-stone pb-24">
       <TopBar title="Wash & Care" />
       <main className="mx-auto max-w-md px-4 pt-3">
-        <div className="rounded-card bg-care p-5 text-white">
+        <div className="rounded-card bg-brand p-5 text-white">
           <div className="flex items-center justify-between gap-4">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-wide text-white/70">Next in queue</p>
+ <p className="text-xs font-semibold text-white/70">Next in queue</p>
               <p className="mt-1 font-mono text-5xl font-extrabold leading-none tabular">{nextBooking.queuePosition}</p>
               <p className="mt-2 text-sm text-white/85">{nextBooking.when}</p>
             </div>
@@ -37,14 +37,14 @@ export default function Wash() {
         </div>
 
         <div className="mt-3 flex justify-end">
-          <Link to="/wash/history" className="font-heading text-xs font-medium uppercase tracking-wide text-graphite">
+ <Link to="/wash/history" className="font-heading text-xs font-medium text-graphite">
             View bookings
           </Link>
         </div>
 
         <Link
           to="/wash/rebook?rebook=1"
-          className="mt-2 flex items-center justify-between rounded-card border border-dashed border-care/40 bg-care-tint/40 px-4 py-3 font-heading text-sm font-semibold text-care-ink"
+          className="mt-2 flex items-center justify-between rounded-card border border-dashed border-brand/40 bg-brand-tint/40 px-4 py-3 font-heading text-sm font-semibold text-brand-mid"
         >
           Rebook “{nextBooking.service}” in one tap
           <span>›</span>
@@ -63,19 +63,19 @@ export default function Wash() {
 
         {groups.map((g) => (
           <section key={g.label} className="mt-7">
-            <h2 className="font-heading text-base font-medium uppercase tracking-wide text-ink">{g.label}</h2>
+ <h2 className="font-heading text-base font-medium text-ink">{g.label}</h2>
             <motion.div variants={list} initial="hidden" animate="show" className="mt-3 flex flex-col gap-3">
               {g.items.map((s) => (
                 <motion.div key={s.id} variants={row}>
                   <Link
                     to={`/wash/book/${s.id}`}
-                    className="flex items-center justify-between rounded-card border border-line bg-surface p-4 transition-colors active:bg-care-tint/30"
+                    className="flex items-center justify-between rounded-card border border-line bg-surface p-4 transition-colors active:bg-brand-tint/30"
                   >
                     <span>
                       <span className="block font-semibold text-ink">{s.name}</span>
                       <span className="block text-sm text-graphite">{s.desc} · {s.mins} min</span>
                     </span>
-                    <span className="font-mono text-sm font-semibold text-care">
+                    <span className="font-mono text-sm font-semibold text-brand-mid">
                       {s.priceFrom === 0 ? 'Free' : `from $${s.priceFrom}`}
                     </span>
                   </Link>

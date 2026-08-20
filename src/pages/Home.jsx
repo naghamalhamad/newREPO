@@ -28,7 +28,7 @@ export default function Home() {
     <div className="min-h-dvh bg-stone pb-24">
       <TopBar title="Home" action={<NotifBell />} />
       <motion.main variants={container} initial="hidden" animate="show" className="mx-auto max-w-md px-4 pt-4">
-        <motion.p variants={item} className="text-[11px] uppercase tracking-[0.1em] text-mist">
+ <motion.p variants={item} className="text-[11px] tracking-[0.1em] text-mist">
           {greeting()}, Nagham
         </motion.p>
 
@@ -36,8 +36,8 @@ export default function Home() {
           <div className="rounded-card bg-ink p-5 text-stone">
             <div className="flex items-start justify-between">
               <div>
-                <p className="text-[11px] uppercase tracking-[0.1em] text-stone/45">Your vehicle</p>
-                <p className="mt-1 font-heading text-xl font-medium uppercase tracking-wide">{vehicle.name}</p>
+ <p className="text-[11px] tracking-[0.1em] text-stone/45">Your vehicle</p>
+ <p className="mt-1 font-heading text-xl font-medium">{vehicle.name}</p>
               </div>
               <span className="rounded-pill border border-white/15 px-3 py-1 font-mono text-[11px] text-stone/70">
                 {vehicle.plate}
@@ -57,7 +57,7 @@ export default function Home() {
 
             <div className="mt-3 h-1.5 w-full overflow-hidden rounded-full bg-white/10">
               <div
-                className="h-full rounded-full bg-charge transition-all duration-700"
+                className="h-full rounded-full bg-brand transition-all duration-700"
                 style={{ width: `${vehicle.batteryPct}%` }}
               />
             </div>
@@ -66,16 +66,16 @@ export default function Home() {
 
         <motion.section variants={item} className="mt-7">
           <div className="flex items-baseline justify-between">
-            <h2 className="font-heading text-base font-medium uppercase tracking-wide text-ink">Nearest charger</h2>
-            <Link to="/charge" className="font-heading text-xs font-medium uppercase tracking-wide text-charge">
+ <h2 className="font-heading text-base font-medium text-ink">Nearest charger</h2>
+ <Link to="/charge" className="font-heading text-xs font-medium text-brand-mid">
               See map
             </Link>
           </div>
           <Link
             to={`/charge/${nearest.id}`}
-            className="mt-3 flex items-center gap-3 rounded-card border border-line bg-surface p-4 transition-colors active:bg-charge-tint/40"
+            className="mt-3 flex items-center gap-3 rounded-card border border-line bg-surface p-4 transition-colors active:bg-brand-tint/40"
           >
-            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-charge-tint text-charge-ink">
+            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-brand-tint text-brand-mid">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M13 3 5 14h6l-1 7 8-11h-6l1-7Z" /></svg>
             </span>
             <span className="flex-1">
@@ -88,13 +88,13 @@ export default function Home() {
 
         <motion.section variants={item} className="mt-7">
           <div className="flex items-baseline justify-between">
-            <h2 className="font-heading text-base font-medium uppercase tracking-wide text-ink">Upcoming booking</h2>
-            <Link to="/wash" className="font-heading text-xs font-medium uppercase tracking-wide text-care-ink">
+ <h2 className="font-heading text-base font-medium text-ink">Upcoming booking</h2>
+ <Link to="/wash" className="font-heading text-xs font-medium text-brand-mid">
               Book more
             </Link>
           </div>
           <div className="mt-3 flex items-center gap-3 rounded-card border border-line bg-surface p-4">
-            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-care-tint text-care-ink">
+            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-brand-tint text-brand-mid">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3c3.5 4 6 7.4 6 10.5a6 6 0 1 1-12 0C6 10.4 8.5 7 12 3Z" /></svg>
             </span>
             <span className="flex-1">

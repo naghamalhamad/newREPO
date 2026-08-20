@@ -16,9 +16,9 @@ export default function Subscribe() {
     const plan = plans.find((p) => p.id === picked)
     return (
       <div className="flex min-h-dvh flex-col items-center justify-center bg-stone px-6 text-center">
-        <h1 className="font-heading text-xl font-medium uppercase tracking-wide text-ink">You're subscribed</h1>
+ <h1 className="font-heading text-xl font-medium text-ink">You're subscribed</h1>
         <p className="mt-2 text-graphite">{plan.name} wash package · ${plan.price}/mo</p>
-        <Link to="/wash" className="mt-6 rounded-xl bg-care px-6 py-3 font-heading font-semibold text-white">
+        <Link to="/wash" className="mt-6 rounded-xl bg-brand px-6 py-3 font-heading font-semibold text-white">
           Back to Wash & Care
         </Link>
       </div>
@@ -36,20 +36,20 @@ export default function Subscribe() {
               key={p.id}
               onClick={() => setPicked(p.id)}
               className={`flex items-center justify-between rounded-card border p-4 text-left ${
-                picked === p.id ? 'border-care bg-care-tint/50' : 'border-line bg-surface'
+                picked === p.id ? 'border-brand bg-brand-tint/50' : 'border-line bg-surface'
               }`}
             >
               <span>
                 <span className="block font-semibold text-ink">{p.name}</span>
-                {p.save && <span className="block text-sm text-care-ink">Save {p.save}</span>}
+                {p.save && <span className="block text-sm text-brand-mid">Save {p.save}</span>}
               </span>
-              <span className="font-mono font-semibold text-care">${p.price}/mo</span>
+              <span className="font-mono font-semibold text-brand-mid">${p.price}/mo</span>
             </button>
           ))}
         </div>
         <button
           onClick={() => setConfirmed(true)}
-          className="mt-7 w-full rounded-xl bg-care py-4 text-center font-heading font-semibold text-white"
+          className="mt-7 w-full rounded-xl bg-brand py-4 text-center font-heading font-semibold text-white"
         >
           Subscribe
         </button>

@@ -15,7 +15,7 @@ export default function TopBar({ title, back, action }) {
           </svg>
         </button>
       )}
-      <h1 className="flex-1 font-heading text-xl font-medium uppercase tracking-wide text-ink">{title}</h1>
+ <h1 className="flex-1 font-heading text-xl font-medium text-ink">{title}</h1>
       {action}
     </header>
   )

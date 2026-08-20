@@ -14,7 +14,7 @@ export default function Vehicles() {
         <div className="flex flex-col gap-3">
           {vehicles.map((v) => (
             <div key={v.id} className="flex items-center gap-3 rounded-card border border-line bg-surface p-4">
-              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-brand-tint text-brand-ink">
+              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-brand-tint text-brand-mid">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8}>
                   <path d="M4 16V11l2-4h12l2 4v5" strokeLinecap="round" strokeLinejoin="round" />
                   <circle cx="7.5" cy="16.5" r="1.5" />
@@ -41,7 +41,7 @@ export default function Vehicles() {
             }}
           >
             <label className="flex flex-col gap-2">
-              <span className="text-[11px] uppercase tracking-[0.08em] text-mist">Vehicle nickname</span>
+ <span className="text-[11px] tracking-[0.08em] text-mist">Vehicle nickname</span>
               <input
                 autoFocus
                 value={name}
@@ -51,7 +51,7 @@ export default function Vehicles() {
               />
             </label>
             <div className="flex gap-3">
-              <button type="button" onClick={() => setAdding(false)} className="flex-1 rounded-xl border border-line py-3 font-heading font-semibold text-ink">
+              <button type="button" onClick={() => setAdding(false)} className="flex-1 rounded-xl border border-brand py-3 font-heading font-semibold text-brand">
                 Cancel
               </button>
               <button type="submit" className="flex-1 rounded-xl bg-brand py-3 font-heading font-semibold text-white">

@@ -13,7 +13,7 @@ export default function BookingHistory() {
       <TopBar title="Bookings" back />
       <main className="mx-auto max-w-md px-4 pt-3">
         <section>
-          <h2 className="font-heading text-base font-medium uppercase tracking-wide text-ink">Upcoming</h2>
+ <h2 className="font-heading text-base font-medium text-ink">Upcoming</h2>
           <div className="mt-2 flex flex-col gap-3">
             {upcoming.length === 0 && (
               <p className="rounded-card border border-dashed border-line px-4 py-6 text-center text-sm text-graphite">
@@ -27,7 +27,7 @@ export default function BookingHistory() {
                     <span className="block font-semibold text-ink">{b.service}</span>
                     <span className="block text-sm text-graphite">{b.provider} · {b.when}</span>
                   </span>
-                  <span className="font-mono font-semibold text-care">${b.cost}</span>
+                  <span className="font-mono font-semibold text-brand-mid">${b.cost}</span>
                 </div>
                 <button
                   onClick={() => setCancelled((c) => [...c, b.id])}
@@ -46,7 +46,7 @@ export default function BookingHistory() {
         </section>
 
         <section className="mt-7">
-          <h2 className="font-heading text-base font-medium uppercase tracking-wide text-ink">Past</h2>
+ <h2 className="font-heading text-base font-medium text-ink">Past</h2>
           <div className="mt-2 flex flex-col gap-3">
             {past.map((b) => (
               <div key={b.id} className="flex items-center justify-between rounded-card border border-line bg-surface p-4">

@@ -3,9 +3,9 @@ import TopBar from '../components/TopBar'
 import { notifications } from '../data/mock'
 
 const kindStyles = {
-  charging: { bg: 'bg-charge-tint', text: 'text-charge-ink' },
-  booking: { bg: 'bg-care-tint', text: 'text-care-ink' },
-  subscription: { bg: 'care-tint', text: 'text-care' },
+  charging: { bg: 'bg-brand-tint', text: 'text-brand-mid' },
+  booking: { bg: 'bg-brand-tint', text: 'text-brand-mid' },
+  subscription: { bg: 'bg-brand-tint', text: 'text-brand-mid' },
 }
 
 export default function Notifications() {
@@ -15,7 +15,7 @@ export default function Notifications() {
         title="Notifications"
         back
         action={
-          <Link to="/profile/notifications" className="font-heading text-xs font-medium uppercase tracking-wide text-graphite">
+ <Link to="/profile/notifications" className="font-heading text-xs font-medium text-graphite">
             Settings
           </Link>
         }

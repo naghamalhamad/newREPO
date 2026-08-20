@@ -4,33 +4,24 @@ import { AnimatePresence, motion } from 'framer-motion'
 
 const slides = [
   {
-    accent: 'charge',
     eyebrow: 'Charging',
     title: 'Charge anywhere, without the guesswork',
     body: 'Find nearby stations, see how busy they are right now, and pay for your session in the app — no card, no app-switching.',
     icon: BoltIcon,
   },
   {
-    accent: 'care',
     eyebrow: 'Wash & care',
     title: 'Wash and maintenance, booked in seconds',
     body: 'Pick a service, choose a time, and rebook your usual in one tap. Subscribe to a recurring wash and save.',
     icon: DropIcon,
   },
   {
-    accent: 'brand',
     eyebrow: 'Your account',
     title: 'One account for your whole car',
     body: 'Manage your vehicles, payment methods, and notifications in one place — for charging and car care alike.',
     icon: CarIcon,
   },
 ]
-
-const accents = {
-  charge: { bg: 'bg-charge', dim: 'bg-charge-tint', text: 'text-charge-ink', ring: 'border-charge', wash: 'from-charge-tint' },
-  care: { bg: 'bg-care', dim: 'bg-care-tint', text: 'text-care-ink', ring: 'border-care', wash: 'from-care-tint' },
-  brand: { bg: 'bg-brand', dim: 'bg-brand-tint', text: 'text-brand-ink', ring: 'border-brand', wash: 'from-brand-tint' },
-}
 
 const textIn = {
   hidden: {},
@@ -46,7 +37,6 @@ export default function Onboarding() {
   const [direction, setDirection] = useState(1)
   const navigate = useNavigate()
   const slide = slides[index]
-  const a = accents[slide.accent]
   const isLast = index === slides.length - 1
 
   function go(next) {
@@ -56,7 +46,7 @@ export default function Onboarding() {
 
   return (
     <div className="relative flex min-h-dvh flex-col overflow-hidden bg-stone">
-      <div className={`pointer-events-none absolute inset-x-0 top-0 h-96 bg-linear-to-b ${a.wash} to-stone opacity-70 transition-colors duration-500`} />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-96 bg-linear-to-b from-brand-tint to-stone opacity-70" />
 
       <div className="relative flex justify-end px-5 pt-5">
         <button onClick={() => navigate('/login')} className="text-sm font-medium text-graphite">
@@ -83,15 +73,15 @@ export default function Onboarding() {
             className="flex w-full max-w-sm flex-col items-center text-center"
           >
             <div className="relative flex h-44 w-44 items-center justify-center">
-              <span className={`absolute inset-2 animate-ping rounded-full border-2 ${a.ring} opacity-30`} style={{ animationDuration: '2.6s' }} />
-              <span className={`absolute inset-7 animate-ping rounded-full border-2 ${a.ring} opacity-30`} style={{ animationDuration: '2.6s', animationDelay: '0.7s' }} />
-              <span className={`relative flex h-24 w-24 items-center justify-center rounded-full ${a.bg} text-white shadow-lg`}>
+              <span className="absolute inset-2 animate-ping rounded-full border-2 border-brand opacity-30" style={{ animationDuration: '2.6s' }} />
+              <span className="absolute inset-7 animate-ping rounded-full border-2 border-brand opacity-30" style={{ animationDuration: '2.6s', animationDelay: '0.7s' }} />
+              <span className="relative flex h-24 w-24 items-center justify-center rounded-full bg-brand text-white shadow-lg">
                 <slide.icon />
               </span>
             </div>
 
             <motion.div variants={textIn} initial="hidden" animate="show">
-              <motion.p variants={textItem} className={`mt-8 text-xs font-semibold uppercase tracking-wide ${a.text}`}>
+ <motion.p variants={textItem} className="mt-8 text-xs font-semibold text-brand-mid">
                 {slide.eyebrow}
               </motion.p>
               <motion.h1 variants={textItem} className="mt-2 font-heading text-[26px] font-semibold leading-tight text-ink">
@@ -113,7 +103,7 @@ export default function Onboarding() {
               aria-label={`Go to slide ${i + 1}`}
               onClick={() => go(i)}
               className={`h-1.5 rounded-full transition-all duration-300 ${
-                i === index ? `w-6 ${accents[s.accent].bg}` : 'w-1.5 bg-line'
+                i === index ? 'w-6 bg-brand' : 'w-1.5 bg-line'
               }`}
             />
           ))}
@@ -129,7 +119,7 @@ export default function Onboarding() {
         ) : (
           <button
             onClick={() => go(index + 1)}
-            className={`flex w-full items-center justify-center gap-2 rounded-xl py-4 text-center font-heading font-semibold text-white active:opacity-90 ${a.bg}`}
+            className="flex w-full items-center justify-center gap-2 rounded-xl bg-brand py-4 text-center font-heading font-semibold text-white active:opacity-90"
           >
             Next
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.4}>
