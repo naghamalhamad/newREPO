@@ -63,7 +63,7 @@ export default function Wash() {
 
         {groups.map((g) => (
           <section key={g.label} className="mt-7">
-            <h2 className="font-heading text-lg font-extrabold uppercase tracking-wide text-ink">{g.label}</h2>
+            <h2 className="font-heading text-base font-medium uppercase tracking-wide text-ink">{g.label}</h2>
             <motion.div variants={list} initial="hidden" animate="show" className="mt-2.5 flex flex-col gap-2.5">
               {g.items.map((s) => (
                 <motion.div key={s.id} variants={row}>

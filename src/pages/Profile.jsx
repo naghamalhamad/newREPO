@@ -18,7 +18,7 @@ export default function Profile() {
       <TopBar title="Profile" />
       <main className="mx-auto max-w-md px-4 pt-3">
         <div className="flex items-center gap-3 rounded-card border border-line bg-paper-raised p-4">
-          <span className="flex h-12 w-12 items-center justify-center rounded-full bg-ink font-heading text-lg font-extrabold text-paper">
+          <span className="flex h-12 w-12 items-center justify-center rounded-full bg-ink font-heading text-base font-medium text-paper">
             N
           </span>
           <div>

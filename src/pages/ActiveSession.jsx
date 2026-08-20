@@ -61,7 +61,7 @@ export default function ActiveSession() {
           </button>
         ) : (
           <div className="mt-7 rounded-card border border-line bg-paper-raised p-4 text-center">
-            <p className="font-heading text-xl font-extrabold uppercase tracking-wide text-ink">Session ended</p>
+            <p className="font-heading text-lg font-medium uppercase tracking-wide text-ink">Session ended</p>
             <p className="mt-1 text-sm text-ink-soft">{kwh} kWh delivered · ${cost} charged to Visa •••• 4821</p>
             <button
               onClick={() => navigate('/charge/history')}

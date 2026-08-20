@@ -15,7 +15,7 @@ export default function StationDetail() {
     <div className="min-h-dvh bg-paper pb-10">
       <TopBar title="Station" back />
       <main className="mx-auto max-w-md px-4 pt-3">
-        <h2 className="font-heading text-2xl font-extrabold uppercase tracking-wide text-ink">{s.name}</h2>
+        <h2 className="font-heading text-xl font-medium uppercase tracking-wide text-ink">{s.name}</h2>
         <p className="mt-0.5 text-sm text-ink-soft">{s.address}</p>
 
         <div className="mt-4 grid grid-cols-2 gap-3">
@@ -36,7 +36,7 @@ export default function StationDetail() {
         </div>
 
         <section className="mt-6">
-          <h3 className="font-heading text-lg font-extrabold uppercase tracking-wide text-ink">Connectors</h3>
+          <h3 className="font-heading text-base font-medium uppercase tracking-wide text-ink">Connectors</h3>
           <div className="mt-2 flex flex-wrap gap-2">
             {s.connectors.map((c) => (
               <span key={c} className="rounded-pill border border-line bg-paper-raised px-3 py-1.5 text-xs text-ink">
@@ -49,7 +49,7 @@ export default function StationDetail() {
         <section className="mt-6 flex items-center justify-between rounded-card border border-line bg-paper-raised p-4">
           <div>
             <p className="text-[11px] uppercase tracking-[0.14em] text-ink-faint">Price</p>
-            <p className="text-2xl font-extrabold text-copper">${s.priceKwh.toFixed(2)} <span className="text-sm font-normal text-ink-soft">/ kWh</span></p>
+            <p className="text-xl font-medium text-copper">${s.priceKwh.toFixed(2)} <span className="text-sm font-normal text-ink-soft">/ kWh</span></p>
           </div>
           <div className="text-right">
             <p className="text-[11px] uppercase tracking-[0.14em] text-ink-faint">Hours</p>

@@ -56,7 +56,7 @@ export default function Charging() {
 
       <main className="mx-auto max-w-md px-4">
         <div className="mt-4 flex items-center justify-between">
-          <h2 className="font-heading text-lg font-extrabold uppercase tracking-wide text-ink">{stations.length} stations nearby</h2>
+          <h2 className="font-heading text-base font-medium uppercase tracking-wide text-ink">{stations.length} stations nearby</h2>
           <button className="text-xs font-medium uppercase tracking-wide text-ink-soft">Filter</button>
         </div>
 

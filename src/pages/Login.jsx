@@ -12,7 +12,7 @@ export default function Login() {
                 <path d="M13 3 5 14h6l-1 7 8-11h-6l1-7Z" />
               </svg>
             </span>
-            <span className="font-heading text-3xl font-extrabold uppercase tracking-wide text-paper">Car Care</span>
+            <span className="font-heading text-2xl font-medium uppercase tracking-wide text-paper">Car Care</span>
           </div>
           <p className="mt-3 text-[13px] uppercase tracking-[0.1em] text-paper/50">
             Charge. Wash. Maintain.

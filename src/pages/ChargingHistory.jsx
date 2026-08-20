@@ -32,7 +32,7 @@ export default function ChargingHistory() {
 function EmptyState() {
   return (
     <div className="mt-10 rounded-card border border-dashed border-line px-6 py-10 text-center">
-      <p className="font-heading text-lg font-extrabold uppercase tracking-wide text-ink">No charging sessions yet</p>
+      <p className="font-heading text-base font-medium uppercase tracking-wide text-ink">No charging sessions yet</p>
       <p className="mt-1 text-sm text-ink-soft">Sessions and receipts show up here once you charge.</p>
     </div>
   )

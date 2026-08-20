@@ -37,7 +37,7 @@ export default function Home() {
             <div className="flex items-start justify-between">
               <div>
                 <p className="text-[11px] uppercase tracking-[0.1em] text-paper/45">Your vehicle</p>
-                <p className="mt-0.5 font-heading text-2xl font-extrabold uppercase tracking-wide">{vehicle.name}</p>
+                <p className="mt-0.5 font-heading text-xl font-medium uppercase tracking-wide">{vehicle.name}</p>
               </div>
               <span className="rounded-pill border border-white/15 px-2.5 py-1 text-[11px] text-paper/70">
                 {vehicle.plate}
@@ -66,7 +66,7 @@ export default function Home() {
 
         <motion.section variants={item} className="mt-7">
           <div className="flex items-baseline justify-between">
-            <h2 className="font-heading text-lg font-extrabold uppercase tracking-wide text-ink">Nearest charger</h2>
+            <h2 className="font-heading text-base font-medium uppercase tracking-wide text-ink">Nearest charger</h2>
             <Link to="/charge" className="text-xs font-medium uppercase tracking-wide text-spark">
               See map
             </Link>
@@ -88,7 +88,7 @@ export default function Home() {
 
         <motion.section variants={item} className="mt-7">
           <div className="flex items-baseline justify-between">
-            <h2 className="font-heading text-lg font-extrabold uppercase tracking-wide text-ink">Upcoming booking</h2>
+            <h2 className="font-heading text-base font-medium uppercase tracking-wide text-ink">Upcoming booking</h2>
             <Link to="/wash" className="text-xs font-medium uppercase tracking-wide text-tide-ink">
               Book more
             </Link>

@@ -15,7 +15,7 @@ export default function Subscribe() {
     const plan = plans.find((p) => p.id === picked)
     return (
       <div className="flex min-h-dvh flex-col items-center justify-center bg-paper px-6 text-center">
-        <h1 className="font-heading text-2xl font-extrabold uppercase tracking-wide text-ink">You're subscribed</h1>
+        <h1 className="font-heading text-xl font-medium uppercase tracking-wide text-ink">You're subscribed</h1>
         <p className="mt-1.5 text-ink-soft">{plan.name} wash package · ${plan.price}/mo</p>
         <a href="/wash" className="mt-6 rounded-xl bg-tide px-6 py-3 font-semibold text-white">
           Back to Wash & Care
