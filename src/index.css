@@ -51,35 +51,8 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Instrument strip signature: thin tick-mark rule used behind readouts */
-.instrument-ticks {
-  background-image: repeating-linear-gradient(
-    to right,
-    var(--color-line) 0,
-    var(--color-line) 1px,
-    transparent 1px,
-    transparent 8px
-  );
-}
-
 .tabular {
   font-variant-numeric: tabular-nums;
-}
-
-.instrument-live {
-  animation: instrument-sweep 2.4s linear infinite;
-}
-@keyframes instrument-sweep {
-  from { background-position: 0 0; }
-  to { background-position: 32px 0; }
-}
-
-.pulse-dot {
-  animation: pulse-dot 1.8s ease-in-out infinite;
-}
-@keyframes pulse-dot {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.35; }
 }
 
 @media (prefers-reduced-motion: reduce) {
