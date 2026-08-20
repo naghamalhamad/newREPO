@@ -18,15 +18,15 @@ export default function ReceiptDetail() {
       <TopBar title="Receipt" back />
       <main className="mx-auto max-w-md px-4 pt-3">
         <div className="rounded-card border border-line bg-paper-raised p-5 text-center">
-          <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-ink-faint">Total charged</p>
-          <p className="mt-1 font-display text-4xl font-semibold text-copper">${r.cost.toFixed(2)}</p>
+          <p className="text-[11px] uppercase tracking-[0.14em] text-ink-faint">Total charged</p>
+          <p className="mt-1 text-4xl font-extrabold text-copper">${r.cost.toFixed(2)}</p>
         </div>
 
         <div className="mt-4 divide-y divide-line rounded-card border border-line bg-paper-raised">
           {rows.map(([label, value]) => (
             <div key={label} className="flex items-center justify-between px-4 py-3">
               <span className="text-sm text-ink-soft">{label}</span>
-              <span className="font-mono text-sm font-medium text-ink">{value}</span>
+              <span className="text-sm font-medium text-ink">{value}</span>
             </div>
           ))}
         </div>

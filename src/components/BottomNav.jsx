@@ -17,7 +17,7 @@ export default function BottomNav() {
             to={to}
             end={to === '/'}
             className={({ isActive }) =>
-              `flex flex-1 flex-col items-center gap-1 py-2.5 font-heading text-[11px] font-medium ${
+              `flex flex-1 flex-col items-center gap-1 py-2.5 text-[11px] font-medium ${
                 isActive ? 'text-ink' : 'text-ink-faint'
               }`
             }

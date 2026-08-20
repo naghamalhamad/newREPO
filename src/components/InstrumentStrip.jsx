@@ -21,21 +21,21 @@ export default function InstrumentStrip({
       className={`instrument-ticks rounded-card border border-line bg-paper-raised px-4 py-3 ${live ? 'instrument-live' : ''}`}
     >
       <div className="flex items-baseline justify-between gap-3">
-        <span className="flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-[0.14em] text-ink-faint">
+        <span className="flex items-center gap-1.5 text-[11px] font-medium uppercase tracking-[0.1em] text-ink-faint">
           {live && <span className={`pulse-dot h-1.5 w-1.5 rounded-full ${a.bar}`} aria-hidden="true" />}
           {eyebrow}
         </span>
         {detail && (
-          <span className="font-mono text-[11px] uppercase tracking-[0.1em] text-ink-soft">
+          <span className="text-[11px] font-medium uppercase tracking-[0.08em] text-ink-soft">
             {detail}
           </span>
         )}
       </div>
       <div className="mt-1 flex items-baseline gap-1.5">
-        <span className={`font-display text-[40px] leading-none font-bold tabular ${a.text}`}>
+        <span className={`text-[40px] leading-none font-extrabold tabular ${a.text}`}>
           {value}
         </span>
-        {unit && <span className="font-mono text-sm text-ink-soft">{unit}</span>}
+        {unit && <span className="text-sm text-ink-soft">{unit}</span>}
       </div>
       {typeof fillPct === 'number' && (
         <div className={`mt-2.5 h-1.5 w-full overflow-hidden rounded-full ${a.dim}`}>

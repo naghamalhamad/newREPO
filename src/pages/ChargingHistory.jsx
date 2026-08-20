@@ -18,7 +18,7 @@ export default function ChargingHistory() {
                     <span className="block font-semibold text-ink">{r.station}</span>
                     <span className="block text-sm text-ink-soft">{r.date} · {r.kwh} kWh · {r.mins} min</span>
                   </span>
-                  <span className="font-mono font-semibold text-copper">${r.cost.toFixed(2)}</span>
+                  <span className="font-semibold text-copper">${r.cost.toFixed(2)}</span>
                 </Link>
               </li>
             ))}
@@ -32,7 +32,7 @@ export default function ChargingHistory() {
 function EmptyState() {
   return (
     <div className="mt-10 rounded-card border border-dashed border-line px-6 py-10 text-center">
-      <p className="font-heading text-lg font-semibold text-ink">No charging sessions yet</p>
+      <p className="font-heading text-lg font-extrabold uppercase tracking-wide text-ink">No charging sessions yet</p>
       <p className="mt-1 text-sm text-ink-soft">Sessions and receipts show up here once you charge.</p>
     </div>
   )

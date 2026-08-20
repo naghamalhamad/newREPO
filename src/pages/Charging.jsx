@@ -26,7 +26,14 @@ export default function Charging() {
       <TopBar title="Charging" />
 
       <div className="relative mx-4 mt-3 h-44 overflow-hidden rounded-card border border-line bg-spark-dim">
-        <div className="instrument-ticks instrument-live absolute inset-0 opacity-50" />
+        <svg className="absolute inset-0 h-full w-full" viewBox="0 0 400 180" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <rect x="0" y="0" width="400" height="180" fill="var(--color-spark-dim)" />
+          <rect x="-20" y="10" width="150" height="90" rx="16" fill="#ffffff" opacity="0.55" />
+          <rect x="210" y="95" width="130" height="100" rx="16" fill="#ffffff" opacity="0.4" />
+          <rect x="150" y="-10" width="110" height="70" rx="14" fill="#ffffff" opacity="0.35" />
+          <path d="M0 60 C 90 30, 140 110, 240 70 S 360 40, 400 90" stroke="#ffffff" strokeWidth="10" fill="none" opacity="0.7" strokeLinecap="round" />
+          <path d="M40 180 C 90 130, 60 90, 130 60 S 260 20, 300 -10" stroke="#ffffff" strokeWidth="8" fill="none" opacity="0.5" strokeLinecap="round" />
+        </svg>
         {stations.map((s, i) => {
           const open = s.occupied < s.total
           return (
@@ -42,15 +49,15 @@ export default function Charging() {
             </span>
           )
         })}
-        <span className="absolute bottom-2 right-3 font-heading text-[10px] uppercase tracking-wide text-spark-ink/60">
+        <span className="absolute bottom-2 right-3 rounded-pill bg-white/70 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-spark-ink/70 backdrop-blur-sm">
           Map preview
         </span>
       </div>
 
       <main className="mx-auto max-w-md px-4">
         <div className="mt-4 flex items-center justify-between">
-          <h2 className="font-heading text-lg font-semibold text-ink">{stations.length} stations nearby</h2>
-          <button className="font-heading text-xs font-medium uppercase tracking-wide text-ink-soft">Filter</button>
+          <h2 className="font-heading text-lg font-extrabold uppercase tracking-wide text-ink">{stations.length} stations nearby</h2>
+          <button className="text-xs font-medium uppercase tracking-wide text-ink-soft">Filter</button>
         </div>
 
         <motion.ul variants={list} initial="hidden" animate="show" className="mt-2 flex flex-col gap-2.5">
@@ -67,9 +74,9 @@ export default function Charging() {
                       <p className="font-semibold text-ink">{s.name}</p>
                       <p className="text-sm text-ink-soft">{s.address}</p>
                     </div>
-                    <span className="whitespace-nowrap font-mono text-sm text-ink-soft">{s.distanceMi} mi</span>
+                    <span className="whitespace-nowrap text-sm text-ink-soft">{s.distanceMi} mi</span>
                   </div>
-                  <div className="flex items-center gap-3 border-t border-line pt-2.5 font-mono text-xs">
+                  <div className="flex items-center gap-3 border-t border-line pt-2.5 text-xs">
                     <span className={`font-semibold ${busy.tone}`}>{busy.text}</span>
                     <span className="text-ink-faint">·</span>
                     <span className="tabular text-ink-soft">{s.occupied}/{s.total} in use</span>

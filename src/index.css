@@ -25,16 +25,14 @@
   --color-alert: #d5423f;
   --color-alert-dim: #fbe2e1;
 
-  /* --- Type ---
-     display   = Big Shoulders — instrument numerals only (gauge, big stats)
-     heading   = Space Grotesk — structural chrome: titles, nav, buttons, labels
-     body      = Inter — reading content: card copy, descriptions, inputs
-     mono      = IBM Plex Mono — literal data readouts: prices, kWh, timestamps
+  /* --- Type — two-tier system ---
+     heading = Poppins ExtraBold, uppercase, tracked — screen titles, section
+               headers, status headlines. The only place the display face appears.
+     body    = Inter — everything else: card labels, big numbers/metrics
+               (bold/extrabold), captions (regular, muted), buttons, inputs.
   */
-  --font-display: "Big Shoulders", "Arial Narrow", sans-serif;
-  --font-heading: "Space Grotesk", "Inter", sans-serif;
+  --font-heading: "Poppins", "Inter", sans-serif;
   --font-body: "Inter", system-ui, sans-serif;
-  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
 
   /* --- Radius --- */
   --radius-card: 18px;

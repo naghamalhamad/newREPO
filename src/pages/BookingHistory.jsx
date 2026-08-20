@@ -13,7 +13,7 @@ export default function BookingHistory() {
       <TopBar title="Bookings" back />
       <main className="mx-auto max-w-md px-4 pt-3">
         <section>
-          <h2 className="font-heading text-lg font-semibold text-ink">Upcoming</h2>
+          <h2 className="font-heading text-lg font-extrabold uppercase tracking-wide text-ink">Upcoming</h2>
           <div className="mt-2 flex flex-col gap-2.5">
             {upcoming.length === 0 && (
               <p className="rounded-card border border-dashed border-line px-4 py-6 text-center text-sm text-ink-soft">
@@ -27,11 +27,11 @@ export default function BookingHistory() {
                     <span className="block font-semibold text-ink">{b.service}</span>
                     <span className="block text-sm text-ink-soft">{b.provider} · {b.when}</span>
                   </span>
-                  <span className="font-mono font-semibold text-copper">${b.cost}</span>
+                  <span className="font-semibold text-copper">${b.cost}</span>
                 </div>
                 <button
                   onClick={() => setCancelled((c) => [...c, b.id])}
-                  className="mt-2.5 w-full rounded-lg border border-alert/30 py-2 text-sm font-heading font-semibold text-alert"
+                  className="mt-2.5 w-full rounded-xl border border-alert/30 bg-alert-dim py-3 text-sm font-semibold text-alert"
                 >
                   Cancel booking
                 </button>
@@ -46,7 +46,7 @@ export default function BookingHistory() {
         </section>
 
         <section className="mt-7">
-          <h2 className="font-heading text-lg font-semibold text-ink">Past</h2>
+          <h2 className="font-heading text-lg font-extrabold uppercase tracking-wide text-ink">Past</h2>
           <div className="mt-2 flex flex-col gap-2.5">
             {past.map((b) => (
               <div key={b.id} className="flex items-center justify-between rounded-card border border-line bg-paper-raised p-3.5">
@@ -54,7 +54,7 @@ export default function BookingHistory() {
                   <span className="block font-semibold text-ink">{b.service}</span>
                   <span className="block text-sm text-ink-soft">{b.provider} · {b.when}</span>
                 </span>
-                <span className="font-mono text-sm text-ink-soft">${b.cost}</span>
+                <span className="text-sm text-ink-soft">${b.cost}</span>
               </div>
             ))}
           </div>

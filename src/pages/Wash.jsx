@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import TopBar from '../components/TopBar'
 import BottomNav from '../components/BottomNav'
-import InstrumentStrip from '../components/InstrumentStrip'
 import { services, nextBooking } from '../data/mock'
 
 const groups = [
@@ -24,16 +23,21 @@ export default function Wash() {
     <div className="min-h-dvh bg-paper pb-24">
       <TopBar title="Wash & Care" />
       <main className="mx-auto max-w-md px-4 pt-3">
-        <InstrumentStrip
-          eyebrow="Next in queue"
-          value={nextBooking.queuePosition}
-          detail={nextBooking.when}
-          accent="tide"
-          live
-        />
+        <div className="rounded-card bg-tide p-5 text-white">
+          <div className="flex items-center justify-between gap-4">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-wide text-white/70">Next in queue</p>
+              <p className="mt-1 text-5xl font-extrabold leading-none tabular">{nextBooking.queuePosition}</p>
+              <p className="mt-2 text-sm text-white/85">{nextBooking.when}</p>
+            </div>
+            <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-white/15">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3c3.5 4 6 7.4 6 10.5a6 6 0 1 1-12 0C6 10.4 8.5 7 12 3Z" /></svg>
+            </span>
+          </div>
+        </div>
 
         <div className="mt-2.5 flex justify-end">
-          <Link to="/wash/history" className="font-heading text-xs font-medium uppercase tracking-wide text-ink-soft">
+          <Link to="/wash/history" className="text-xs font-medium uppercase tracking-wide text-ink-soft">
             View bookings
           </Link>
         </div>
@@ -59,7 +63,7 @@ export default function Wash() {
 
         {groups.map((g) => (
           <section key={g.label} className="mt-7">
-            <h2 className="font-heading text-lg font-semibold text-ink">{g.label}</h2>
+            <h2 className="font-heading text-lg font-extrabold uppercase tracking-wide text-ink">{g.label}</h2>
             <motion.div variants={list} initial="hidden" animate="show" className="mt-2.5 flex flex-col gap-2.5">
               {g.items.map((s) => (
                 <motion.div key={s.id} variants={row}>
@@ -71,7 +75,7 @@ export default function Wash() {
                       <span className="block font-semibold text-ink">{s.name}</span>
                       <span className="block text-sm text-ink-soft">{s.desc} · {s.mins} min</span>
                     </span>
-                    <span className="font-mono text-sm font-semibold text-copper">
+                    <span className="text-sm font-semibold text-copper">
                       {s.priceFrom === 0 ? 'Free' : `from $${s.priceFrom}`}
                     </span>
                   </Link>

@@ -15,7 +15,7 @@ export default function Notifications() {
         title="Notifications"
         back
         action={
-          <Link to="/profile/notifications" className="font-heading text-xs font-medium uppercase tracking-wide text-ink-soft">
+          <Link to="/profile/notifications" className="text-xs font-medium uppercase tracking-wide text-ink-soft">
             Settings
           </Link>
         }
@@ -30,7 +30,7 @@ export default function Notifications() {
                 <span className="flex-1">
                   <span className="flex items-baseline justify-between gap-2">
                     <span className="font-semibold text-ink">{n.title}</span>
-                    <span className="whitespace-nowrap font-mono text-[11px] text-ink-faint">{n.when}</span>
+                    <span className="whitespace-nowrap text-[11px] text-ink-faint">{n.when}</span>
                   </span>
                   <span className="mt-0.5 block text-sm text-ink-soft">{n.body}</span>
                 </span>

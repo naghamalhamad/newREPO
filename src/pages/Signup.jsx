@@ -12,9 +12,9 @@ export default function Signup() {
                 <path d="M13 3 5 14h6l-1 7 8-11h-6l1-7Z" />
               </svg>
             </span>
-            <span className="font-heading text-3xl font-semibold tracking-tight text-paper">Create account</span>
+            <span className="font-heading text-3xl font-extrabold uppercase tracking-wide text-paper">Create account</span>
           </div>
-          <p className="mt-3 font-heading text-[13px] uppercase tracking-[0.1em] text-paper/50">
+          <p className="mt-3 text-[13px] uppercase tracking-[0.1em] text-paper/50">
             One account, two modules.
           </p>
         </div>
@@ -27,19 +27,19 @@ export default function Signup() {
           }}
         >
           <label className="flex flex-col gap-1.5">
-            <span className="font-heading text-[11px] uppercase tracking-[0.08em] text-paper/50">Full name</span>
+            <span className="text-[11px] uppercase tracking-[0.08em] text-paper/50">Full name</span>
             <input required className="rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-paper outline-none placeholder:text-paper/30 focus:border-spark" placeholder="Nagham Alhamad" />
           </label>
           <label className="flex flex-col gap-1.5">
-            <span className="font-heading text-[11px] uppercase tracking-[0.08em] text-paper/50">Email</span>
+            <span className="text-[11px] uppercase tracking-[0.08em] text-paper/50">Email</span>
             <input type="email" required className="rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-paper outline-none placeholder:text-paper/30 focus:border-spark" placeholder="you@example.com" />
           </label>
           <label className="flex flex-col gap-1.5">
-            <span className="font-heading text-[11px] uppercase tracking-[0.08em] text-paper/50">Password</span>
+            <span className="text-[11px] uppercase tracking-[0.08em] text-paper/50">Password</span>
             <input type="password" required className="rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-paper outline-none placeholder:text-paper/30 focus:border-spark" placeholder="At least 8 characters" />
           </label>
 
-          <button type="submit" className="mt-2 rounded-xl bg-spark py-3.5 text-center font-heading font-semibold text-white active:opacity-90">
+          <button type="submit" className="mt-2 rounded-xl bg-spark py-3.5 text-center font-semibold text-white active:opacity-90">
             Create account
           </button>
         </form>

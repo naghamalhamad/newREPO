@@ -13,7 +13,7 @@ export default function PaymentMethods() {
           {methods.map((m) => (
             <div key={m.id} className="flex items-center justify-between rounded-card border border-line bg-paper-raised p-3.5">
               <span className="flex items-center gap-3">
-                <span className="flex h-9 w-12 items-center justify-center rounded-md bg-ink font-mono text-[10px] font-semibold text-paper">
+                <span className="flex h-9 w-12 items-center justify-center rounded-md bg-ink text-[10px] font-semibold text-paper">
                   {m.brand.slice(0, 4).toUpperCase()}
                 </span>
                 <span>
@@ -22,11 +22,11 @@ export default function PaymentMethods() {
                 </span>
               </span>
               {m.primary ? (
-                <span className="rounded-pill bg-status-dim px-2.5 py-1 font-heading text-[11px] font-medium text-status">default</span>
+                <span className="rounded-pill bg-status-dim px-2.5 py-1 text-[11px] font-medium text-status">default</span>
               ) : (
                 <button
                   onClick={() => setMethods((ms) => ms.map((x) => ({ ...x, primary: x.id === m.id })))}
-                  className="font-heading text-xs font-medium uppercase tracking-wide text-spark"
+                  className="text-xs font-medium uppercase tracking-wide text-spark"
                 >
                   Make default
                 </button>
@@ -35,7 +35,7 @@ export default function PaymentMethods() {
           ))}
         </div>
 
-        <button className="mt-4 w-full rounded-xl border border-dashed border-line py-3.5 font-heading font-semibold text-ink-soft">
+        <button className="mt-4 w-full rounded-xl border border-dashed border-line py-3.5 font-semibold text-ink-soft">
           + Add a card
         </button>
       </main>
