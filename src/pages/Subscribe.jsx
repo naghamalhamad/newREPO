@@ -19,7 +19,7 @@ export default function Subscribe() {
  <h1 className="font-heading text-xl font-medium text-ink">You're subscribed</h1>
         <p className="mt-2 text-graphite">{plan.name} wash package · ${plan.price}/mo</p>
         <Link to="/wash" className="mt-6 rounded-xl bg-brand px-6 py-3 font-heading font-semibold text-white">
-          Back to Wash & Care
+          Back to Services
         </Link>
       </div>
     )

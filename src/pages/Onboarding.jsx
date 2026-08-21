@@ -10,7 +10,7 @@ const slides = [
     icon: BoltIcon,
   },
   {
-    eyebrow: 'Wash & care',
+    eyebrow: 'Wash & services',
     title: 'Wash and maintenance, booked in seconds',
     body: 'Pick a service, choose a time, and rebook your usual in one tap. Subscribe to a recurring wash and save.',
     icon: DropIcon,
@@ -112,7 +112,7 @@ export default function Onboarding() {
         {isLast ? (
           <button
             onClick={() => navigate('/login')}
-            className="w-full rounded-xl bg-ink py-4 text-center font-heading font-semibold text-stone active:opacity-90"
+            className="w-full rounded-xl bg-brand py-4 text-center font-heading font-semibold text-white active:opacity-90"
           >
             Get started
           </button>

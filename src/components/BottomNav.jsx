@@ -3,29 +3,31 @@ import { NavLink } from 'react-router-dom'
 const items = [
   { to: '/home', label: 'Home', icon: HomeIcon },
   { to: '/charge', label: 'Charge', icon: BoltIcon },
-  { to: '/wash', label: 'Care', icon: DropIcon },
+  { to: '/wash', label: 'Services', icon: DropIcon },
   { to: '/profile', label: 'Account', icon: UserIcon },
 ]
 
 export default function BottomNav() {
   return (
-    <nav className="fixed inset-x-0 bottom-0 z-20 border-t border-line bg-surface/95 backdrop-blur">
-      <div className="mx-auto flex max-w-md items-stretch justify-between px-2 pb-[max(env(safe-area-inset-bottom),8px)]">
+    <nav className="fixed inset-x-0 bottom-0 z-20 border-t border-line bg-stone/95 shadow-[0_-4px_16px_rgba(20,23,28,0.06)] backdrop-blur">
+      <div className="mx-auto flex max-w-md items-stretch justify-between gap-1 px-3 pt-2 pb-[max(env(safe-area-inset-bottom),10px)]">
         {items.map(({ to, label, icon: Icon }) => (
           <NavLink
             key={to}
             to={to}
             end={to === '/home'}
-            className={({ isActive }) =>
-              `flex flex-1 flex-col items-center gap-1 py-3 font-heading text-[11px] font-medium ${
-                isActive ? 'text-ink' : 'text-mist'
-              }`
-            }
+            className="flex flex-1 flex-col items-center gap-1 py-1 font-heading text-[11px]"
           >
             {({ isActive }) => (
               <>
-                <Icon active={isActive} />
-                <span>{label}</span>
+                <span
+                  className={`flex h-9 w-12 items-center justify-center rounded-full transition-colors duration-200 ${
+                    isActive ? 'bg-brand-tint text-brand' : 'text-graphite'
+                  }`}
+                >
+                  <Icon active={isActive} />
+                </span>
+                <span className={isActive ? 'font-semibold text-ink' : 'font-medium text-graphite'}>{label}</span>
               </>
             )}
           </NavLink>

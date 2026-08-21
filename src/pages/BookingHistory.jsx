@@ -17,7 +17,7 @@ export default function BookingHistory() {
           <div className="mt-2 flex flex-col gap-3">
             {upcoming.length === 0 && (
               <p className="rounded-card border border-dashed border-line px-4 py-6 text-center text-sm text-graphite">
-                Nothing booked. Head to Wash & Care to book a service.
+                Nothing booked. Head to Services to book one.
               </p>
             )}
             {upcoming.map((b) => (

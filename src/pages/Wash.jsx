@@ -21,18 +21,25 @@ const row = {
 export default function Wash() {
   return (
     <div className="min-h-dvh bg-stone pb-24">
-      <TopBar title="Wash & Care" />
+      <TopBar title="Services" />
       <main className="mx-auto max-w-md px-4 pt-3">
         <div className="rounded-card bg-brand p-5 text-white">
-          <div className="flex items-center justify-between gap-4">
+          <div className="flex items-start justify-between gap-4">
             <div>
- <p className="text-xs font-semibold text-white/70">Next in queue</p>
-              <p className="mt-1 font-mono text-5xl font-extrabold leading-none tabular">{nextBooking.queuePosition}</p>
-              <p className="mt-2 text-sm text-white/85">{nextBooking.when}</p>
+              <p className="text-xs font-semibold text-white/70">Next booking</p>
+              <p className="mt-1 text-xl font-semibold">{nextBooking.service}</p>
+              <p className="mt-1 text-sm text-white/80">{nextBooking.provider}</p>
+              <p className="text-sm text-white/80">{nextBooking.when}</p>
             </div>
-            <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-white/15">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3c3.5 4 6 7.4 6 10.5a6 6 0 1 1-12 0C6 10.4 8.5 7 12 3Z" /></svg>
+            <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white/15">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3c3.5 4 6 7.4 6 10.5a6 6 0 1 1-12 0C6 10.4 8.5 7 12 3Z" /></svg>
             </span>
+          </div>
+          <div className="mt-4 flex items-center gap-2 border-t border-white/15 pt-3">
+            <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-white/15 font-mono text-xs font-bold tabular">
+              {nextBooking.queuePosition}
+            </span>
+            <span className="text-sm text-white/85">people ahead of you in the queue</span>
           </div>
         </div>
 

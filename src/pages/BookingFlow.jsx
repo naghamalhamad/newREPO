@@ -22,7 +22,7 @@ export default function BookingFlow() {
  <h1 className="mt-4 font-heading text-xl font-medium text-ink">Booking confirmed</h1>
         <p className="mt-2 text-graphite">{service.name} · {slot} · Suds & Co — Downtown</p>
         <Link to="/wash" className="mt-6 rounded-xl bg-brand px-6 py-3 font-heading font-semibold text-white">
-          Back to Wash & Care
+          Back to Services
         </Link>
       </div>
     )
