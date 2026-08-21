@@ -19,11 +19,11 @@ export default function Profile() {
       <main className="mx-auto max-w-md px-4 pt-3">
         <div className="flex items-center gap-3 rounded-card border border-line bg-surface p-4">
           <span className="flex h-12 w-12 items-center justify-center rounded-full bg-ink font-heading text-base font-medium text-stone">
-            N
+            J
           </span>
           <div>
-            <p className="font-semibold text-ink">Nagham Alhamad</p>
-            <p className="text-sm text-graphite">Nagham.Alhamad@leading-point.com</p>
+            <p className="font-semibold text-ink">Jordan Ellis</p>
+            <p className="text-sm text-graphite">jordan.ellis@example.com</p>
           </div>
         </div>
 

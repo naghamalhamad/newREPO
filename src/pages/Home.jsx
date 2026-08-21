@@ -29,7 +29,7 @@ export default function Home() {
       <TopBar title="Home" action={<NotifBell />} />
       <motion.main variants={container} initial="hidden" animate="show" className="mx-auto max-w-md px-4 pt-4">
  <motion.p variants={item} className="text-[11px] tracking-[0.1em] text-mist">
-          {greeting()}, Nagham
+          {greeting()}, Jordan
         </motion.p>
 
         <motion.section variants={item} className="mt-2">

@@ -31,7 +31,7 @@ export default function Signup() {
               <span className="pointer-events-none absolute inset-y-0 left-4 flex items-center text-mist">
                 <UserIcon />
               </span>
-              <input required className="w-full rounded-xl border border-line bg-surface py-3 pr-4 pl-11 text-ink outline-none placeholder:text-mist focus:border-brand" placeholder="Nagham Alhamad" />
+              <input required className="w-full rounded-xl border border-line bg-surface py-3 pr-4 pl-11 text-ink outline-none placeholder:text-mist focus:border-brand" placeholder="Jordan Ellis" />
             </div>
           </label>
 
