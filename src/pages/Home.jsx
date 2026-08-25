@@ -53,25 +53,17 @@ export default function Home() {
               <span className="font-heading text-sm font-semibold">Battery</span>
             </div>
 
-            <div className="mt-4 flex items-start justify-between">
-              <div>
- <p className="text-[11px] tracking-[0.1em] text-stone/45">Your vehicle</p>
- <p className="mt-1 font-heading text-xl font-medium">{vehicle.name}</p>
-              </div>
-              <span className="rounded-pill border border-white/15 px-3 py-1 font-mono text-[11px] text-stone/70">
-                {vehicle.plate}
-              </span>
+            <div className="mt-4">
+              <p className="text-[11px] tracking-[0.1em] text-stone/45">Your vehicle</p>
+              <p className="mt-1 font-heading text-xl font-medium">{vehicle.name}</p>
             </div>
 
             <div className="mt-6 flex items-end justify-between">
               <div className="flex items-baseline gap-1 font-mono">
-                <span className="text-5xl font-extrabold leading-none tabular">{vehicle.batteryPct}</span>
+                <span className="text-3xl font-extrabold leading-none tabular">{vehicle.batteryPct}</span>
                 <span className="text-sm text-stone/50">%</span>
               </div>
-              <div className="text-right">
-                <p className="font-mono text-sm text-stone/80">{vehicle.rangeMi} mi range</p>
-                <p className="mt-1 text-xs text-stone/45">{vehicle.connector} connector</p>
-              </div>
+              <p className="text-xs text-stone/45">{vehicle.connector} connector</p>
             </div>
 
             <div className="mt-3 h-1.5 w-full overflow-hidden rounded-full bg-white/10">
