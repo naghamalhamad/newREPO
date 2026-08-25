@@ -2,7 +2,10 @@ import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import TopBar from '../components/TopBar'
 import GaugeDial from '../components/GaugeDial'
-import { stations, activeSession } from '../data/mock'
+import { stations, activeSession, vehicle } from '../data/mock'
+
+const PCT_PER_SEC = 1.5 // matches the simulated fill rate below, so the countdown hits 0 exactly when the ring finishes
+const MI_PER_PCT = vehicle.rangeMi / vehicle.batteryPct
 
 export default function ActiveSession() {
   const { id } = useParams()
@@ -27,6 +30,10 @@ export default function ActiveSession() {
   const secs = String(elapsedSec % 60).padStart(2, '0')
   const done = pct >= activeSession.targetBatteryPct
 
+  const rangeAddedMi = Math.round((pct - activeSession.startBatteryPct) * MI_PER_PCT)
+  const remainingSec = Math.max(0, Math.ceil((activeSession.targetBatteryPct - pct) / PCT_PER_SEC))
+  const remainingMin = Math.ceil(remainingSec / 60)
+
   return (
     <div className="min-h-dvh bg-stone pb-10">
       <TopBar title="Charging" back />
@@ -37,7 +44,20 @@ export default function ActiveSession() {
           <GaugeDial value={pct} unit="%" label={done ? 'target reached' : 'battery'} />
         </div>
 
-        <div className="mt-2 grid grid-cols-3 gap-3 text-center">
+        <div className="mt-4 grid grid-cols-2 gap-3 text-center">
+          <div className="rounded-card border border-brand-light bg-brand-tint/30 py-4">
+            <p className="font-mono tabular text-2xl font-extrabold text-brand-mid">
+              {done ? 'Done' : `${remainingMin} min`}
+            </p>
+            <p className="mt-1 text-xs text-graphite">{done ? 'charging complete' : 'time remaining'}</p>
+          </div>
+          <div className="rounded-card border border-brand-light bg-brand-tint/30 py-4">
+            <p className="font-mono tabular text-2xl font-extrabold text-brand-mid">+{rangeAddedMi} mi</p>
+            <p className="mt-1 text-xs text-graphite">range added</p>
+          </div>
+        </div>
+
+        <div className="mt-3 grid grid-cols-3 gap-3 text-center">
           <div className="rounded-card border border-line bg-surface py-3">
             <p className="font-mono tabular text-lg font-semibold text-ink">{mins}:{secs}</p>
  <p className="mt-1 text-[10px] text-mist">elapsed</p>
