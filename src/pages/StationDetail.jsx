@@ -1,4 +1,4 @@
-import { useParams, useNavigate } from 'react-router-dom'
+import { Link, useParams, useNavigate } from 'react-router-dom'
 import TopBar from '../components/TopBar'
 import { stations } from '../data/mock'
 import { stationStatus } from '../utils/station'
@@ -84,6 +84,14 @@ export default function StationDetail() {
             <p className="font-semibold text-ink">24 / 7</p>
           </div>
         </section>
+
+        <Link
+          to={`/charge/${s.id}/reserve`}
+          className="mt-6 flex items-center justify-between rounded-card border border-dashed border-brand/40 bg-brand-tint/40 px-4 py-3 font-heading text-sm font-semibold text-brand-mid"
+        >
+          Reserve a slot in advance
+          <span>›</span>
+        </Link>
 
         <div className="mt-auto flex gap-3 pt-6">
           <a

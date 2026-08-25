@@ -4,6 +4,7 @@ import Register from './pages/Register'
 import Home from './pages/Home'
 import Charging from './pages/Charging'
 import StationDetail from './pages/StationDetail'
+import ReserveSlot from './pages/ReserveSlot'
 import ActiveSession from './pages/ActiveSession'
 import ChargingHistory from './pages/ChargingHistory'
 import ReceiptDetail from './pages/ReceiptDetail'
@@ -31,6 +32,7 @@ export default function App() {
         <Route path="/charge/history" element={<ChargingHistory />} />
         <Route path="/charge/history/:id" element={<ReceiptDetail />} />
         <Route path="/charge/:id" element={<StationDetail />} />
+        <Route path="/charge/:id/reserve" element={<ReserveSlot />} />
         <Route path="/charge/:id/session" element={<ActiveSession />} />
 
         <Route path="/wash" element={<Wash />} />
