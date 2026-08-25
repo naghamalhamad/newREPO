@@ -42,7 +42,7 @@ export default function Home() {
         </motion.p>
 
         <motion.section variants={item} className="mt-2">
-          <div className="rounded-card bg-ink p-5 text-stone">
+          <div className="rounded-card bg-ink p-4 text-stone">
             <div className="flex items-center gap-2">
               <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-white/10">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
@@ -53,12 +53,12 @@ export default function Home() {
               <span className="font-heading text-sm font-semibold">Battery</span>
             </div>
 
-            <div className="mt-4">
+            <div className="mt-3">
               <p className="text-[11px] tracking-[0.1em] text-stone/45">Your vehicle</p>
               <p className="mt-1 font-heading text-xl font-medium">{vehicle.name}</p>
             </div>
 
-            <div className="mt-6 flex items-end justify-between">
+            <div className="mt-3 flex items-end justify-between">
               <div className="flex items-baseline gap-1 font-mono">
                 <span className="text-3xl font-extrabold leading-none tabular">{vehicle.batteryPct}</span>
                 <span className="text-sm text-stone/50">%</span>
@@ -66,7 +66,7 @@ export default function Home() {
               <p className="text-xs text-stone/45">{vehicle.connector} connector</p>
             </div>
 
-            <div className="mt-3 h-1.5 w-full overflow-hidden rounded-full bg-white/10">
+            <div className="mt-2 h-1.5 w-full overflow-hidden rounded-full bg-white/10">
               <div
                 className="h-full rounded-full bg-brand transition-all duration-700"
                 style={{ width: `${vehicle.batteryPct}%` }}
@@ -87,7 +87,7 @@ export default function Home() {
               <span className="font-heading text-sm font-semibold text-ink">Remaining</span>
             </div>
             <div className="mt-3 flex items-baseline gap-3">
-              <span className="font-mono text-3xl font-extrabold tabular text-ink">{vehicle.rangeMi} mi</span>
+              <span className="font-mono text-xl font-extrabold tabular text-ink">{vehicle.rangeMi} mi</span>
               <span className="rounded-pill bg-brand-tint px-2.5 py-1 font-mono text-xs font-semibold text-brand-mid">
                 {driveTimeLabel(vehicle.rangeMi)}
               </span>
