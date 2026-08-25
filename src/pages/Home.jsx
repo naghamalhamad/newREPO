@@ -22,6 +22,15 @@ function greeting() {
   return 'Good evening'
 }
 
+const AVG_MPH = 45 // used only to turn remaining range into a rough drive-time estimate
+
+function driveTimeLabel(rangeMi) {
+  const totalMin = Math.round((rangeMi / AVG_MPH) * 60)
+  const h = Math.floor(totalMin / 60)
+  const m = String(totalMin % 60).padStart(2, '0')
+  return `${h}h ${m}m`
+}
+
 export default function Home() {
   const nearest = stations[0]
   return (
@@ -34,7 +43,17 @@ export default function Home() {
 
         <motion.section variants={item} className="mt-2">
           <div className="rounded-card bg-ink p-5 text-stone">
-            <div className="flex items-start justify-between">
+            <div className="flex items-center gap-2">
+              <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-white/10">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+                  <rect x="2" y="7" width="18" height="10" rx="2.5" />
+                  <path d="M22 10v4" strokeLinecap="round" />
+                </svg>
+              </span>
+              <span className="font-heading text-sm font-semibold">Battery</span>
+            </div>
+
+            <div className="mt-4 flex items-start justify-between">
               <div>
  <p className="text-[11px] tracking-[0.1em] text-stone/45">Your vehicle</p>
  <p className="mt-1 font-heading text-xl font-medium">{vehicle.name}</p>
@@ -61,6 +80,27 @@ export default function Home() {
                 style={{ width: `${vehicle.batteryPct}%` }}
               />
             </div>
+          </div>
+        </motion.section>
+
+        <motion.section variants={item} className="mt-3">
+          <div className="rounded-card border border-line bg-surface p-5">
+            <div className="flex items-center gap-2">
+              <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-brand-tint text-brand-mid">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="M12 7v5l3.5 2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </span>
+              <span className="font-heading text-sm font-semibold text-ink">Remaining</span>
+            </div>
+            <div className="mt-3 flex items-baseline gap-3">
+              <span className="font-mono text-3xl font-extrabold tabular text-ink">{vehicle.rangeMi} mi</span>
+              <span className="rounded-pill bg-brand-tint px-2.5 py-1 font-mono text-xs font-semibold text-brand-mid">
+                {driveTimeLabel(vehicle.rangeMi)}
+              </span>
+            </div>
+            <p className="mt-2 text-sm text-graphite">Remaining distance and time</p>
           </div>
         </motion.section>
 
