@@ -1,6 +1,6 @@
 import { HashRouter, Routes, Route, Navigate } from 'react-router-dom'
 import Login from './pages/Login'
-import Signup from './pages/Signup'
+import Register from './pages/Register'
 import Home from './pages/Home'
 import Charging from './pages/Charging'
 import StationDetail from './pages/StationDetail'
@@ -23,7 +23,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Navigate to="/login" replace />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
+        <Route path="/signup" element={<Register />} />
         <Route path="/home" element={<Home />} />
         <Route path="/notifications" element={<Notifications />} />
 

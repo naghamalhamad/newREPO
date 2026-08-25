@@ -15,7 +15,7 @@ export default function Login() {
             <CarIcon />
           </span>
           <h1 className="mt-4 font-heading text-2xl font-semibold text-ink">Car Care</h1>
-          <p className="mt-1 text-sm text-graphite">Charge. Wash. Maintain.</p>
+          <p className="mt-1 text-sm text-graphite">Charge anywhere, anytime.</p>
         </div>
 
         <form
@@ -26,16 +26,16 @@ export default function Login() {
           }}
         >
           <label className="flex flex-col gap-2">
-            <span className="text-[11px] font-medium tracking-[0.08em] text-graphite">Email</span>
+            <span className="text-[11px] font-medium tracking-[0.08em] text-graphite">Phone number</span>
             <div className="relative">
               <span className="pointer-events-none absolute inset-y-0 left-4 flex items-center text-mist">
-                <MailIcon />
+                <PhoneIcon />
               </span>
               <input
-                type="email"
-                defaultValue="nagham@example.com"
+                type="tel"
+                defaultValue="(555) 123-4567"
                 className="w-full rounded-xl border border-line bg-surface py-3 pr-4 pl-11 text-ink outline-none placeholder:text-mist focus:border-brand"
-                placeholder="you@example.com"
+                placeholder="(555) 123-4567"
               />
             </div>
           </label>
@@ -109,11 +109,10 @@ function CarIcon() {
     </svg>
   )
 }
-function MailIcon() {
+function PhoneIcon() {
   return (
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8}>
-      <rect x="3" y="5" width="18" height="14" rx="2.5" />
-      <path d="m4 6.5 8 6 8-6" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M6.5 3h3l1.5 4-2 1.5a11 11 0 0 0 5.5 5.5l1.5-2 4 1.5v3a2 2 0 0 1-2.2 2C10.7 18 6 13.3 4.5 6.2A2 2 0 0 1 6.5 3Z" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   )
 }

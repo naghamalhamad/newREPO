@@ -6,6 +6,16 @@ export const vehicle = {
   connector: 'NACS',
 }
 
+export const carBrands = [
+  'Audi', 'BMW', 'Cadillac', 'Chevrolet', 'Ford', 'Honda', 'Hyundai', 'Jeep',
+  'Kia', 'Lucid', 'Mercedes-Benz', 'Nissan', 'Polestar', 'Porsche', 'Rivian',
+  'Subaru', 'Tesla', 'Toyota', 'Volkswagen', 'Volvo',
+]
+
+export const carTypes = ['Sedan', 'SUV', 'Truck', 'Hatchback']
+
+export const chargerTypes = ['NACS', 'CCS', 'CHAdeMO']
+
 export const stations = [
   {
     id: 'st-1',
