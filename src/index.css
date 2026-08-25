@@ -5,10 +5,10 @@
   --color-brand: #0a3f3b;        /* dark teal — primary buttons, primary fills, outline borders */
   --color-brand-mid: #0f5c56;    /* teal — links, active nav/tab state, inline accents */
   --color-brand-light: #bfe3e0;  /* light teal — badge/chip borders */
-  --color-brand-tint: #eaf6f5;   /* teal tint — badge/chip fill, subtle backgrounds */
+  --color-brand-tint: #bfe3e0;   /* light teal — badge/chip fill, active states (kept distinct from the card surface below) */
 
-  --color-stone: #eaf6f5;        /* page background */
-  --color-surface: #ffffff;      /* card background */
+  --color-stone: #ffffff;        /* page background */
+  --color-surface: #eaf6f5;      /* card background */
   --color-panel: #f6f8f8;        /* secondary panel background */
 
   --color-ink: #14171c;          /* primary text (text-hi) */
