@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import TopBar from '../components/TopBar'
 import BottomNav from '../components/BottomNav'
 import NotifBell from '../components/NotifBell'
-import { vehicle, stations, nextBooking } from '../data/mock'
+import { vehicle, stations } from '../data/mock'
 
 const container = {
   hidden: { opacity: 0 },
@@ -84,25 +84,6 @@ export default function Home() {
             </span>
             <span className="text-mist">›</span>
           </Link>
-        </motion.section>
-
-        <motion.section variants={item} className="mt-7">
-          <div className="flex items-baseline justify-between">
- <h2 className="font-heading text-base font-medium text-ink">Upcoming booking</h2>
- <Link to="/wash" className="font-heading text-xs font-medium text-brand-mid">
-              Book more
-            </Link>
-          </div>
-          <div className="mt-3 flex items-center gap-3 rounded-card border border-line bg-surface p-4">
-            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-brand-tint text-brand-mid">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3c3.5 4 6 7.4 6 10.5a6 6 0 1 1-12 0C6 10.4 8.5 7 12 3Z" /></svg>
-            </span>
-            <span className="flex-1">
-              <span className="block font-semibold text-ink">{nextBooking.service}</span>
-              <span className="block text-sm text-graphite">{nextBooking.provider} · {nextBooking.when}</span>
-            </span>
-            <span className="rounded-pill bg-success-tint px-2 py-1 text-[11px] font-medium text-success">confirmed</span>
-          </div>
         </motion.section>
       </motion.main>
       <BottomNav />

@@ -3,7 +3,6 @@ import { NavLink } from 'react-router-dom'
 const items = [
   { to: '/home', label: 'Home', icon: HomeIcon },
   { to: '/charge', label: 'Charge', icon: BoltIcon },
-  { to: '/wash', label: 'Services', icon: DropIcon },
   { to: '/profile', label: 'Account', icon: UserIcon },
 ]
 
@@ -49,13 +48,6 @@ function BoltIcon({ active }) {
   return (
     <svg width="22" height="22" viewBox="0 0 24 24" fill={active ? 'currentColor' : 'none'} stroke="currentColor" strokeWidth={1.6}>
       <path d="M13 3 5 14h6l-1 7 8-11h-6l1-7Z" strokeLinejoin="round" />
-    </svg>
-  )
-}
-function DropIcon({ active }) {
-  return (
-    <svg width="22" height="22" viewBox="0 0 24 24" fill={active ? 'currentColor' : 'none'} stroke="currentColor" strokeWidth={1.6}>
-      <path d="M12 3c3.5 4 6 7.4 6 10.5a6 6 0 1 1-12 0C6 10.4 8.5 7 12 3Z" strokeLinejoin="round" />
     </svg>
   )
 }

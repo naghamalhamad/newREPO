@@ -8,7 +8,6 @@ const rows = [
   { label: 'Payment methods', value: 'Visa •••• 4821', to: '/profile/payment-methods' },
   { label: 'Notifications', value: 'On', to: '/profile/notifications' },
   { label: 'Charging history', value: '', to: '/charge/history' },
-  { label: 'Booking history', value: '', to: '/wash/history' },
 ]
 
 export default function Profile() {
