@@ -29,6 +29,17 @@ export default function StationDetail() {
               {status.text} · {freeSlots}/{s.total} free
             </span>
           </div>
+          <a
+            href={mapsUrl}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Get directions"
+            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-line bg-surface text-brand-mid active:bg-brand-tint/40"
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+              <path d="M3 11l17-8-8 17-2-7-7-2Z" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </a>
         </div>
 
         <div className="mt-4 grid grid-cols-2 gap-3">
@@ -93,22 +104,12 @@ export default function StationDetail() {
           <span>›</span>
         </Link>
 
-        <div className="mt-auto flex gap-3 pt-6">
-          <a
-            href={mapsUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="flex flex-1 items-center justify-center gap-2 rounded-xl border border-brand bg-surface py-4 font-heading font-semibold text-brand active:bg-brand-tint/40"
-          >
-            Navigate
-          </a>
-          <button
-            onClick={() => navigate(`/charge/${s.id}/session`)}
-            className="flex-1 rounded-xl bg-brand py-4 text-center font-heading font-semibold text-white active:opacity-90"
-          >
-            Start & pay
-          </button>
-        </div>
+        <button
+          onClick={() => navigate(`/charge/${s.id}/session`)}
+          className="mt-auto w-full rounded-xl bg-brand py-4 text-center font-heading font-semibold text-white active:opacity-90"
+        >
+          Start charging
+        </button>
       </main>
     </div>
   )
