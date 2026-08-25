@@ -222,7 +222,7 @@ export default function Register() {
               type="button"
               disabled={!step2Valid}
               onClick={() => setStep(3)}
-              className="mt-6 rounded-xl bg-brand py-4 text-center font-heading font-semibold text-white active:opacity-90 disabled:bg-line disabled:text-disabled-text"
+              className="mt-auto rounded-xl bg-brand py-4 text-center font-heading font-semibold text-white active:opacity-90 disabled:bg-line disabled:text-disabled-text"
             >
               Continue
             </button>

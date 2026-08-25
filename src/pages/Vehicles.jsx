@@ -8,9 +8,9 @@ export default function Vehicles() {
   const [name, setName] = useState('')
 
   return (
-    <div className="min-h-dvh bg-stone pb-10">
+    <div className="flex min-h-dvh flex-col bg-stone pb-10">
       <TopBar title="Vehicles" back />
-      <main className="mx-auto max-w-md px-4 pt-3">
+      <main className="mx-auto flex w-full max-w-md flex-1 flex-col px-4 pt-3">
         <div className="flex flex-col gap-3">
           {vehicles.map((v) => (
             <div key={v.id} className="flex items-center gap-3 rounded-card border border-line bg-surface p-4">
@@ -62,7 +62,7 @@ export default function Vehicles() {
         ) : (
           <button
             onClick={() => setAdding(true)}
-            className="mt-4 w-full rounded-xl border border-dashed border-line py-4 font-heading font-semibold text-graphite"
+            className="mt-auto w-full rounded-xl border border-dashed border-line py-4 font-heading font-semibold text-graphite"
           >
             + Add a vehicle
           </button>

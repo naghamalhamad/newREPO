@@ -19,7 +19,7 @@ export default function Login() {
         </div>
 
         <form
-          className="flex flex-col gap-5"
+          className="flex flex-1 flex-col gap-5"
           onSubmit={(e) => {
             e.preventDefault()
             navigate('/home')
@@ -65,27 +65,29 @@ export default function Login() {
             </div>
           </label>
 
-          <button
-            type="submit"
-            className="mt-1 rounded-xl bg-brand py-4 text-center font-heading font-semibold text-white active:opacity-90"
-          >
-            Log in
-          </button>
+          <div className="mt-auto flex flex-col gap-5">
+            <button
+              type="submit"
+              className="rounded-xl bg-brand py-4 text-center font-heading font-semibold text-white active:opacity-90"
+            >
+              Log in
+            </button>
 
-          <div className="flex items-center gap-3">
-            <span className="h-px flex-1 bg-line" />
-            <span className="text-xs text-graphite">or</span>
-            <span className="h-px flex-1 bg-line" />
+            <div className="flex items-center gap-3">
+              <span className="h-px flex-1 bg-line" />
+              <span className="text-xs text-graphite">or</span>
+              <span className="h-px flex-1 bg-line" />
+            </div>
+
+            <button
+              type="button"
+              onClick={() => navigate('/home')}
+              className="flex items-center justify-center gap-2.5 rounded-xl border border-brand py-4 text-center font-heading font-semibold text-brand active:bg-brand-tint/40"
+            >
+              <GoogleIcon />
+              Continue with Google
+            </button>
           </div>
-
-          <button
-            type="button"
-            onClick={() => navigate('/home')}
-            className="flex items-center justify-center gap-2.5 rounded-xl border border-brand py-4 text-center font-heading font-semibold text-brand active:bg-brand-tint/40"
-          >
-            <GoogleIcon />
-            Continue with Google
-          </button>
         </form>
 
         <p className="mt-6 text-center text-sm text-graphite">

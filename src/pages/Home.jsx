@@ -52,6 +52,7 @@ export default function Home() {
               <div className="text-right">
                 <p className="font-mono text-sm text-stone/80">{vehicle.rangeMi} mi range</p>
                 <p className="mt-1 text-xs text-stone/45">{vehicle.connector} connector</p>
+                <p className="mt-1 font-mono text-xs text-stone/45">${nearest.priceKwh.toFixed(2)}/kWh nearby</p>
               </div>
             </div>
 

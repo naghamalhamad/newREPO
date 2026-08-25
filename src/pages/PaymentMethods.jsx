@@ -6,9 +6,9 @@ export default function PaymentMethods() {
   const [methods, setMethods] = useState(initial)
 
   return (
-    <div className="min-h-dvh bg-stone pb-10">
+    <div className="flex min-h-dvh flex-col bg-stone pb-10">
       <TopBar title="Payment methods" back />
-      <main className="mx-auto max-w-md px-4 pt-3">
+      <main className="mx-auto flex w-full max-w-md flex-1 flex-col px-4 pt-3">
         <div className="flex flex-col gap-3">
           {methods.map((m) => (
             <div key={m.id} className="flex items-center justify-between rounded-card border border-line bg-surface p-4">
@@ -35,7 +35,7 @@ export default function PaymentMethods() {
           ))}
         </div>
 
-        <button className="mt-4 w-full rounded-xl border border-dashed border-line py-4 font-heading font-semibold text-graphite">
+        <button className="mt-auto w-full rounded-xl border border-dashed border-line py-4 font-heading font-semibold text-graphite">
           + Add a card
         </button>
       </main>

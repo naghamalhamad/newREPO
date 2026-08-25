@@ -3,13 +3,7 @@ import { motion } from 'framer-motion'
 import TopBar from '../components/TopBar'
 import BottomNav from '../components/BottomNav'
 import { stations } from '../data/mock'
-
-function busyLabel(s) {
-  const ratio = s.occupied / s.total
-  if (ratio >= 1) return { text: 'Full', bg: 'bg-danger-tint', text_: 'text-danger' }
-  if (ratio >= 0.6) return { text: 'Busy', bg: 'bg-warning-tint', text_: 'text-warning' }
-  return { text: 'Open', bg: 'bg-success-tint', text_: 'text-success' }
-}
+import { stationStatus } from '../utils/station'
 
 const list = {
   hidden: {},
@@ -62,7 +56,8 @@ export default function Charging() {
 
         <motion.ul variants={list} initial="hidden" animate="show" className="mt-2 flex flex-col gap-3">
           {stations.map((s) => {
-            const busy = busyLabel(s)
+            const status = stationStatus(s)
+            const occupancyPct = (s.occupied / s.total) * 100
             return (
               <motion.li key={s.id} variants={row}>
                 <Link
@@ -76,14 +71,16 @@ export default function Charging() {
                     </div>
                     <span className="whitespace-nowrap font-mono text-sm text-graphite">{s.distanceMi} mi</span>
                   </div>
-                  <div className="flex items-center justify-between border-t border-line pt-3">
-                    <div className="flex items-center gap-2">
-                      <span className={`rounded-pill px-3 py-1 text-xs font-semibold ${busy.bg} ${busy.text_}`}>
-                        {busy.text}
+                  <div className="border-t border-line pt-3">
+                    <div className="flex items-center justify-between gap-2">
+                      <span className={`rounded-pill px-3 py-1 text-xs font-semibold ${status.bg} ${status.color}`}>
+                        {status.text}
                       </span>
-                      <span className="tabular font-mono text-sm text-graphite">{s.total - s.occupied}/{s.total} free</span>
+                      <span className="tabular font-mono text-sm font-semibold text-ink">{s.total - s.occupied}/{s.total} free</span>
                     </div>
-                    <span className="tabular font-mono text-sm font-semibold text-brand-mid">${s.priceKwh.toFixed(2)}/kWh</span>
+                    <div className="mt-2 h-1.5 w-full overflow-hidden rounded-full bg-line">
+                      <div className={`h-full rounded-full ${status.bar} transition-all duration-700`} style={{ width: `${occupancyPct}%` }} />
+                    </div>
                   </div>
                 </Link>
               </motion.li>

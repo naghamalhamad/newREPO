@@ -35,9 +35,9 @@ export default function ActiveSession() {
   const remainingMin = Math.ceil(remainingSec / 60)
 
   return (
-    <div className="min-h-dvh bg-stone pb-10">
+    <div className="flex min-h-dvh flex-col bg-stone pb-10">
       <TopBar title="Charging" back />
-      <main className="mx-auto max-w-md px-4 pt-2">
+      <main className="mx-auto flex w-full max-w-md flex-1 flex-col px-4 pt-2">
         <p className="text-center text-sm text-graphite">{station.name} · {activeSession.connector}</p>
 
         <div className="mt-4">
@@ -75,12 +75,12 @@ export default function ActiveSession() {
         {!ending ? (
           <button
             onClick={() => setEnding(true)}
-            className="mt-7 w-full rounded-xl border border-danger/30 bg-danger-tint py-4 text-center font-heading font-semibold text-danger"
+            className="mt-auto w-full rounded-xl border border-danger/30 bg-danger-tint py-4 text-center font-heading font-semibold text-danger"
           >
             Stop charging
           </button>
         ) : (
-          <div className="mt-7 rounded-card border border-line bg-surface p-4 text-center">
+          <div className="mt-auto rounded-card border border-line bg-surface p-4 text-center">
  <p className="font-heading text-lg font-medium text-ink">Session ended</p>
             <p className="mt-1 text-sm text-graphite">{kwh} kWh delivered · ${cost} charged to Visa •••• 4821</p>
             <button

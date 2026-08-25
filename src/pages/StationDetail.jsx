@@ -1,6 +1,7 @@
 import { useParams, useNavigate } from 'react-router-dom'
 import TopBar from '../components/TopBar'
 import { stations } from '../data/mock'
+import { stationStatus } from '../utils/station'
 
 export default function StationDetail() {
   const { id } = useParams()
@@ -9,30 +10,36 @@ export default function StationDetail() {
   const freeSlots = s.total - s.occupied
   const occupancyPct = (s.occupied / s.total) * 100
   const availableNow = s.etaFreeMin === 0
+  const status = stationStatus(s)
 
   const mapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(s.address)}`
 
   return (
-    <div className="min-h-dvh bg-stone pb-10">
+    <div className="flex min-h-dvh flex-col bg-stone pb-10">
       <TopBar title="Station" back />
-      <main className="mx-auto max-w-md px-4 pt-3">
- <h2 className="font-heading text-xl font-medium text-ink">{s.name}</h2>
-        <p className="mt-1 text-sm text-graphite">{s.address}</p>
+      <main className="mx-auto flex w-full max-w-md flex-1 flex-col px-4 pt-3">
+        <div className="flex items-start gap-3">
+          <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-brand-tint text-brand-mid">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M13 3 5 14h6l-1 7 8-11h-6l1-7Z" /></svg>
+          </span>
+          <div className="flex-1">
+            <h2 className="font-heading text-xl font-medium text-ink">{s.name}</h2>
+            <p className="mt-1 text-sm text-graphite">{s.address}</p>
+            <span className={`mt-2 inline-flex items-center rounded-pill px-3 py-1 text-xs font-semibold ${status.bg} ${status.color}`}>
+              {status.text} · {freeSlots}/{s.total} free
+            </span>
+          </div>
+        </div>
 
         <div className="mt-4 grid grid-cols-2 gap-3">
           <div className="rounded-card border border-line bg-surface p-4">
-            <div className="flex items-center justify-between gap-2">
- <p className="font-heading text-xs font-medium text-mist">Occupancy</p>
-              {availableNow && (
-                <span className="flex h-1.5 w-1.5 shrink-0 rounded-full bg-success" aria-hidden="true" />
-              )}
-            </div>
+            <p className="font-heading text-xs font-medium text-mist">Occupancy</p>
             <p className="mt-2 flex items-baseline gap-1 font-mono tabular">
-              <span className="text-4xl font-extrabold text-brand-mid">{freeSlots}</span>
+              <span className="text-4xl font-extrabold text-ink">{freeSlots}</span>
               <span className="text-base text-mist">/{s.total} free</span>
             </p>
-            <div className="mt-3 h-1.5 w-full overflow-hidden rounded-full bg-brand-tint">
-              <div className="h-full rounded-full bg-brand transition-all duration-700" style={{ width: `${occupancyPct}%` }} />
+            <div className="mt-3 h-1.5 w-full overflow-hidden rounded-full bg-line">
+              <div className={`h-full rounded-full ${status.bar} transition-all duration-700`} style={{ width: `${occupancyPct}%` }} />
             </div>
           </div>
 
@@ -78,7 +85,7 @@ export default function StationDetail() {
           </div>
         </section>
 
-        <div className="mt-6 flex gap-3">
+        <div className="mt-auto flex gap-3 pt-6">
           <a
             href={mapsUrl}
             target="_blank"

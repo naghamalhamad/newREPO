@@ -13,9 +13,9 @@ const rows = [
 export default function Profile() {
   const navigate = useNavigate()
   return (
-    <div className="min-h-dvh bg-stone pb-24">
+    <div className="flex min-h-dvh flex-col bg-stone">
       <TopBar title="Account" />
-      <main className="mx-auto max-w-md px-4 pt-3">
+      <main className="mx-auto flex w-full max-w-md flex-1 flex-col px-4 pt-3 pb-24">
         <div className="flex items-center gap-3 rounded-card border border-line bg-surface p-4">
           <span className="flex h-12 w-12 items-center justify-center rounded-full bg-ink font-heading text-base font-medium text-stone">
             J
@@ -40,7 +40,7 @@ export default function Profile() {
 
         <button
           onClick={() => navigate('/login')}
-          className="mt-5 w-full rounded-xl border border-line py-4 font-heading font-semibold text-danger"
+          className="mt-auto w-full rounded-xl border border-line py-4 font-heading font-semibold text-danger"
         >
           Log out
         </button>

@@ -26,9 +26,9 @@ export default function Subscribe() {
   }
 
   return (
-    <div className="min-h-dvh bg-stone pb-10">
+    <div className="flex min-h-dvh flex-col bg-stone pb-10">
       <TopBar title="Subscribe" back />
-      <main className="mx-auto max-w-md px-4 pt-3">
+      <main className="mx-auto flex w-full max-w-md flex-1 flex-col px-4 pt-3">
         <p className="text-graphite">Pick a recurring full-wash package, billed monthly. Cancel anytime.</p>
         <div className="mt-4 flex flex-col gap-3">
           {plans.map((p) => (
@@ -49,7 +49,7 @@ export default function Subscribe() {
         </div>
         <button
           onClick={() => setConfirmed(true)}
-          className="mt-7 w-full rounded-xl bg-brand py-4 text-center font-heading font-semibold text-white"
+          className="mt-auto w-full rounded-xl bg-brand py-4 text-center font-heading font-semibold text-white"
         >
           Subscribe
         </button>

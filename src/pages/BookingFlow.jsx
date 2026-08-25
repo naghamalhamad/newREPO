@@ -29,9 +29,9 @@ export default function BookingFlow() {
   }
 
   return (
-    <div className="min-h-dvh bg-stone pb-10">
+    <div className="flex min-h-dvh flex-col bg-stone pb-10">
       <TopBar title="Book service" back />
-      <main className="mx-auto max-w-md px-4 pt-3">
+      <main className="mx-auto flex w-full max-w-md flex-1 flex-col px-4 pt-3">
         {isRebook && (
           <div className="mb-3 rounded-card border border-brand/30 bg-brand-tint/50 px-4 py-3 text-sm text-brand-mid">
             Rebooking your usual — same vehicle, same provider.
@@ -82,7 +82,7 @@ export default function BookingFlow() {
         <button
           disabled={!slot}
           onClick={() => setConfirmed(true)}
-          className="mt-7 w-full rounded-xl bg-brand py-4 text-center font-heading font-semibold text-white disabled:bg-line disabled:text-disabled-text"
+          className="mt-auto w-full rounded-xl bg-brand py-4 text-center font-heading font-semibold text-white disabled:bg-line disabled:text-disabled-text"
         >
           Confirm & pay {service.priceFrom > 0 ? `$${service.priceFrom}` : ''}
         </button>
