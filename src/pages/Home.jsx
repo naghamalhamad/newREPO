@@ -28,7 +28,7 @@ export default function Home() {
     <div className="min-h-dvh bg-stone pb-24">
       <TopBar title="Home" action={<NotifBell />} />
       <motion.main variants={container} initial="hidden" animate="show" className="mx-auto max-w-md px-4 pt-4">
- <motion.p variants={item} className="text-[11px] tracking-[0.1em] text-mist">
+ <motion.p variants={item} className="font-heading text-lg font-medium text-ink">
           {greeting()}, Jordan
         </motion.p>
 
@@ -52,7 +52,6 @@ export default function Home() {
               <div className="text-right">
                 <p className="font-mono text-sm text-stone/80">{vehicle.rangeMi} mi range</p>
                 <p className="mt-1 text-xs text-stone/45">{vehicle.connector} connector</p>
-                <p className="mt-1 font-mono text-xs text-stone/45">${nearest.priceKwh.toFixed(2)}/kWh nearby</p>
               </div>
             </div>
 

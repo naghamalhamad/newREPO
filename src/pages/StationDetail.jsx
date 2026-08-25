@@ -19,15 +19,9 @@ export default function StationDetail() {
       <TopBar title="Station" back />
       <main className="mx-auto flex w-full max-w-md flex-1 flex-col px-4 pt-3">
         <div className="flex items-start gap-3">
-          <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-brand-tint text-brand-mid">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M13 3 5 14h6l-1 7 8-11h-6l1-7Z" /></svg>
-          </span>
           <div className="flex-1">
             <h2 className="font-heading text-xl font-medium text-ink">{s.name}</h2>
             <p className="mt-1 text-sm text-graphite">{s.address}</p>
-            <span className={`mt-2 inline-flex items-center rounded-pill px-3 py-1 text-xs font-semibold ${status.bg} ${status.color}`}>
-              {status.text} · {freeSlots}/{s.total} free
-            </span>
           </div>
           <a
             href={mapsUrl}
