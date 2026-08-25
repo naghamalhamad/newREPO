@@ -7,7 +7,7 @@
   --color-brand-light: #bfe3e0;  /* light teal — badge/chip borders */
   --color-brand-tint: #eaf6f5;   /* teal tint — badge/chip fill, subtle backgrounds */
 
-  --color-stone: #f5f3ec;        /* page background */
+  --color-stone: #eaf6f5;        /* page background */
   --color-surface: #ffffff;      /* card background */
   --color-panel: #f6f8f8;        /* secondary panel background */
 
@@ -17,11 +17,11 @@
   --color-line: #d4ddea;         /* borders, dividers, disabled fill (grey-200) */
   --color-disabled-text: #6e7686; /* disabled button text (grey-400) */
 
-  --color-success: #1e9e70;
+  --color-success: #22b07d;
   --color-success-tint: #e1f5ec;
-  --color-danger: #e23b2e;
+  --color-danger: #f44336;
   --color-danger-tint: #fbe4e2;
-  --color-warning: #e6a421;
+  --color-warning: #ffba2f;
   --color-warning-tint: #fcf0dd;
 
   /* --- Type: Inter, single typeface. Weight carries the hierarchy per the
