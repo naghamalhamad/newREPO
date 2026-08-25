@@ -41,7 +41,7 @@ export default function Home() {
           {greeting()}, Jordan
         </motion.p>
 
-        <motion.section variants={item} className="mt-2">
+        <motion.section variants={item} className="mt-2 grid grid-cols-2 gap-3">
           <div className="rounded-card bg-ink p-4 text-stone">
             <div className="flex items-center gap-2">
               <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-white/10">
@@ -53,30 +53,20 @@ export default function Home() {
               <span className="font-heading text-sm font-semibold">Battery</span>
             </div>
 
-            <div className="mt-3">
-              <p className="text-[11px] tracking-[0.1em] text-stone/45">Your vehicle</p>
-              <p className="mt-1 font-heading text-xl font-medium">{vehicle.name}</p>
-            </div>
-
-            <div className="mt-3 flex items-end justify-between">
-              <div className="flex items-baseline gap-1 font-mono">
-                <span className="text-3xl font-extrabold leading-none tabular">{vehicle.batteryPct}</span>
-                <span className="text-sm text-stone/50">%</span>
-              </div>
-              <p className="text-xs text-stone/45">{vehicle.connector} connector</p>
-            </div>
-
-            <div className="mt-2 h-1.5 w-full overflow-hidden rounded-full bg-white/10">
+            <div className="relative mt-3 h-10 w-full overflow-hidden rounded-pill bg-white/10">
               <div
-                className="h-full rounded-full bg-brand transition-all duration-700"
+                className="absolute inset-y-0 left-0 rounded-pill bg-success transition-all duration-700"
                 style={{ width: `${vehicle.batteryPct}%` }}
               />
+              <span className="relative z-10 flex h-full items-center pl-3 font-mono text-lg font-extrabold text-white">
+                {vehicle.batteryPct}%
+              </span>
             </div>
-          </div>
-        </motion.section>
 
-        <motion.section variants={item} className="mt-3">
-          <div className="rounded-card border border-line bg-surface p-5">
+            <p className="mt-2 truncate text-xs text-stone/45">{vehicle.name}</p>
+          </div>
+
+          <div className="rounded-card border border-line bg-surface p-4">
             <div className="flex items-center gap-2">
               <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-brand-tint text-brand-mid">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
@@ -86,13 +76,15 @@ export default function Home() {
               </span>
               <span className="font-heading text-sm font-semibold text-ink">Remaining</span>
             </div>
-            <div className="mt-3 flex items-baseline gap-3">
+
+            <div className="mt-3 flex flex-wrap items-baseline gap-2">
               <span className="font-mono text-xl font-extrabold tabular text-ink">{vehicle.rangeMi} mi</span>
-              <span className="rounded-pill bg-brand-tint px-2.5 py-1 font-mono text-xs font-semibold text-brand-mid">
+              <span className="rounded-pill bg-brand-tint px-2 py-1 font-mono text-[11px] font-semibold text-brand-mid">
                 {driveTimeLabel(vehicle.rangeMi)}
               </span>
             </div>
-            <p className="mt-2 text-sm text-graphite">Remaining distance and time</p>
+
+            <p className="mt-2 text-xs text-graphite">Remaining distance and time</p>
           </div>
         </motion.section>
 
