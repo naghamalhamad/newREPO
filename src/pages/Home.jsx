@@ -53,14 +53,16 @@ export default function Home() {
               <span className="font-heading text-sm font-semibold">Battery</span>
             </div>
 
-            <div className="relative mt-3 h-10 w-full overflow-hidden rounded-pill bg-white/10">
+            <div className="mt-4 flex items-baseline gap-1 font-mono">
+              <span className="text-3xl font-extrabold leading-none tabular">{vehicle.batteryPct}</span>
+              <span className="text-base text-stone/50">%</span>
+            </div>
+
+            <div className="mt-3 h-1.5 w-full overflow-hidden rounded-full bg-white/10">
               <div
-                className="absolute inset-y-0 left-0 rounded-pill bg-success transition-all duration-700"
+                className="h-full rounded-full bg-brand-light transition-all duration-700"
                 style={{ width: `${vehicle.batteryPct}%` }}
               />
-              <span className="relative z-10 flex h-full items-center pl-3 font-mono text-lg font-extrabold text-white">
-                {vehicle.batteryPct}%
-              </span>
             </div>
 
             <p className="mt-2 truncate text-xs text-stone/45">{vehicle.name}</p>
