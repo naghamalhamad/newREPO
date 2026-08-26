@@ -13,30 +13,23 @@ export default function BottomNav() {
       className="fixed inset-x-0 z-20 flex justify-center px-4"
       style={{ bottom: 'max(env(safe-area-inset-bottom), 16px)' }}
     >
-      <div className="flex items-center gap-1 rounded-full border border-line/60 bg-stone/70 px-2.5 py-2 shadow-[0_8px_30px_rgba(20,23,28,0.16)] backdrop-blur-xl">
+      <div className="relative flex items-center gap-1 overflow-hidden rounded-full border border-white/50 bg-stone/60 p-2 shadow-[0_8px_30px_rgba(20,23,28,0.18)] backdrop-blur-xl">
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-1/2 bg-linear-to-b from-white/50 to-transparent" />
         {items.map(({ to, label, icon: Icon }) => (
-          <NavLink
-            key={to}
-            to={to}
-            end={to === '/home'}
-            className="flex flex-col items-center gap-0.5 px-3.5 py-1 font-heading text-[11px]"
-          >
+          <NavLink key={to} to={to} end={to === '/home'} aria-label={label}>
             {({ isActive }) => (
-              <>
-                <motion.span whileTap={{ scale: 0.88 }} className="relative flex h-9 w-11 items-center justify-center">
-                  {isActive && (
-                    <motion.span
-                      layoutId="nav-pill"
-                      className="absolute inset-0 rounded-full bg-brand-tint"
-                      transition={{ type: 'spring', stiffness: 500, damping: 32 }}
-                    />
-                  )}
-                  <span className={`relative transition-colors duration-200 ${isActive ? 'text-brand-mid' : 'text-graphite'}`}>
-                    <Icon active={isActive} />
-                  </span>
-                </motion.span>
-                <span className={isActive ? 'font-medium text-ink' : 'font-normal text-graphite'}>{label}</span>
-              </>
+              <motion.span whileTap={{ scale: 0.88 }} className="relative flex h-11 w-11 items-center justify-center">
+                {isActive && (
+                  <motion.span
+                    layoutId="nav-pill"
+                    className="absolute inset-0 rounded-full bg-brand shadow-[0_4px_14px_rgba(41,218,153,0.5)]"
+                    transition={{ type: 'spring', stiffness: 500, damping: 32 }}
+                  />
+                )}
+                <span className={`relative transition-colors duration-200 ${isActive ? 'text-ink' : 'text-graphite'}`}>
+                  <Icon active={isActive} />
+                </span>
+              </motion.span>
             )}
           </NavLink>
         ))}
