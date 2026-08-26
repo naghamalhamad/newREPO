@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import StepProgress from '../components/StepProgress'
 import BrandLogo from '../components/BrandLogo'
-import { carBrands, carBrandMonograms, carTypes, chargerTypes } from '../data/mock'
+import { carBrands, carBrandMonograms, carModelsByBrand, chargerTypes } from '../data/mock'
 
 const TOTAL_STEPS = 3
 
@@ -19,7 +19,8 @@ export default function Register() {
   const [manualEntry, setManualEntry] = useState(false)
   const [manualBrand, setManualBrand] = useState('')
 
-  const [carType, setCarType] = useState('')
+  const [carModel, setCarModel] = useState('')
+  const [manualModel, setManualModel] = useState('')
   const [chargerType, setChargerType] = useState('')
 
   const [showLocationPrompt, setShowLocationPrompt] = useState(false)
@@ -29,6 +30,9 @@ export default function Register() {
     if (!q) return carBrands
     return carBrands.filter((b) => b.toLowerCase().includes(q))
   }, [brandQuery])
+
+  const effectiveBrand = manualEntry ? manualBrand.trim() : brand
+  const modelOptions = carModelsByBrand[effectiveBrand] ?? []
 
   function goBack() {
     if (step === 1) navigate('/login')
@@ -41,7 +45,7 @@ export default function Register() {
 
   const step1Valid = phone.trim().length >= 7 && password.length >= 8
   const step2Valid = manualEntry ? manualBrand.trim().length > 0 : brand.length > 0
-  const step3Valid = carType.length > 0 && chargerType.length > 0
+  const step3Valid = (modelOptions.length > 0 ? carModel.length > 0 : manualModel.trim().length > 0) && chargerType.length > 0
 
   return (
     <div className="relative flex min-h-dvh flex-col overflow-hidden bg-stone">
@@ -245,28 +249,37 @@ export default function Register() {
             <p className="mt-1 text-sm text-graphite">This helps us match you to the right chargers.</p>
 
             <section className="mt-7">
-              <h2 className="font-heading text-base font-medium text-ink">Vehicle type</h2>
-              <div className="mt-3 grid grid-cols-2 gap-2.5">
-                {carTypes.map((t) => (
-                  <button
-                    key={t}
-                    type="button"
-                    onClick={() => setCarType(t)}
-                    className={`flex items-center gap-2.5 rounded-xl border p-2.5 text-left transition-colors ${
-                      carType === t ? 'border-brand bg-brand-tint/40' : 'border-line bg-surface'
-                    }`}
-                  >
-                    <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full ${
-                      carType === t ? 'bg-brand text-ink' : 'bg-brand-tint text-brand-mid'
-                    }`}>
-                      <CarIcon />
-                    </span>
-                    <span className={`flex-1 text-sm font-medium ${carType === t ? 'text-brand-mid' : 'text-ink'}`}>
-                      {t}
-                    </span>
-                  </button>
-                ))}
-              </div>
+              <h2 className="font-heading text-base font-medium text-ink">Vehicle model</h2>
+              {modelOptions.length > 0 ? (
+                <div className="mt-3 grid grid-cols-2 gap-2.5">
+                  {modelOptions.map((m) => (
+                    <button
+                      key={m}
+                      type="button"
+                      onClick={() => setCarModel(m)}
+                      className={`flex items-center gap-2.5 rounded-xl border p-2.5 text-left transition-colors ${
+                        carModel === m ? 'border-brand bg-brand-tint/40' : 'border-line bg-surface'
+                      }`}
+                    >
+                      <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full ${
+                        carModel === m ? 'bg-brand text-ink' : 'bg-brand-tint text-brand-mid'
+                      }`}>
+                        <CarIcon />
+                      </span>
+                      <span className={`flex-1 text-sm font-medium ${carModel === m ? 'text-brand-mid' : 'text-ink'}`}>
+                        {m}
+                      </span>
+                    </button>
+                  ))}
+                </div>
+              ) : (
+                <input
+                  value={manualModel}
+                  onChange={(e) => setManualModel(e.target.value)}
+                  placeholder={effectiveBrand ? `e.g. ${effectiveBrand} model name` : 'e.g. Model 3'}
+                  className="mt-3 w-full rounded-xl border border-line bg-surface px-4 py-3 text-ink outline-none placeholder:text-mist focus:border-brand"
+                />
+              )}
             </section>
 
             <section className="mt-6">

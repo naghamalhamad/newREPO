@@ -35,7 +35,26 @@ export const carBrandMonograms = {
   Porsche: 'PO',
 }
 
-export const carTypes = ['Sedan', 'SUV', 'Truck', 'Hatchback']
+// EV model lineup sold under each brand — shown once the brand is picked,
+// so the user selects their actual car rather than a generic body type.
+export const carModelsByBrand = {
+  Hyundai: ['Kona Electric', 'Ioniq 5', 'Ioniq 6'],
+  Kia: ['Niro EV', 'EV6', 'Soul EV'],
+  Nissan: ['Leaf', 'Ariya'],
+  MG: ['MG4', 'ZS EV', 'MG5'],
+  BYD: ['Seagull', 'Dolphin', 'Atto 3', 'Seal', 'Han', 'Tang', 'Song Plus', 'Yuan Plus'],
+  JAC: ['e-JS1', 'JS4 EV', 'JS6 EV', 'iEV7S'],
+  Changan: ['Lumin', 'Benben E-Star', 'UNI-K EV'],
+  Renault: ['Zoe', 'Megane E-Tech', 'Kangoo E-Tech'],
+  Chevrolet: ['Bolt EV', 'Bolt EUV'],
+  Tesla: ['Model 3', 'Model Y', 'Model S', 'Model X'],
+  BMW: ['i4', 'iX1', 'iX', 'i7'],
+  'Mercedes-Benz': ['EQA', 'EQB', 'EQC', 'EQS'],
+  Audi: ['Q4 e-tron', 'e-tron', 'e-tron GT'],
+  Volkswagen: ['ID.3', 'ID.4', 'ID.5'],
+  Volvo: ['EX30', 'XC40 Recharge', 'C40 Recharge'],
+  Porsche: ['Taycan', 'Macan Electric'],
+}
 
 export const chargerTypes = ['NACS', 'CCS', 'CHAdeMO']
 
