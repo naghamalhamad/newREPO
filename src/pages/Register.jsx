@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import StepProgress from '../components/StepProgress'
+import BrandLogo from '../components/BrandLogo'
 import { carBrands, carBrandMonograms, carTypes, chargerTypes } from '../data/mock'
 
 const TOTAL_STEPS = 3
@@ -180,10 +181,10 @@ export default function Register() {
                             brand === b ? 'border-brand bg-brand-tint/40' : 'border-line bg-surface'
                           }`}
                         >
-                          <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full font-heading text-[10px] font-bold tracking-tight ${
+                          <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full ${
                             brand === b ? 'bg-brand text-ink' : 'bg-brand-tint text-brand-mid'
                           }`}>
-                            {carBrandMonograms[b] ?? b.slice(0, 2).toUpperCase()}
+                            <BrandLogo brand={b} monogram={carBrandMonograms[b] ?? b.slice(0, 2).toUpperCase()} />
                           </span>
                           <span className={`flex-1 text-sm font-medium ${brand === b ? 'text-brand-mid' : 'text-ink'}`}>
                             {b}
@@ -246,17 +247,25 @@ export default function Register() {
 
             <section className="mt-7">
               <h2 className="font-heading text-base font-medium text-ink">Vehicle type</h2>
-              <div className="mt-3 flex flex-wrap gap-2">
+              <div className="mt-3 grid grid-cols-2 gap-2.5">
                 {carTypes.map((t) => (
                   <button
                     key={t}
                     type="button"
                     onClick={() => setCarType(t)}
-                    className={`rounded-pill border px-4 py-2.5 text-sm font-medium ${
-                      carType === t ? 'border-brand bg-brand-tint text-brand-mid' : 'border-line bg-surface text-ink'
+                    className={`flex items-center gap-2.5 rounded-xl border p-2.5 text-left transition-colors ${
+                      carType === t ? 'border-brand bg-brand-tint/40' : 'border-line bg-surface'
                     }`}
                   >
-                    {t}
+                    <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full ${
+                      carType === t ? 'bg-brand text-ink' : 'bg-brand-tint text-brand-mid'
+                    }`}>
+                      <CarIcon />
+                    </span>
+                    <span className={`flex-1 text-sm font-medium ${carType === t ? 'text-brand-mid' : 'text-ink'}`}>
+                      {t}
+                    </span>
+                    {carType === t && <CheckIcon />}
                   </button>
                 ))}
               </div>
@@ -264,17 +273,25 @@ export default function Register() {
 
             <section className="mt-6">
               <h2 className="font-heading text-base font-medium text-ink">Charger connector</h2>
-              <div className="mt-3 flex flex-wrap gap-2">
+              <div className="mt-3 grid grid-cols-2 gap-2.5">
                 {chargerTypes.map((c) => (
                   <button
                     key={c}
                     type="button"
                     onClick={() => setChargerType(c)}
-                    className={`rounded-pill border px-4 py-2.5 text-sm font-medium ${
-                      chargerType === c ? 'border-brand bg-brand-tint text-brand-mid' : 'border-line bg-surface text-ink'
+                    className={`flex items-center gap-2.5 rounded-xl border p-2.5 text-left transition-colors ${
+                      chargerType === c ? 'border-brand bg-brand-tint/40' : 'border-line bg-surface'
                     }`}
                   >
-                    {c}
+                    <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full ${
+                      chargerType === c ? 'bg-brand text-ink' : 'bg-brand-tint text-brand-mid'
+                    }`}>
+                      <PlugIcon />
+                    </span>
+                    <span className={`flex-1 text-sm font-medium ${chargerType === c ? 'text-brand-mid' : 'text-ink'}`}>
+                      {c}
+                    </span>
+                    {chargerType === c && <CheckIcon />}
                   </button>
                 ))}
               </div>
@@ -374,6 +391,15 @@ function CarIcon() {
       <path d="M4 16h16" strokeLinecap="round" />
       <circle cx="7.5" cy="16.5" r="1.6" />
       <circle cx="16.5" cy="16.5" r="1.6" />
+    </svg>
+  )
+}
+function PlugIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8}>
+      <path d="M8 3v5M16 3v5" strokeLinecap="round" />
+      <path d="M6 8h12v4a6 6 0 0 1-6 6 6 6 0 0 1-6-6Z" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M12 18v3" strokeLinecap="round" />
     </svg>
   )
 }
