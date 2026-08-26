@@ -189,7 +189,6 @@ export default function Register() {
                           <span className={`flex-1 text-sm font-medium ${brand === b ? 'text-brand-mid' : 'text-ink'}`}>
                             {b}
                           </span>
-                          {brand === b && <CheckIcon />}
                         </button>
                       ))}
                     </div>
@@ -265,7 +264,6 @@ export default function Register() {
                     <span className={`flex-1 text-sm font-medium ${carType === t ? 'text-brand-mid' : 'text-ink'}`}>
                       {t}
                     </span>
-                    {carType === t && <CheckIcon />}
                   </button>
                 ))}
               </div>
@@ -291,7 +289,6 @@ export default function Register() {
                     <span className={`flex-1 text-sm font-medium ${chargerType === c ? 'text-brand-mid' : 'text-ink'}`}>
                       {c}
                     </span>
-                    {chargerType === c && <CheckIcon />}
                   </button>
                 ))}
               </div>
@@ -400,13 +397,6 @@ function PlugIcon() {
       <path d="M8 3v5M16 3v5" strokeLinecap="round" />
       <path d="M6 8h12v4a6 6 0 0 1-6 6 6 6 0 0 1-6-6Z" strokeLinecap="round" strokeLinejoin="round" />
       <path d="M12 18v3" strokeLinecap="round" />
-    </svg>
-  )
-}
-function CheckIcon() {
-  return (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.4}>
-      <path d="m5 13 4 4 10-10" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   )
 }
