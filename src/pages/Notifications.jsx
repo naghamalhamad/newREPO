@@ -15,7 +15,7 @@ export default function Notifications() {
         title="Notifications"
         back
         action={
- <Link to="/profile/notifications" className="font-heading text-xs font-medium text-graphite">
+          <Link to="/profile" state={{ tab: 'settings' }} className="font-heading text-xs font-medium text-graphite">
             Settings
           </Link>
         }

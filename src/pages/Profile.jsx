@@ -1,4 +1,5 @@
-import { Link, useNavigate } from 'react-router-dom'
+import { useState } from 'react'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import TopBar from '../components/TopBar'
 import BottomNav from '../components/BottomNav'
 import { vehicle } from '../data/mock'
@@ -6,12 +7,27 @@ import { vehicle } from '../data/mock'
 const rows = [
   { label: 'Vehicles', value: vehicle.name, to: '/profile/vehicles' },
   { label: 'Payment methods', value: 'Visa •••• 4821', to: '/profile/payment-methods' },
-  { label: 'Notifications', value: 'On', to: '/profile/notifications' },
   { label: 'Charging history', value: '', to: '/charge/history' },
+]
+
+const tabs = [
+  { id: 'account', label: 'Account' },
+  { id: 'settings', label: 'Settings' },
+]
+
+const initialNotifRows = [
+  { id: 'booking', label: 'Booking reminders', desc: 'Before an upcoming wash or service', on: true },
+  { id: 'charging', label: 'Charging complete', desc: 'When a charging session finishes', on: true },
+  { id: 'slot', label: 'Slot available', desc: 'When a connector opens up nearby', on: true },
+  { id: 'renewal', label: 'Subscription renewal', desc: 'A few days before you’re billed', on: false },
 ]
 
 export default function Profile() {
   const navigate = useNavigate()
+  const location = useLocation()
+  const [tab, setTab] = useState(location.state?.tab === 'settings' ? 'settings' : 'account')
+  const [notifRows, setNotifRows] = useState(initialNotifRows)
+
   return (
     <div className="flex min-h-dvh flex-col bg-stone">
       <TopBar title="Account" />
@@ -26,17 +42,53 @@ export default function Profile() {
           </div>
         </div>
 
-        <div className="mt-5 flex flex-col divide-y divide-line overflow-hidden rounded-card border border-line bg-surface">
-          {rows.map((r) => (
-            <Link key={r.label} to={r.to} className="flex items-center justify-between px-4 py-4 text-left">
-              <span className="font-medium text-ink">{r.label}</span>
-              <span className="flex items-center gap-2 text-sm text-graphite">
-                {r.value}
-                <span className="text-mist">›</span>
-              </span>
-            </Link>
+        <div className="mt-5 grid grid-cols-2 gap-1 rounded-pill border border-line bg-surface p-1">
+          {tabs.map((t) => (
+            <button
+              key={t.id}
+              type="button"
+              onClick={() => setTab(t.id)}
+              className={`rounded-pill py-2 text-center font-heading text-sm font-semibold transition-colors ${
+                tab === t.id ? 'bg-brand text-ink' : 'text-graphite'
+              }`}
+            >
+              {t.label}
+            </button>
           ))}
         </div>
+
+        {tab === 'account' ? (
+          <div className="mt-4 flex flex-col divide-y divide-line overflow-hidden rounded-card border border-line bg-surface">
+            {rows.map((r) => (
+              <Link key={r.label} to={r.to} className="flex items-center justify-between px-4 py-4 text-left">
+                <span className="font-medium text-ink">{r.label}</span>
+                <span className="flex items-center gap-2 text-sm text-graphite">
+                  {r.value}
+                  <span className="text-mist">›</span>
+                </span>
+              </Link>
+            ))}
+          </div>
+        ) : (
+          <div className="mt-4 divide-y divide-line overflow-hidden rounded-card border border-line bg-surface">
+            {notifRows.map((r) => (
+              <div key={r.id} className="flex items-center justify-between px-4 py-4">
+                <span>
+                  <span className="block font-medium text-ink">{r.label}</span>
+                  <span className="block text-sm text-graphite">{r.desc}</span>
+                </span>
+                <button
+                  role="switch"
+                  aria-checked={r.on}
+                  onClick={() => setNotifRows((rs) => rs.map((x) => (x.id === r.id ? { ...x, on: !x.on } : x)))}
+                  className={`relative h-6 w-10 shrink-0 rounded-pill transition-colors ${r.on ? 'bg-brand' : 'bg-line'}`}
+                >
+                  <span className={`absolute top-1 h-5 w-5 rounded-full bg-white shadow transition-transform ${r.on ? 'translate-x-[18px]' : 'translate-x-0.5'}`} />
+                </button>
+              </div>
+            ))}
+          </div>
+        )}
 
         <button
           onClick={() => navigate('/login')}

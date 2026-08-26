@@ -19,7 +19,6 @@ import BookingHistory from './pages/BookingHistory'
 import Profile from './pages/Profile'
 import Vehicles from './pages/Vehicles'
 import PaymentMethods from './pages/PaymentMethods'
-import NotificationSettings from './pages/NotificationSettings'
 import Notifications from './pages/Notifications'
 
 export default function App() {
@@ -52,7 +51,6 @@ export default function App() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/profile/vehicles" element={<Vehicles />} />
         <Route path="/profile/payment-methods" element={<PaymentMethods />} />
-        <Route path="/profile/notifications" element={<NotificationSettings />} />
       </Routes>
     </HashRouter>
   )
