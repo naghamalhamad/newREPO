@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 // throughout the app (battery bar, occupancy bar, charging session).
 export default function Logo({ size = 64, ring = true, animate = false }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 64 64" role="img" aria-label="Car Care logo">
+    <svg width={size} height={size} viewBox="0 0 64 64" role="img" aria-label="Circuit logo">
       <rect x="4" y="4" width="56" height="56" rx="18" className="fill-ink" />
       {ring && (
         <motion.g
@@ -26,7 +26,7 @@ export default function Logo({ size = 64, ring = true, animate = false }) {
           />
         </motion.g>
       )}
-      <path d="M33.8 20.8 24.3 33.4 30.6 33.4 29.2 43.2 40.4 29.2 34.1 29.2Z" className="fill-brand" strokeLinejoin="round" />
+      <path d="M33.3 23.9 26.5 33 31 33 30 40.1 38 30 33.5 30Z" className="fill-brand" strokeLinejoin="round" />
     </svg>
   )
 }

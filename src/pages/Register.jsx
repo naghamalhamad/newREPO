@@ -325,7 +325,7 @@ export default function Register() {
             <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-brand-tint text-brand-mid">
               <PinIcon />
             </span>
-            <h2 className="mt-4 font-heading text-lg font-semibold text-ink">Allow "Car Care" to use your location?</h2>
+            <h2 className="mt-4 font-heading text-lg font-semibold text-ink">Allow "Circuit" to use your location?</h2>
             <p className="mt-2 text-sm text-graphite">Used to show nearby charging stations and estimate how long it'll take to get there.</p>
             <div className="mt-6 flex flex-col gap-2">
               <button
