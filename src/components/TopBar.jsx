@@ -20,7 +20,7 @@ export default function TopBar({ title, back, action }) {
           </button>
         )}
       </div>
-      <h1 className="truncate text-center font-heading text-base font-medium tracking-tight text-ink">{title}</h1>
+      <h1 className="truncate text-center font-heading text-lg font-medium tracking-tight text-ink">{title}</h1>
       <div className="flex justify-end">{action}</div>
     </header>
   )
