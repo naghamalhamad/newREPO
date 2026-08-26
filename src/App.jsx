@@ -5,7 +5,9 @@ import Home from './pages/Home'
 import Charging from './pages/Charging'
 import StationDetail from './pages/StationDetail'
 import ReserveSlot from './pages/ReserveSlot'
+import ChargerConnect from './pages/ChargerConnect'
 import ActiveSession from './pages/ActiveSession'
+import SessionSummary from './pages/SessionSummary'
 import ChargingHistory from './pages/ChargingHistory'
 import ReceiptDetail from './pages/ReceiptDetail'
 import Wash from './pages/Wash'
@@ -33,7 +35,9 @@ export default function App() {
         <Route path="/charge/history/:id" element={<ReceiptDetail />} />
         <Route path="/charge/:id" element={<StationDetail />} />
         <Route path="/charge/:id/reserve" element={<ReserveSlot />} />
+        <Route path="/charge/:id/connect" element={<ChargerConnect />} />
         <Route path="/charge/:id/session" element={<ActiveSession />} />
+        <Route path="/charge/:id/summary" element={<SessionSummary />} />
 
         <Route path="/wash" element={<Wash />} />
         <Route path="/wash/book/:id" element={<BookingFlow />} />

@@ -99,7 +99,7 @@ export default function StationDetail() {
         </Link>
 
         <button
-          onClick={() => navigate(`/charge/${s.id}/session`)}
+          onClick={() => navigate(`/charge/${s.id}/connect`)}
           className="mt-auto w-full rounded-xl bg-brand py-4 text-center font-heading font-semibold text-ink active:opacity-90"
         >
           Start charging
