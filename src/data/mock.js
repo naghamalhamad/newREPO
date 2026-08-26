@@ -13,6 +13,28 @@ export const carBrands = [
   'Volvo', 'Porsche',
 ]
 
+// Short monogram shown on each brand's selection card — not the brands'
+// actual logo artwork (we have no licensed asset source for those), just a
+// recognizable abbreviation so the card reads as brand-specific at a glance.
+export const carBrandMonograms = {
+  Hyundai: 'HY',
+  Kia: 'KIA',
+  Nissan: 'NI',
+  MG: 'MG',
+  BYD: 'BYD',
+  JAC: 'JAC',
+  Changan: 'CA',
+  Renault: 'RE',
+  Chevrolet: 'CHV',
+  Tesla: 'TE',
+  BMW: 'BMW',
+  'Mercedes-Benz': 'MB',
+  Audi: 'AU',
+  Volkswagen: 'VW',
+  Volvo: 'VOL',
+  Porsche: 'PO',
+}
+
 export const carTypes = ['Sedan', 'SUV', 'Truck', 'Hatchback']
 
 export const chargerTypes = ['NACS', 'CCS', 'CHAdeMO']

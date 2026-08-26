@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import StepProgress from '../components/StepProgress'
-import { carBrands, carTypes, chargerTypes } from '../data/mock'
+import { carBrands, carBrandMonograms, carTypes, chargerTypes } from '../data/mock'
 
 const TOTAL_STEPS = 3
 
@@ -167,20 +167,23 @@ export default function Register() {
                   {filteredBrands.length === 0 ? (
                     <p className="p-4 text-center text-sm text-graphite">No brands match "{brandQuery}".</p>
                   ) : (
-                    <div className="grid grid-cols-2 gap-3">
+                    <div className="grid grid-cols-2 gap-2.5">
                       {filteredBrands.map((b) => (
                         <button
                           key={b}
                           type="button"
-                          onClick={() => setBrand(b)}
-                          className={`flex items-center gap-3 rounded-xl border p-3 text-left transition-colors ${
+                          onClick={() => {
+                            setBrand(b)
+                            setTimeout(() => setStep(3), 350)
+                          }}
+                          className={`flex items-center gap-2.5 rounded-xl border p-2.5 text-left transition-colors ${
                             brand === b ? 'border-brand bg-brand-tint/40' : 'border-line bg-surface'
                           }`}
                         >
-                          <span className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full ${
+                          <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full font-heading text-[10px] font-bold tracking-tight ${
                             brand === b ? 'bg-brand text-ink' : 'bg-brand-tint text-brand-mid'
                           }`}>
-                            <CarIcon />
+                            {carBrandMonograms[b] ?? b.slice(0, 2).toUpperCase()}
                           </span>
                           <span className={`flex-1 text-sm font-medium ${brand === b ? 'text-brand-mid' : 'text-ink'}`}>
                             {b}
@@ -201,8 +204,8 @@ export default function Register() {
                 </button>
               </>
             ) : (
-              <div className="mt-6 flex flex-col gap-2">
-                <label className="flex flex-col gap-2">
+              <div className="flex flex-1 flex-col gap-2">
+                <label className="mt-6 flex flex-col gap-2">
                   <span className="text-[11px] font-medium tracking-[0.08em] text-graphite">Car brand</span>
                   <input
                     autoFocus
@@ -222,17 +225,17 @@ export default function Register() {
                 >
                   Pick from the list instead
                 </button>
+
+                <button
+                  type="button"
+                  disabled={!step2Valid}
+                  onClick={() => setStep(3)}
+                  className="mt-auto rounded-xl bg-brand py-4 text-center font-heading font-semibold text-ink active:opacity-90 disabled:bg-line disabled:text-disabled-text"
+                >
+                  Continue
+                </button>
               </div>
             )}
-
-            <button
-              type="button"
-              disabled={!step2Valid}
-              onClick={() => setStep(3)}
-              className="mt-auto rounded-xl bg-brand py-4 text-center font-heading font-semibold text-ink active:opacity-90 disabled:bg-line disabled:text-disabled-text"
-            >
-              Continue
-            </button>
           </div>
         )}
 
