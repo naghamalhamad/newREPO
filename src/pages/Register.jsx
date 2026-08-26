@@ -163,21 +163,28 @@ export default function Register() {
                   />
                 </div>
 
-                <div className="mt-4 flex-1 overflow-y-auto rounded-card border border-line bg-surface">
+                <div className="mt-4 flex-1 overflow-y-auto">
                   {filteredBrands.length === 0 ? (
                     <p className="p-4 text-center text-sm text-graphite">No brands match "{brandQuery}".</p>
                   ) : (
-                    <div className="flex flex-col divide-y divide-line">
+                    <div className="grid grid-cols-2 gap-3">
                       {filteredBrands.map((b) => (
                         <button
                           key={b}
                           type="button"
                           onClick={() => setBrand(b)}
-                          className={`flex items-center justify-between px-4 py-3.5 text-left font-medium ${
-                            brand === b ? 'bg-brand-tint text-brand-mid' : 'text-ink'
+                          className={`flex items-center gap-3 rounded-xl border p-3 text-left transition-colors ${
+                            brand === b ? 'border-brand bg-brand-tint/40' : 'border-line bg-surface'
                           }`}
                         >
-                          {b}
+                          <span className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full ${
+                            brand === b ? 'bg-brand text-ink' : 'bg-brand-tint text-brand-mid'
+                          }`}>
+                            <CarIcon />
+                          </span>
+                          <span className={`flex-1 text-sm font-medium ${brand === b ? 'text-brand-mid' : 'text-ink'}`}>
+                            {b}
+                          </span>
                           {brand === b && <CheckIcon />}
                         </button>
                       ))}
@@ -354,6 +361,16 @@ function SearchIcon() {
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8}>
       <circle cx="11" cy="11" r="7" />
       <path d="m21 21-4.3-4.3" strokeLinecap="round" />
+    </svg>
+  )
+}
+function CarIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8}>
+      <path d="M4 16v-3.5L6 8h12l2 4.5V16" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M4 16h16" strokeLinecap="round" />
+      <circle cx="7.5" cy="16.5" r="1.6" />
+      <circle cx="16.5" cy="16.5" r="1.6" />
     </svg>
   )
 }

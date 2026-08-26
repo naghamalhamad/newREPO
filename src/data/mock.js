@@ -6,10 +6,11 @@ export const vehicle = {
   connector: 'NACS',
 }
 
+// EV brands actually sold/available in the Jordanian market
 export const carBrands = [
-  'Audi', 'BMW', 'Cadillac', 'Chevrolet', 'Ford', 'Honda', 'Hyundai', 'Jeep',
-  'Kia', 'Lucid', 'Mercedes-Benz', 'Nissan', 'Polestar', 'Porsche', 'Rivian',
-  'Subaru', 'Tesla', 'Toyota', 'Volkswagen', 'Volvo',
+  'Hyundai', 'Kia', 'Nissan', 'MG', 'BYD', 'JAC', 'Changan', 'Renault',
+  'Chevrolet', 'Tesla', 'BMW', 'Mercedes-Benz', 'Audi', 'Volkswagen',
+  'Volvo', 'Porsche',
 ]
 
 export const carTypes = ['Sedan', 'SUV', 'Truck', 'Hatchback']
