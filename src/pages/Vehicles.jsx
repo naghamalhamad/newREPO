@@ -51,10 +51,10 @@ export default function Vehicles() {
               />
             </label>
             <div className="flex gap-3">
-              <button type="button" onClick={() => setAdding(false)} className="flex-1 rounded-xl border border-brand py-3 font-heading font-semibold text-brand">
+              <button type="button" onClick={() => setAdding(false)} className="flex-1 rounded-xl border border-brand py-3 font-heading font-semibold text-brand-mid">
                 Cancel
               </button>
-              <button type="submit" className="flex-1 rounded-xl bg-brand py-3 font-heading font-semibold text-white">
+              <button type="submit" className="flex-1 rounded-xl bg-brand py-3 font-heading font-semibold text-ink">
                 Add vehicle
               </button>
             </div>

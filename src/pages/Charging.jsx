@@ -37,7 +37,7 @@ export default function Charging() {
               style={{ left: `${18 + i * 22}%`, top: `${30 + (i % 2) * 34}%` }}
             >
               {open && <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand/40" />}
-              <span className="relative flex h-7 w-7 items-center justify-center rounded-full border-2 border-white bg-brand text-[10px] font-bold text-white shadow">
+              <span className="relative flex h-7 w-7 items-center justify-center rounded-full border-2 border-white bg-brand text-[10px] font-bold text-ink shadow">
                 {s.total - s.occupied}
               </span>
             </span>

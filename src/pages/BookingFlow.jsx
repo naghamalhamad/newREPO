@@ -21,7 +21,7 @@ export default function BookingFlow() {
         </span>
  <h1 className="mt-4 font-heading text-xl font-medium text-ink">Booking confirmed</h1>
         <p className="mt-2 text-graphite">{service.name} · {slot} · Suds & Co — Downtown</p>
-        <Link to="/wash" className="mt-6 rounded-xl bg-brand px-6 py-3 font-heading font-semibold text-white">
+        <Link to="/wash" className="mt-6 rounded-xl bg-brand px-6 py-3 font-heading font-semibold text-ink">
           Back to Services
         </Link>
       </div>
@@ -61,7 +61,7 @@ export default function BookingFlow() {
                 onClick={() => setSlot(t)}
                 className={`rounded-xl border px-2 py-3 font-mono text-sm ${
                   slot === t
-                    ? 'border-brand bg-brand text-white'
+                    ? 'border-brand bg-brand text-ink'
                     : 'border-line bg-surface text-graphite'
                 }`}
               >
@@ -82,7 +82,7 @@ export default function BookingFlow() {
         <button
           disabled={!slot}
           onClick={() => setConfirmed(true)}
-          className="mt-auto w-full rounded-xl bg-brand py-4 text-center font-heading font-semibold text-white disabled:bg-line disabled:text-disabled-text"
+          className="mt-auto w-full rounded-xl bg-brand py-4 text-center font-heading font-semibold text-ink disabled:bg-line disabled:text-disabled-text"
         >
           Confirm & pay {service.priceFrom > 0 ? `$${service.priceFrom}` : ''}
         </button>

@@ -113,7 +113,7 @@ export default function Register() {
                 type="button"
                 disabled={!step1Valid}
                 onClick={() => setStep(2)}
-                className="rounded-xl bg-brand py-4 text-center font-heading font-semibold text-white active:opacity-90 disabled:bg-line disabled:text-disabled-text"
+                className="rounded-xl bg-brand py-4 text-center font-heading font-semibold text-ink active:opacity-90 disabled:bg-line disabled:text-disabled-text"
               >
                 Continue
               </button>
@@ -127,7 +127,7 @@ export default function Register() {
               <button
                 type="button"
                 onClick={() => setStep(2)}
-                className="flex items-center justify-center gap-2.5 rounded-xl border border-brand py-4 text-center font-heading font-semibold text-brand active:bg-brand-tint/40"
+                className="flex items-center justify-center gap-2.5 rounded-xl border border-brand py-4 text-center font-heading font-semibold text-brand-mid active:bg-brand-tint/40"
               >
                 <GoogleIcon />
                 Sign up with Google
@@ -135,7 +135,7 @@ export default function Register() {
 
               <p className="text-center text-sm text-graphite">
                 Already have an account?{' '}
-                <Link to="/login" className="font-semibold text-brand underline underline-offset-2">
+                <Link to="/login" className="font-semibold text-brand-mid underline underline-offset-2">
                   Log in
                 </Link>
               </p>
@@ -222,7 +222,7 @@ export default function Register() {
               type="button"
               disabled={!step2Valid}
               onClick={() => setStep(3)}
-              className="mt-auto rounded-xl bg-brand py-4 text-center font-heading font-semibold text-white active:opacity-90 disabled:bg-line disabled:text-disabled-text"
+              className="mt-auto rounded-xl bg-brand py-4 text-center font-heading font-semibold text-ink active:opacity-90 disabled:bg-line disabled:text-disabled-text"
             >
               Continue
             </button>
@@ -274,7 +274,7 @@ export default function Register() {
               type="button"
               disabled={!step3Valid}
               onClick={finish}
-              className="mt-auto rounded-xl bg-brand py-4 text-center font-heading font-semibold text-white active:opacity-90 disabled:bg-line disabled:text-disabled-text"
+              className="mt-auto rounded-xl bg-brand py-4 text-center font-heading font-semibold text-ink active:opacity-90 disabled:bg-line disabled:text-disabled-text"
             >
               Finish
             </button>
@@ -294,7 +294,7 @@ export default function Register() {
               <button
                 type="button"
                 onClick={() => navigate('/home')}
-                className="rounded-xl bg-brand py-3.5 font-heading font-semibold text-white active:opacity-90"
+                className="rounded-xl bg-brand py-3.5 font-heading font-semibold text-ink active:opacity-90"
               >
                 Allow While Using App
               </button>

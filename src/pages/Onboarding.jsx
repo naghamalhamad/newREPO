@@ -75,7 +75,7 @@ export default function Onboarding() {
             <div className="relative flex h-44 w-44 items-center justify-center">
               <span className="absolute inset-2 animate-ping rounded-full border-2 border-brand opacity-30" style={{ animationDuration: '2.6s' }} />
               <span className="absolute inset-7 animate-ping rounded-full border-2 border-brand opacity-30" style={{ animationDuration: '2.6s', animationDelay: '0.7s' }} />
-              <span className="relative flex h-24 w-24 items-center justify-center rounded-full bg-brand text-white shadow-lg">
+              <span className="relative flex h-24 w-24 items-center justify-center rounded-full bg-brand text-ink shadow-lg">
                 <slide.icon />
               </span>
             </div>
@@ -112,14 +112,14 @@ export default function Onboarding() {
         {isLast ? (
           <button
             onClick={() => navigate('/login')}
-            className="w-full rounded-xl bg-brand py-4 text-center font-heading font-semibold text-white active:opacity-90"
+            className="w-full rounded-xl bg-brand py-4 text-center font-heading font-semibold text-ink active:opacity-90"
           >
             Get started
           </button>
         ) : (
           <button
             onClick={() => go(index + 1)}
-            className="flex w-full items-center justify-center gap-2 rounded-xl bg-brand py-4 text-center font-heading font-semibold text-white active:opacity-90"
+            className="flex w-full items-center justify-center gap-2 rounded-xl bg-brand py-4 text-center font-heading font-semibold text-ink active:opacity-90"
           >
             Next
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.4}>

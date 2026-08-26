@@ -21,7 +21,7 @@ export default function BottomNav() {
               <>
                 <span
                   className={`flex h-9 w-12 items-center justify-center rounded-full transition-colors duration-200 ${
-                    isActive ? 'bg-brand-tint text-brand' : 'text-graphite'
+                    isActive ? 'bg-brand-tint text-brand-mid' : 'text-graphite'
                   }`}
                 >
                   <Icon active={isActive} />

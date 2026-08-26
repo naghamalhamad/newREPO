@@ -85,7 +85,7 @@ export default function ActiveSession() {
             <p className="mt-1 text-sm text-graphite">{kwh} kWh delivered · ${cost} charged to Visa •••• 4821</p>
             <button
               onClick={() => navigate('/charge/history')}
-              className="mt-4 w-full rounded-xl bg-brand py-3 text-center font-heading font-semibold text-white"
+              className="mt-4 w-full rounded-xl bg-brand py-3 text-center font-heading font-semibold text-ink"
             >
               View receipt
             </button>

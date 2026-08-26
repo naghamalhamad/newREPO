@@ -11,7 +11,7 @@ export default function Login() {
 
       <div className="relative flex flex-1 flex-col px-6 pt-16 pb-10">
         <div className="mb-8 flex flex-col items-center text-center">
-          <span className="flex h-16 w-16 items-center justify-center rounded-full bg-brand text-white shadow-lg">
+          <span className="flex h-16 w-16 items-center justify-center rounded-full bg-brand text-ink shadow-lg">
             <CarIcon />
           </span>
           <h1 className="mt-4 font-heading text-2xl font-semibold text-ink">Car Care</h1>
@@ -68,7 +68,7 @@ export default function Login() {
           <div className="mt-auto flex flex-col gap-5">
             <button
               type="submit"
-              className="rounded-xl bg-brand py-4 text-center font-heading font-semibold text-white active:opacity-90"
+              className="rounded-xl bg-brand py-4 text-center font-heading font-semibold text-ink active:opacity-90"
             >
               Log in
             </button>
@@ -82,7 +82,7 @@ export default function Login() {
             <button
               type="button"
               onClick={() => navigate('/home')}
-              className="flex items-center justify-center gap-2.5 rounded-xl border border-brand py-4 text-center font-heading font-semibold text-brand active:bg-brand-tint/40"
+              className="flex items-center justify-center gap-2.5 rounded-xl border border-brand py-4 text-center font-heading font-semibold text-brand-mid active:bg-brand-tint/40"
             >
               <GoogleIcon />
               Continue with Google
@@ -92,7 +92,7 @@ export default function Login() {
 
         <p className="mt-6 text-center text-sm text-graphite">
           New here?{' '}
-          <button onClick={() => navigate('/signup')} className="font-semibold text-brand underline underline-offset-2">
+          <button onClick={() => navigate('/signup')} className="font-semibold text-brand-mid underline underline-offset-2">
             Create an account
           </button>
         </p>
