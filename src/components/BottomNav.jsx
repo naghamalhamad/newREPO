@@ -27,15 +27,15 @@ export default function BottomNav() {
                 {isActive && (
                   <motion.span
                     layoutId="nav-pill"
-                    className="absolute inset-0 rounded-full bg-brand shadow-[0_4px_14px_rgba(41,218,153,0.5)]"
+                    className="absolute inset-0 rounded-2xl border border-brand/40 bg-brand/25 backdrop-blur-md"
                     transition={{ type: 'spring', stiffness: 500, damping: 32 }}
                   />
                 )}
-                <span className={`relative z-10 shrink-0 transition-colors duration-200 ${isActive ? 'text-ink' : 'text-graphite'}`}>
+                <span className={`relative z-10 shrink-0 transition-colors duration-200 ${isActive ? 'text-brand-mid' : 'text-graphite'}`}>
                   <Icon active={isActive} />
                 </span>
                 {isActive && (
-                  <span className="relative z-10 whitespace-nowrap font-heading text-sm font-medium text-ink">{label}</span>
+                  <span className="relative z-10 whitespace-nowrap font-heading text-sm font-medium text-brand-mid">{label}</span>
                 )}
               </motion.span>
             )}
