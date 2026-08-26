@@ -38,7 +38,7 @@ export default function Splash() {
         transition={{ duration: 0.4, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
         className="mt-5 font-heading text-2xl font-semibold text-stone"
       >
-        Car Care
+        Circuit
       </motion.h1>
       <motion.p
         initial={{ opacity: 0 }}

@@ -5,21 +5,18 @@ import CarChargingIllustration from '../components/CarChargingIllustration'
 
 const slides = [
   {
-    eyebrow: 'Find a charger',
     title: 'Find the right charger, fast',
-    body: 'See nearby stations, how many connectors are free right now, and how long until one opens up — before you ever leave home.',
+    body: 'See nearby stations and live availability — know before you leave.',
     Illustration: FindStationIllustration,
   },
   {
-    eyebrow: 'Plug in',
     title: 'Plug in — we handle the rest',
-    body: "We detect the connection automatically and start tracking your session: energy delivered, time to finish, and running cost.",
+    body: 'We detect the connection and track energy, time, and cost live.',
     Illustration: () => <CarChargingIllustration connected charging />,
   },
   {
-    eyebrow: 'Pay in the app',
     title: 'Pay straight from your wallet',
-    body: 'No kiosk, no fumbling for a card. Your session total is ready the moment you unplug — just tap to pay.',
+    body: 'No kiosk, no card. Just tap to pay the moment you unplug.',
     Illustration: PaySuccessIllustration,
   },
 ]
@@ -83,10 +80,7 @@ export default function Onboarding() {
             </div>
 
             <motion.div variants={textIn} initial="hidden" animate="show">
-              <motion.p variants={textItem} className="mt-6 text-xs font-semibold text-brand-mid">
-                {slide.eyebrow}
-              </motion.p>
-              <motion.h1 variants={textItem} className="mt-2 font-heading text-[26px] font-semibold leading-tight text-ink">
+              <motion.h1 variants={textItem} className="mt-6 font-heading text-[22px] font-semibold leading-tight text-ink">
                 {slide.title}
               </motion.h1>
               <motion.p variants={textItem} className="mt-3 text-[15px] leading-relaxed text-graphite">
