@@ -46,7 +46,12 @@ export default function Onboarding() {
   }
 
   return (
-    <div className="relative flex min-h-dvh flex-col overflow-hidden bg-stone">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
+      className="relative flex min-h-dvh flex-col overflow-hidden bg-stone"
+    >
       <div className="pointer-events-none absolute inset-x-0 top-0 h-96 bg-linear-to-b from-brand-tint to-stone opacity-70" />
 
       <div className="relative flex justify-end px-5 pt-5">
@@ -125,7 +130,7 @@ export default function Onboarding() {
           </button>
         )}
       </div>
-    </div>
+    </motion.div>
   )
 }
 

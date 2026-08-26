@@ -1,26 +1,36 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import Logo from '../components/Logo'
 
-const SPLASH_MS = 1700
+const EXIT_START_MS = 2000
+const EXIT_DURATION_MS = 500
 
 export default function Splash() {
   const navigate = useNavigate()
+  const [leaving, setLeaving] = useState(false)
 
   useEffect(() => {
-    const t = setTimeout(() => navigate('/onboarding', { replace: true }), SPLASH_MS)
-    return () => clearTimeout(t)
+    const startExit = setTimeout(() => setLeaving(true), EXIT_START_MS)
+    const go = setTimeout(() => navigate('/onboarding', { replace: true }), EXIT_START_MS + EXIT_DURATION_MS)
+    return () => {
+      clearTimeout(startExit)
+      clearTimeout(go)
+    }
   }, [navigate])
 
   return (
-    <div className="flex min-h-dvh flex-col items-center justify-center bg-ink px-6 text-center">
+    <motion.div
+      animate={{ opacity: leaving ? 0 : 1 }}
+      transition={{ duration: EXIT_DURATION_MS / 1000, ease: [0.4, 0, 0.2, 1] }}
+      className="flex min-h-dvh flex-col items-center justify-center bg-ink px-6 text-center"
+    >
       <motion.div
         initial={{ opacity: 0, scale: 0.85 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
       >
-        <Logo size={84} />
+        <Logo size={84} animate />
       </motion.div>
       <motion.h1
         initial={{ opacity: 0, y: 8 }}
@@ -38,6 +48,6 @@ export default function Splash() {
       >
         Charge smarter
       </motion.p>
-    </div>
+    </motion.div>
   )
 }
