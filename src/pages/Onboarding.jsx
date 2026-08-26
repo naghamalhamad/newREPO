@@ -18,8 +18,8 @@ const slides = [
   },
   {
     eyebrow: 'Pay in the app',
-    title: 'Done charging? Just tap pay',
-    body: 'No card, no kiosk. Review your session total and pay straight from your phone in one tap.',
+    title: 'Pay straight from your wallet',
+    body: 'No kiosk, no fumbling for a card. Your session total is ready the moment you unplug — just tap to pay.',
     Illustration: PaySuccessIllustration,
   },
 ]
@@ -166,22 +166,28 @@ function FindStationIllustration() {
 
 function PaySuccessIllustration() {
   return (
-    <svg viewBox="0 0 280 200" className="mx-auto w-full max-w-[260px]" role="img" aria-label="Session summary with successful payment">
+    <svg viewBox="0 0 280 200" className="mx-auto w-full max-w-[260px]" role="img" aria-label="Wallet with a charging session card, payment successful">
       <ellipse cx="140" cy="176" rx="90" ry="8" className="fill-line/60" />
 
-      {/* receipt card */}
-      <rect x="76" y="36" width="128" height="132" rx="16" className="fill-surface stroke-line" strokeWidth="1.5" />
-      <rect x="96" y="58" width="60" height="8" rx="4" className="fill-line" />
-      <rect x="96" y="74" width="88" height="6" rx="3" className="fill-line" />
-      <rect x="96" y="88" width="88" height="6" rx="3" className="fill-line" />
-      <rect x="96" y="102" width="60" height="6" rx="3" className="fill-line" />
-      <line x1="96" y1="122" x2="184" y2="122" className="stroke-line" strokeWidth="1.5" />
-      <rect x="96" y="134" width="40" height="9" rx="4" className="fill-graphite" opacity="0.5" />
-      <rect x="140" y="134" width="44" height="9" rx="4" className="fill-brand-mid" />
+      {/* a plain card, tucked behind, peeking out of the wallet */}
+      <g transform="rotate(-9 140 100)">
+        <rect x="104" y="56" width="52" height="68" rx="9" className="fill-surface stroke-line" strokeWidth="1.5" />
+      </g>
+
+      {/* the charge-session card, mint, peeking out further */}
+      <g transform="rotate(7 140 100)">
+        <rect x="120" y="50" width="52" height="68" rx="9" className="fill-brand" />
+        <path d="M148 64 138 80h6l-2 12 11-13h-6l-1-11Z" className="fill-ink" strokeLinejoin="round" />
+      </g>
+
+      {/* closed wallet body, clipping the cards' lower half */}
+      <rect x="76" y="96" width="128" height="78" rx="18" className="fill-ink" />
+      <path d="M76 118c10 6 22 9 36 9h56c14 0 26-3 36-9" fill="none" stroke="var(--color-stone)" strokeOpacity="0.08" strokeWidth="2" />
+      <circle cx="184" cy="135" r="7" className="fill-brand" opacity="0.85" />
 
       {/* success badge */}
-      <circle cx="196" cy="150" r="26" className="fill-brand" stroke="var(--color-stone)" strokeWidth="4" />
-      <path d="m185 150 8 8 15-16" fill="none" className="stroke-ink" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+      <circle cx="192" cy="160" r="25" className="fill-brand" stroke="var(--color-stone)" strokeWidth="4" />
+      <path d="m181 160 7 7 14-15" fill="none" className="stroke-ink" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   )
 }
