@@ -9,18 +9,21 @@ const items = [
 
 export default function BottomNav() {
   return (
-    <nav className="fixed inset-x-0 bottom-0 z-20 bg-stone/85 shadow-[0_-1px_10px_rgba(20,23,28,0.05)] backdrop-blur-md">
-      <div className="mx-auto flex max-w-md items-stretch justify-between gap-1 px-3 pt-2 pb-[max(env(safe-area-inset-bottom),10px)]">
+    <nav
+      className="fixed inset-x-0 z-20 flex justify-center px-4"
+      style={{ bottom: 'max(env(safe-area-inset-bottom), 16px)' }}
+    >
+      <div className="flex items-center gap-1 rounded-full border border-line/60 bg-stone/70 px-2.5 py-2 shadow-[0_8px_30px_rgba(20,23,28,0.16)] backdrop-blur-xl">
         {items.map(({ to, label, icon: Icon }) => (
           <NavLink
             key={to}
             to={to}
             end={to === '/home'}
-            className="flex flex-1 flex-col items-center gap-1 py-1 font-heading text-[11px]"
+            className="flex flex-col items-center gap-0.5 px-3.5 py-1 font-heading text-[11px]"
           >
             {({ isActive }) => (
               <>
-                <motion.span whileTap={{ scale: 0.88 }} className="relative flex h-9 w-12 items-center justify-center">
+                <motion.span whileTap={{ scale: 0.88 }} className="relative flex h-9 w-11 items-center justify-center">
                   {isActive && (
                     <motion.span
                       layoutId="nav-pill"
