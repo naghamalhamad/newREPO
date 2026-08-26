@@ -42,9 +42,11 @@ export default function Home() {
         </motion.p>
 
         <motion.section variants={item} className="mt-2">
-          <div className="rounded-card bg-ink p-5 text-stone">
-            <div className="flex items-center gap-2">
-              <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-white/10">
+          <div className="relative overflow-hidden rounded-card bg-ink p-5 text-stone">
+            <div className="pointer-events-none absolute -right-8 -top-10 h-40 w-40 rounded-full bg-brand/20 blur-3xl" />
+
+            <div className="relative flex items-center gap-2">
+              <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-brand/15 text-brand">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
                   <rect x="2" y="7" width="18" height="10" rx="2.5" />
                   <path d="M22 10v4" strokeLinecap="round" />
@@ -53,17 +55,17 @@ export default function Home() {
               <span className="font-heading text-sm font-medium">Battery</span>
             </div>
 
-            <div className="mt-4 flex items-end justify-between">
+            <div className="relative mt-4 flex items-end justify-between">
               <div className="flex items-baseline gap-1 font-mono">
                 <span className="text-5xl font-bold leading-none tabular">{vehicle.batteryPct}</span>
                 <span className="text-sm text-stone/50">%</span>
               </div>
-              <p className="text-xs text-stone/45">{vehicle.name}</p>
+              <p className="text-xs text-stone/60">{vehicle.name}</p>
             </div>
 
-            <div className="mt-3 h-1.5 w-full overflow-hidden rounded-full bg-white/10">
+            <div className="relative mt-4 h-2 w-full overflow-hidden rounded-full bg-white/10">
               <div
-                className="h-full rounded-full bg-brand-light transition-all duration-700"
+                className="h-full rounded-full bg-linear-to-r from-brand-light to-brand shadow-[0_0_8px_rgba(41,218,153,0.6)] transition-all duration-700"
                 style={{ width: `${vehicle.batteryPct}%` }}
               />
             </div>
