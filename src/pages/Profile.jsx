@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import TopBar from '../components/TopBar'
 import BottomNav from '../components/BottomNav'
 import { vehicle } from '../data/mock'
@@ -12,7 +12,7 @@ const rows = [
 
 const tabs = [
   { id: 'account', label: 'Account' },
-  { id: 'settings', label: 'Settings' },
+  { id: 'settings', label: 'Notifications' },
 ]
 
 const initialNotifRows = [
@@ -24,8 +24,7 @@ const initialNotifRows = [
 
 export default function Profile() {
   const navigate = useNavigate()
-  const location = useLocation()
-  const [tab, setTab] = useState(location.state?.tab === 'settings' ? 'settings' : 'account')
+  const [tab, setTab] = useState('account')
   const [notifRows, setNotifRows] = useState(initialNotifRows)
 
   return (

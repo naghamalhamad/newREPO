@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import TopBar from '../components/TopBar'
 import { notifications } from '../data/mock'
 
@@ -11,15 +10,7 @@ const kindStyles = {
 export default function Notifications() {
   return (
     <div className="min-h-dvh bg-stone pb-10">
-      <TopBar
-        title="Notifications"
-        back
-        action={
-          <Link to="/profile" state={{ tab: 'settings' }} className="font-heading text-xs font-medium text-graphite">
-            Settings
-          </Link>
-        }
-      />
+      <TopBar title="Notifications" back />
       <main className="mx-auto max-w-md px-4 pt-3">
         <ul className="flex flex-col gap-3">
           {notifications.map((n) => {
