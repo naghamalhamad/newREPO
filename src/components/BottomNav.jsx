@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom'
+import { motion } from 'framer-motion'
 
 const items = [
   { to: '/home', label: 'Home', icon: HomeIcon },
@@ -8,7 +9,7 @@ const items = [
 
 export default function BottomNav() {
   return (
-    <nav className="fixed inset-x-0 bottom-0 z-20 border-t border-line bg-stone/95 shadow-[0_-4px_16px_rgba(20,23,28,0.06)] backdrop-blur">
+    <nav className="fixed inset-x-0 bottom-0 z-20 bg-stone/85 shadow-[0_-1px_10px_rgba(20,23,28,0.05)] backdrop-blur-md">
       <div className="mx-auto flex max-w-md items-stretch justify-between gap-1 px-3 pt-2 pb-[max(env(safe-area-inset-bottom),10px)]">
         {items.map(({ to, label, icon: Icon }) => (
           <NavLink
@@ -19,13 +20,18 @@ export default function BottomNav() {
           >
             {({ isActive }) => (
               <>
-                <span
-                  className={`flex h-9 w-12 items-center justify-center rounded-full transition-colors duration-200 ${
-                    isActive ? 'bg-brand-tint text-brand-mid' : 'text-graphite'
-                  }`}
-                >
-                  <Icon active={isActive} />
-                </span>
+                <motion.span whileTap={{ scale: 0.88 }} className="relative flex h-9 w-12 items-center justify-center">
+                  {isActive && (
+                    <motion.span
+                      layoutId="nav-pill"
+                      className="absolute inset-0 rounded-full bg-brand-tint"
+                      transition={{ type: 'spring', stiffness: 500, damping: 32 }}
+                    />
+                  )}
+                  <span className={`relative transition-colors duration-200 ${isActive ? 'text-brand-mid' : 'text-graphite'}`}>
+                    <Icon active={isActive} />
+                  </span>
+                </motion.span>
                 <span className={isActive ? 'font-medium text-ink' : 'font-normal text-graphite'}>{label}</span>
               </>
             )}
