@@ -13,7 +13,7 @@ export default function BottomNav() {
       className="fixed inset-x-0 z-20 flex justify-center px-4"
       style={{ bottom: 'max(env(safe-area-inset-bottom), 16px)' }}
     >
-      <div className="relative flex items-center gap-3 overflow-hidden rounded-full border border-white/50 bg-stone/60 p-3 shadow-[0_8px_30px_rgba(20,23,28,0.18)] backdrop-blur-xl">
+      <div className="relative flex items-center gap-3 overflow-hidden rounded-full border border-white/50 bg-stone/60 p-1.5 shadow-[0_8px_30px_rgba(20,23,28,0.18)] backdrop-blur-xl">
         <div className="pointer-events-none absolute inset-x-0 top-0 h-1/2 bg-linear-to-b from-white/50 to-transparent" />
         {items.map(({ to, label, icon: Icon }) => (
           <NavLink key={to} to={to} end={to === '/home'} aria-label={label}>
