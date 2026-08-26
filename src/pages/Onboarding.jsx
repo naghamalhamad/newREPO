@@ -1,25 +1,26 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
+import CarChargingIllustration from '../components/CarChargingIllustration'
 
 const slides = [
   {
-    eyebrow: 'Charging',
-    title: 'Charge anywhere, without the guesswork',
-    body: 'Find nearby stations, see how busy they are right now, and pay for your session in the app — no card, no app-switching.',
-    icon: BoltIcon,
+    eyebrow: 'Find a charger',
+    title: 'Find the right charger, fast',
+    body: 'See nearby stations, how many connectors are free right now, and how long until one opens up — before you ever leave home.',
+    Illustration: FindStationIllustration,
   },
   {
-    eyebrow: 'Wash & services',
-    title: 'Wash and maintenance, booked in seconds',
-    body: 'Pick a service, choose a time, and rebook your usual in one tap. Subscribe to a recurring wash and save.',
-    icon: DropIcon,
+    eyebrow: 'Plug in',
+    title: 'Plug in — we handle the rest',
+    body: "We detect the connection automatically and start tracking your session: energy delivered, time to finish, and running cost.",
+    Illustration: () => <CarChargingIllustration connected charging />,
   },
   {
-    eyebrow: 'Your account',
-    title: 'One account for your whole car',
-    body: 'Manage your vehicles, payment methods, and notifications in one place — for charging and car care alike.',
-    icon: CarIcon,
+    eyebrow: 'Pay in the app',
+    title: 'Done charging? Just tap pay',
+    body: 'No card, no kiosk. Review your session total and pay straight from your phone in one tap.',
+    Illustration: PaySuccessIllustration,
   },
 ]
 
@@ -72,16 +73,12 @@ export default function Onboarding() {
             }}
             className="flex w-full max-w-sm flex-col items-center text-center"
           >
-            <div className="relative flex h-44 w-44 items-center justify-center">
-              <span className="absolute inset-2 animate-ping rounded-full border-2 border-brand opacity-30" style={{ animationDuration: '2.6s' }} />
-              <span className="absolute inset-7 animate-ping rounded-full border-2 border-brand opacity-30" style={{ animationDuration: '2.6s', animationDelay: '0.7s' }} />
-              <span className="relative flex h-24 w-24 items-center justify-center rounded-full bg-brand text-ink shadow-lg">
-                <slide.icon />
-              </span>
+            <div className="w-full">
+              <slide.Illustration />
             </div>
 
             <motion.div variants={textIn} initial="hidden" animate="show">
- <motion.p variants={textItem} className="mt-8 text-xs font-semibold text-brand-mid">
+              <motion.p variants={textItem} className="mt-6 text-xs font-semibold text-brand-mid">
                 {slide.eyebrow}
               </motion.p>
               <motion.h1 variants={textItem} className="mt-2 font-heading text-[26px] font-semibold leading-tight text-ink">
@@ -132,27 +129,54 @@ export default function Onboarding() {
   )
 }
 
-function BoltIcon() {
+function FindStationIllustration() {
   return (
-    <svg width="36" height="36" viewBox="0 0 24 24" fill="currentColor">
-      <path d="M13 3 5 14h6l-1 7 8-11h-6l1-7Z" />
+    <svg viewBox="0 0 280 200" className="mx-auto w-full max-w-[260px]" role="img" aria-label="Map with nearby charging stations">
+      <ellipse cx="140" cy="176" rx="90" ry="8" className="fill-line/60" />
+
+      {/* faint distant stations */}
+      <g opacity="0.35">
+        <circle cx="66" cy="128" r="9" className="fill-brand-tint" />
+        <circle cx="66" cy="128" r="9" fill="none" className="stroke-brand-mid" strokeWidth="1.5" />
+        <circle cx="214" cy="120" r="9" className="fill-brand-tint" />
+        <circle cx="214" cy="120" r="9" fill="none" className="stroke-brand-mid" strokeWidth="1.5" />
+      </g>
+
+      {/* radar pulses from the main pin */}
+      <circle cx="140" cy="96" r="30" className="fill-brand/15">
+        <animate attributeName="r" values="20;46;20" dur="2.4s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0.5;0;0.5" dur="2.4s" repeatCount="indefinite" />
+      </circle>
+
+      {/* main pin */}
+      <path
+        d="M140 44c-19 0-34 15-34 34 0 25 34 62 34 62s34-37 34-62c0-19-15-34-34-34Z"
+        className="fill-ink"
+      />
+      <circle cx="140" cy="78" r="20" className="fill-brand" />
+      <path d="M144 62 130 82h8l-2 16 16-20h-8l-.5-16Z" className="fill-ink" strokeLinejoin="round" />
     </svg>
   )
 }
-function DropIcon() {
+
+function PaySuccessIllustration() {
   return (
-    <svg width="36" height="36" viewBox="0 0 24 24" fill="currentColor">
-      <path d="M12 3c3.5 4 6 7.4 6 10.5a6 6 0 1 1-12 0C6 10.4 8.5 7 12 3Z" />
-    </svg>
-  )
-}
-function CarIcon() {
-  return (
-    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
-      <path d="M4 16V11l2-4h12l2 4v5" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M3 16h18v2.5a1 1 0 0 1-1 1h-1.5a1 1 0 0 1-1-1V18h-11v.5a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V16Z" strokeLinecap="round" strokeLinejoin="round" />
-      <circle cx="7.5" cy="16.5" r="1.5" fill="currentColor" stroke="none" />
-      <circle cx="16.5" cy="16.5" r="1.5" fill="currentColor" stroke="none" />
+    <svg viewBox="0 0 280 200" className="mx-auto w-full max-w-[260px]" role="img" aria-label="Session summary with successful payment">
+      <ellipse cx="140" cy="176" rx="90" ry="8" className="fill-line/60" />
+
+      {/* receipt card */}
+      <rect x="76" y="36" width="128" height="132" rx="16" className="fill-surface stroke-line" strokeWidth="1.5" />
+      <rect x="96" y="58" width="60" height="8" rx="4" className="fill-line" />
+      <rect x="96" y="74" width="88" height="6" rx="3" className="fill-line" />
+      <rect x="96" y="88" width="88" height="6" rx="3" className="fill-line" />
+      <rect x="96" y="102" width="60" height="6" rx="3" className="fill-line" />
+      <line x1="96" y1="122" x2="184" y2="122" className="stroke-line" strokeWidth="1.5" />
+      <rect x="96" y="134" width="40" height="9" rx="4" className="fill-graphite" opacity="0.5" />
+      <rect x="140" y="134" width="44" height="9" rx="4" className="fill-brand-mid" />
+
+      {/* success badge */}
+      <circle cx="196" cy="150" r="26" className="fill-brand" stroke="var(--color-stone)" strokeWidth="4" />
+      <path d="m185 150 8 8 15-16" fill="none" className="stroke-ink" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   )
 }

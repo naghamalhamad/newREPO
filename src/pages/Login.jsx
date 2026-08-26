@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import Logo from '../components/Logo'
 
 export default function Login() {
   const navigate = useNavigate()
@@ -11,9 +12,7 @@ export default function Login() {
 
       <div className="relative flex flex-1 flex-col px-6 pt-16 pb-10">
         <div className="mb-8 flex flex-col items-center text-center">
-          <span className="flex h-16 w-16 items-center justify-center rounded-full bg-brand text-ink shadow-lg">
-            <CarIcon />
-          </span>
+          <Logo size={64} />
           <h1 className="mt-4 font-heading text-2xl font-semibold text-ink">Car Care</h1>
           <p className="mt-1 text-sm text-graphite">Charge anywhere, anytime.</p>
         </div>
@@ -101,16 +100,6 @@ export default function Login() {
   )
 }
 
-function CarIcon() {
-  return (
-    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
-      <path d="M4 16V11l2-4h12l2 4v5" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M3 16h18v2.5a1 1 0 0 1-1 1h-1.5a1 1 0 0 1-1-1V18h-11v.5a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V16Z" strokeLinecap="round" strokeLinejoin="round" />
-      <circle cx="7.5" cy="16.5" r="1.5" fill="currentColor" stroke="none" />
-      <circle cx="16.5" cy="16.5" r="1.5" fill="currentColor" stroke="none" />
-    </svg>
-  )
-}
 function PhoneIcon() {
   return (
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8}>

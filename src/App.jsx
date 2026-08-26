@@ -1,4 +1,6 @@
 import { HashRouter, Routes, Route, Navigate } from 'react-router-dom'
+import Splash from './pages/Splash'
+import Onboarding from './pages/Onboarding'
 import Login from './pages/Login'
 import Register from './pages/Register'
 import Home from './pages/Home'
@@ -24,7 +26,9 @@ export default function App() {
   return (
     <HashRouter>
       <Routes>
-        <Route path="/" element={<Navigate to="/login" replace />} />
+        <Route path="/" element={<Navigate to="/splash" replace />} />
+        <Route path="/splash" element={<Splash />} />
+        <Route path="/onboarding" element={<Onboarding />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Register />} />
         <Route path="/home" element={<Home />} />
