@@ -18,11 +18,11 @@ export default function Profile() {
       <TopBar title="Account" />
       <main className="mx-auto flex w-full max-w-md flex-1 flex-col px-4 pt-3 pb-24">
         <div className="flex items-center gap-3 rounded-card border border-line bg-surface p-4">
-          <span className="flex h-12 w-12 items-center justify-center rounded-full bg-ink font-heading text-base font-medium text-stone">
+          <span className="flex h-12 w-12 items-center justify-center rounded-full bg-ink font-heading text-base font-normal text-stone">
             J
           </span>
           <div>
-            <p className="font-semibold text-ink">Jordan Ellis</p>
+            <p className="font-medium text-ink">Jordan Ellis</p>
             <p className="text-sm text-graphite">jordan.ellis@example.com</p>
           </div>
         </div>
@@ -30,7 +30,7 @@ export default function Profile() {
         <div className="mt-4 flex flex-col divide-y divide-line overflow-hidden rounded-card border border-line bg-surface">
           {rows.map((r) => (
             <Link key={r.label} to={r.to} className="flex items-center justify-between px-4 py-4 text-left">
-              <span className="font-medium text-ink">{r.label}</span>
+              <span className="font-normal text-ink">{r.label}</span>
               <span className="flex items-center gap-2 text-sm text-graphite">
                 {r.value}
                 <span className="text-mist">›</span>
@@ -41,7 +41,7 @@ export default function Profile() {
 
         <button
           onClick={() => navigate('/login')}
-          className="mt-auto w-full rounded-xl border border-line py-4 font-heading font-semibold text-danger"
+          className="mt-auto w-full rounded-xl border border-line py-4 font-heading font-medium text-danger"
         >
           Log out
         </button>

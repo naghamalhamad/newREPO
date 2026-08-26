@@ -21,7 +21,7 @@ export default function ChargerConnect() {
     <div className="flex min-h-dvh flex-col bg-stone pb-10">
       <TopBar title="Connect Charger" back />
       <main className="mx-auto flex w-full max-w-md flex-1 flex-col items-center px-4 pt-8 text-center">
-        <p className="font-heading text-lg font-medium text-ink">{station.name}</p>
+        <p className="font-heading text-lg font-normal text-ink">{station.name}</p>
         <p className="mt-1 text-sm text-graphite">Plug the charger into your car to begin</p>
 
         <div className="mt-10 w-full">
@@ -43,12 +43,12 @@ export default function ChargerConnect() {
             <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-brand-tint text-brand-mid">
               <BoltIcon />
             </span>
-            <h2 className="mt-4 font-heading text-lg font-semibold text-ink">Charger Connected</h2>
+            <h2 className="mt-4 font-heading text-lg font-medium text-ink">Charger Connected</h2>
             <p className="mt-2 text-sm text-graphite">Your charger is plugged in and ready. Start charging when you're ready.</p>
             <button
               type="button"
               onClick={() => navigate(`/charge/${station.id}/session`, { replace: true })}
-              className="mt-6 w-full rounded-xl bg-brand py-3.5 font-heading font-semibold text-ink active:opacity-90"
+              className="mt-6 w-full rounded-xl bg-brand py-3.5 font-heading font-medium text-ink active:opacity-90"
             >
               Start Charging
             </button>

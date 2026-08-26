@@ -37,21 +37,21 @@ export default function Charging() {
               style={{ left: `${18 + i * 22}%`, top: `${30 + (i % 2) * 34}%` }}
             >
               {open && <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand/40" />}
-              <span className="relative flex h-7 w-7 items-center justify-center rounded-full border-2 border-white bg-brand text-[10px] font-bold text-ink shadow">
+              <span className="relative flex h-7 w-7 items-center justify-center rounded-full border-2 border-white bg-brand text-[10px] font-semibold text-ink shadow">
                 {s.total - s.occupied}
               </span>
             </span>
           )
         })}
- <span className="absolute bottom-2 right-3 rounded-pill bg-white/70 px-2 py-1 text-[10px] font-medium text-brand-mid/70 backdrop-blur-sm">
+ <span className="absolute bottom-2 right-3 rounded-pill bg-white/70 px-2 py-1 text-[10px] font-normal text-brand-mid/70 backdrop-blur-sm">
           Map preview
         </span>
       </div>
 
       <main className="mx-auto max-w-md px-4">
         <div className="mt-4 flex items-center justify-between">
- <h2 className="font-heading text-base font-medium text-ink">{stations.length} stations nearby</h2>
- <button className="font-heading text-xs font-medium text-graphite">Filter</button>
+ <h2 className="font-heading text-base font-normal text-ink">{stations.length} stations nearby</h2>
+ <button className="font-heading text-xs font-normal text-graphite">Filter</button>
         </div>
 
         <motion.ul variants={list} initial="hidden" animate="show" className="mt-2 flex flex-col gap-3">
@@ -66,17 +66,17 @@ export default function Charging() {
                 >
                   <div className="flex items-start justify-between gap-3">
                     <div>
-                      <p className="font-semibold text-ink">{s.name}</p>
+                      <p className="font-medium text-ink">{s.name}</p>
                       <p className="mt-1 text-sm text-graphite">{s.address}</p>
                     </div>
                     <span className="whitespace-nowrap font-mono text-sm text-graphite">{s.distanceMi} mi</span>
                   </div>
                   <div className="border-t border-line pt-3">
                     <div className="flex items-center justify-between gap-2">
-                      <span className={`rounded-pill px-3 py-1 text-xs font-semibold ${status.bg} ${status.color}`}>
+                      <span className={`rounded-pill px-3 py-1 text-xs font-medium ${status.bg} ${status.color}`}>
                         {status.text}
                       </span>
-                      <span className="tabular font-mono text-sm font-semibold text-ink">{s.total - s.occupied}/{s.total} free</span>
+                      <span className="tabular font-mono text-sm font-medium text-ink">{s.total - s.occupied}/{s.total} free</span>
                     </div>
                     <div className="mt-2 h-1.5 w-full overflow-hidden rounded-full bg-line">
                       <div className={`h-full rounded-full ${status.bar} transition-all duration-700`} style={{ width: `${occupancyPct}%` }} />

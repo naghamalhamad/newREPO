@@ -27,11 +27,11 @@ export default function SessionSummary() {
             <path d="m5 13 4 4 10-10" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </span>
-        <h1 className="mt-4 font-heading text-xl font-medium text-ink">Payment successful</h1>
+        <h1 className="mt-4 font-heading text-xl font-normal text-ink">Payment successful</h1>
         <p className="mt-2 text-graphite">${session.cost} charged to Visa •••• 4821</p>
         <button
           onClick={() => navigate('/home')}
-          className="mt-6 rounded-xl bg-brand px-6 py-3 font-heading font-semibold text-ink active:opacity-90"
+          className="mt-6 rounded-xl bg-brand px-6 py-3 font-heading font-medium text-ink active:opacity-90"
         >
           Back to Home
         </button>
@@ -45,21 +45,21 @@ export default function SessionSummary() {
       <main className="mx-auto flex w-full max-w-md flex-1 flex-col px-4 pt-3">
         <div className="rounded-card border border-line bg-surface p-5 text-center">
           <p className="text-[11px] tracking-[0.14em] text-mist">Total amount due</p>
-          <p className="mt-1 font-mono text-4xl font-extrabold text-brand-mid">${session.cost}</p>
+          <p className="mt-1 font-mono text-4xl font-bold text-brand-mid">${session.cost}</p>
         </div>
 
         <div className="mt-4 divide-y divide-line rounded-card border border-line bg-surface">
           {rows.map(([label, value, numeric]) => (
             <div key={label} className="flex items-center justify-between px-4 py-3">
               <span className="text-sm text-graphite">{label}</span>
-              <span className={`text-sm font-medium text-ink ${numeric ? 'font-mono' : ''}`}>{value}</span>
+              <span className={`text-sm font-normal text-ink ${numeric ? 'font-mono' : ''}`}>{value}</span>
             </div>
           ))}
         </div>
 
         <button
           onClick={() => setPaid(true)}
-          className="mt-auto w-full rounded-xl bg-brand py-4 text-center font-heading font-semibold text-ink active:opacity-90"
+          className="mt-auto w-full rounded-xl bg-brand py-4 text-center font-heading font-medium text-ink active:opacity-90"
         >
           Pay ${session.cost}
         </button>

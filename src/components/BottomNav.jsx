@@ -26,7 +26,7 @@ export default function BottomNav() {
                 >
                   <Icon active={isActive} />
                 </span>
-                <span className={isActive ? 'font-semibold text-ink' : 'font-medium text-graphite'}>{label}</span>
+                <span className={isActive ? 'font-medium text-ink' : 'font-normal text-graphite'}>{label}</span>
               </>
             )}
           </NavLink>

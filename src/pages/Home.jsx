@@ -37,7 +37,7 @@ export default function Home() {
     <div className="min-h-dvh bg-stone pb-24">
       <TopBar title="Home" action={<NotifBell />} />
       <motion.main variants={container} initial="hidden" animate="show" className="mx-auto max-w-md px-4 pt-4">
- <motion.p variants={item} className="font-heading text-lg font-medium text-ink">
+ <motion.p variants={item} className="font-heading text-lg font-normal text-ink">
           {greeting()}, Jordan
         </motion.p>
 
@@ -50,12 +50,12 @@ export default function Home() {
                   <path d="M22 10v4" strokeLinecap="round" />
                 </svg>
               </span>
-              <span className="font-heading text-sm font-semibold">Battery</span>
+              <span className="font-heading text-sm font-medium">Battery</span>
             </div>
 
             <div className="mt-4 flex items-end justify-between">
               <div className="flex items-baseline gap-1 font-mono">
-                <span className="text-5xl font-extrabold leading-none tabular">{vehicle.batteryPct}</span>
+                <span className="text-5xl font-bold leading-none tabular">{vehicle.batteryPct}</span>
                 <span className="text-sm text-stone/50">%</span>
               </div>
               <p className="text-xs text-stone/45">{vehicle.name}</p>
@@ -79,12 +79,12 @@ export default function Home() {
                   <path d="M12 7v5l3.5 2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </span>
-              <span className="font-heading text-sm font-semibold text-ink">Remaining</span>
+              <span className="font-heading text-sm font-medium text-ink">Remaining</span>
             </div>
 
             <div className="mt-3 flex items-baseline gap-3">
-              <span className="font-mono text-3xl font-extrabold tabular text-ink">{vehicle.rangeMi} mi</span>
-              <span className="rounded-pill bg-brand-tint px-2.5 py-1 font-mono text-xs font-semibold text-brand-mid">
+              <span className="font-mono text-3xl font-bold tabular text-ink">{vehicle.rangeMi} mi</span>
+              <span className="rounded-pill bg-brand-tint px-2.5 py-1 font-mono text-xs font-medium text-brand-mid">
                 {driveTimeLabel(vehicle.rangeMi)}
               </span>
             </div>
@@ -95,8 +95,8 @@ export default function Home() {
 
         <motion.section variants={item} className="mt-7">
           <div className="flex items-baseline justify-between">
- <h2 className="font-heading text-base font-medium text-ink">Nearest charger</h2>
- <Link to="/charge" className="font-heading text-xs font-medium text-brand-mid">
+ <h2 className="font-heading text-base font-normal text-ink">Nearest charger</h2>
+ <Link to="/charge" className="font-heading text-xs font-normal text-brand-mid">
               See map
             </Link>
           </div>
@@ -108,7 +108,7 @@ export default function Home() {
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M13 3 5 14h6l-1 7 8-11h-6l1-7Z" /></svg>
             </span>
             <span className="flex-1">
-              <span className="block font-semibold text-ink">{nearest.name}</span>
+              <span className="block font-medium text-ink">{nearest.name}</span>
               <span className="block text-sm text-graphite">{nearest.distanceMi} mi · {nearest.total - nearest.occupied} of {nearest.total} free</span>
             </span>
             <span className="text-mist">›</span>

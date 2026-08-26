@@ -24,12 +24,12 @@
   --color-warning: #ffba2f;
   --color-warning-tint: #fcf0dd;
 
-  /* --- Type: Inter, single typeface. Weight carries the hierarchy per the
+  /* --- Type: Poppins, single typeface. Weight carries the hierarchy per the
      reference scale (H1 32/Bold ... Button Small 13/Medium). No forced
      uppercase anywhere — text renders in its natural sentence case. */
-  --font-heading: "Inter", system-ui, sans-serif;
-  --font-body: "Inter", system-ui, sans-serif;
-  --font-mono: "Inter", system-ui, sans-serif;
+  --font-heading: "Poppins", system-ui, sans-serif;
+  --font-body: "Poppins", system-ui, sans-serif;
+  --font-mono: "Poppins", system-ui, sans-serif;
 
   /* --- Radius: three values only ---
      8px controls  -> Tailwind's built-in rounded-lg

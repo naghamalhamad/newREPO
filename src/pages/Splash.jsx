@@ -36,7 +36,7 @@ export default function Splash() {
         initial={{ opacity: 0, y: 8 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
-        className="mt-5 font-heading text-2xl font-semibold text-stone"
+        className="mt-5 font-heading text-2xl font-medium text-stone"
       >
         Circuit
       </motion.h1>

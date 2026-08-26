@@ -54,7 +54,7 @@ export default function ActiveSession() {
         </div>
 
         <div className="mt-2 flex items-end justify-center gap-1 font-mono">
-          <span className="text-4xl font-extrabold leading-none tabular text-ink">{Math.round(pct)}</span>
+          <span className="text-4xl font-bold leading-none tabular text-ink">{Math.round(pct)}</span>
           <span className="mb-1 text-sm text-mist">%</span>
         </div>
         <div className="mx-auto mt-2 h-1.5 w-full max-w-[220px] overflow-hidden rounded-full bg-line">
@@ -63,35 +63,35 @@ export default function ActiveSession() {
 
         <div className="mt-5 grid grid-cols-2 gap-3 text-center">
           <div className="rounded-card border border-brand-light bg-brand-tint/30 py-4">
-            <p className="font-mono tabular text-2xl font-extrabold text-brand-mid">
+            <p className="font-mono tabular text-2xl font-bold text-brand-mid">
               {done ? 'Done' : `${remainingMin} min`}
             </p>
             <p className="mt-1 text-xs text-graphite">{done ? 'charging complete' : 'time remaining'}</p>
           </div>
           <div className="rounded-card border border-brand-light bg-brand-tint/30 py-4">
-            <p className="font-mono tabular text-2xl font-extrabold text-brand-mid">+{rangeAddedMi} mi</p>
+            <p className="font-mono tabular text-2xl font-bold text-brand-mid">+{rangeAddedMi} mi</p>
             <p className="mt-1 text-xs text-graphite">range added</p>
           </div>
         </div>
 
         <div className="mt-3 grid grid-cols-3 gap-3 text-center">
           <div className="rounded-card border border-line bg-surface py-3">
-            <p className="font-mono tabular text-lg font-semibold text-ink">{mins}:{secs}</p>
+            <p className="font-mono tabular text-lg font-medium text-ink">{mins}:{secs}</p>
             <p className="mt-1 text-[10px] text-mist">elapsed</p>
           </div>
           <div className="rounded-card border border-line bg-surface py-3">
-            <p className="font-mono tabular text-lg font-semibold text-ink">{kwh}</p>
+            <p className="font-mono tabular text-lg font-medium text-ink">{kwh}</p>
             <p className="mt-1 text-[10px] text-mist">kWh</p>
           </div>
           <div className="rounded-card border border-line bg-surface py-3">
-            <p className="font-mono tabular text-lg font-semibold text-brand-mid">${cost}</p>
+            <p className="font-mono tabular text-lg font-medium text-brand-mid">${cost}</p>
             <p className="mt-1 text-[10px] text-mist">cost</p>
           </div>
         </div>
 
         <button
           onClick={() => setUnplugged(true)}
-          className="mt-auto w-full rounded-xl border border-danger/30 bg-danger-tint py-4 text-center font-heading font-semibold text-danger"
+          className="mt-auto w-full rounded-xl border border-danger/30 bg-danger-tint py-4 text-center font-heading font-medium text-danger"
         >
           Stop charging
         </button>
@@ -103,12 +103,12 @@ export default function ActiveSession() {
             <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-success-tint text-success">
               <CheckIcon />
             </span>
-            <h2 className="mt-4 font-heading text-lg font-semibold text-ink">Charging Complete</h2>
+            <h2 className="mt-4 font-heading text-lg font-medium text-ink">Charging Complete</h2>
             <p className="mt-2 text-sm text-graphite">Your battery reached {activeSession.targetBatteryPct}%. You can unplug the charger whenever you're ready.</p>
             <button
               type="button"
               onClick={() => setShowComplete(false)}
-              className="mt-6 w-full rounded-xl bg-brand py-3.5 font-heading font-semibold text-ink active:opacity-90"
+              className="mt-6 w-full rounded-xl bg-brand py-3.5 font-heading font-medium text-ink active:opacity-90"
             >
               OK
             </button>
@@ -122,12 +122,12 @@ export default function ActiveSession() {
             <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-warning-tint text-warning">
               <UnplugIcon />
             </span>
-            <h2 className="mt-4 font-heading text-lg font-semibold text-ink">Charger Unplugged</h2>
+            <h2 className="mt-4 font-heading text-lg font-medium text-ink">Charger Unplugged</h2>
             <p className="mt-2 text-sm text-graphite">Charging has stopped. Review your session details to complete payment.</p>
             <button
               type="button"
               onClick={() => navigate(`/charge/${station.id}/summary`, { replace: true, state: { kwh, cost, mins } })}
-              className="mt-6 w-full rounded-xl bg-brand py-3.5 font-heading font-semibold text-ink active:opacity-90"
+              className="mt-6 w-full rounded-xl bg-brand py-3.5 font-heading font-medium text-ink active:opacity-90"
             >
               View Session
             </button>

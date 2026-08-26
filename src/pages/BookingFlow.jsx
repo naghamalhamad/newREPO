@@ -19,9 +19,9 @@ export default function BookingFlow() {
             <path d="m5 13 4 4 10-10" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </span>
- <h1 className="mt-4 font-heading text-xl font-medium text-ink">Booking confirmed</h1>
+ <h1 className="mt-4 font-heading text-xl font-normal text-ink">Booking confirmed</h1>
         <p className="mt-2 text-graphite">{service.name} · {slot} · Suds & Co — Downtown</p>
-        <Link to="/wash" className="mt-6 rounded-xl bg-brand px-6 py-3 font-heading font-semibold text-ink">
+        <Link to="/wash" className="mt-6 rounded-xl bg-brand px-6 py-3 font-heading font-medium text-ink">
           Back to Services
         </Link>
       </div>
@@ -38,22 +38,22 @@ export default function BookingFlow() {
           </div>
         )}
         <div className="rounded-card border border-line bg-surface p-4">
- <p className="font-heading text-lg font-medium text-ink">{service.name}</p>
+ <p className="font-heading text-lg font-normal text-ink">{service.name}</p>
           <p className="mt-1 text-sm text-graphite">{service.desc} · {service.mins} min</p>
-          <p className="mt-2 font-mono text-sm font-semibold text-brand-mid">
+          <p className="mt-2 font-mono text-sm font-medium text-brand-mid">
             {service.priceFrom === 0 ? 'Free' : `from $${service.priceFrom}`}
           </p>
         </div>
 
         <section className="mt-6">
- <h3 className="font-heading text-base font-medium text-ink">Vehicle</h3>
-          <div className="mt-2 rounded-card border border-line bg-surface p-4 font-semibold text-ink">
+ <h3 className="font-heading text-base font-normal text-ink">Vehicle</h3>
+          <div className="mt-2 rounded-card border border-line bg-surface p-4 font-medium text-ink">
             My Model Y · EV 402 CC
           </div>
         </section>
 
         <section className="mt-6">
- <h3 className="font-heading text-base font-medium text-ink">Today — pick a time</h3>
+ <h3 className="font-heading text-base font-normal text-ink">Today — pick a time</h3>
           <div className="mt-2 grid grid-cols-3 gap-2">
             {timeSlots.map((t) => (
               <button
@@ -72,17 +72,17 @@ export default function BookingFlow() {
         </section>
 
         <section className="mt-6">
- <h3 className="font-heading text-base font-medium text-ink">Payment</h3>
+ <h3 className="font-heading text-base font-normal text-ink">Payment</h3>
           <div className="mt-2 flex items-center justify-between rounded-card border border-line bg-surface p-4">
-            <span className="font-mono font-semibold text-ink">Visa •••• 4821</span>
- <button className="font-heading text-xs font-medium text-brand-mid">Change</button>
+            <span className="font-mono font-medium text-ink">Visa •••• 4821</span>
+ <button className="font-heading text-xs font-normal text-brand-mid">Change</button>
           </div>
         </section>
 
         <button
           disabled={!slot}
           onClick={() => setConfirmed(true)}
-          className="mt-auto w-full rounded-xl bg-brand py-4 text-center font-heading font-semibold text-ink disabled:bg-line disabled:text-disabled-text"
+          className="mt-auto w-full rounded-xl bg-brand py-4 text-center font-heading font-medium text-ink disabled:bg-line disabled:text-disabled-text"
         >
           Confirm & pay {service.priceFrom > 0 ? `$${service.priceFrom}` : ''}
         </button>

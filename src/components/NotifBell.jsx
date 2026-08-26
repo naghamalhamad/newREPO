@@ -10,7 +10,7 @@ export default function NotifBell() {
         <path d="M10 19a2 2 0 0 0 4 0" strokeLinecap="round" />
       </svg>
       {unread > 0 && (
-        <span className="absolute -right-1 -top-1 flex h-4 min-w-4 items-center justify-center rounded-full bg-danger px-1 text-[9px] font-semibold text-white">
+        <span className="absolute -right-1 -top-1 flex h-4 min-w-4 items-center justify-center rounded-full bg-danger px-1 text-[9px] font-medium text-white">
           {unread}
         </span>
       )}

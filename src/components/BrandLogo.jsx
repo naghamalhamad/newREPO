@@ -6,7 +6,7 @@ import { brandLogoData } from './brandLogoData'
 export default function BrandLogo({ brand, monogram }) {
   const logo = brandLogoData[brand]
   if (!logo) {
-    return <span className="font-heading text-[10px] font-bold tracking-tight">{monogram}</span>
+    return <span className="font-heading text-[10px] font-semibold tracking-tight">{monogram}</span>
   }
   return (
     <svg viewBox={logo.viewBox} className="h-4 w-4" fill="currentColor" aria-hidden="true">

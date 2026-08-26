@@ -68,12 +68,12 @@ export default function Register() {
 
         {step === 1 && (
           <div className="flex flex-1 flex-col">
-            <h1 className="font-heading text-2xl font-semibold text-ink">Create your account</h1>
+            <h1 className="font-heading text-2xl font-medium text-ink">Create your account</h1>
             <p className="mt-1 text-sm text-graphite">Let's start with the basics.</p>
 
             <div className="mt-7 flex flex-col gap-5">
               <label className="flex flex-col gap-2">
-                <span className="text-[11px] font-medium tracking-[0.08em] text-graphite">Phone number</span>
+                <span className="text-[11px] font-normal tracking-[0.08em] text-graphite">Phone number</span>
                 <div className="relative">
                   <span className="pointer-events-none absolute inset-y-0 left-4 flex items-center text-mist">
                     <PhoneIcon />
@@ -89,7 +89,7 @@ export default function Register() {
               </label>
 
               <label className="flex flex-col gap-2">
-                <span className="text-[11px] font-medium tracking-[0.08em] text-graphite">Password</span>
+                <span className="text-[11px] font-normal tracking-[0.08em] text-graphite">Password</span>
                 <div className="relative">
                   <span className="pointer-events-none absolute inset-y-0 left-4 flex items-center text-mist">
                     <LockIcon />
@@ -118,7 +118,7 @@ export default function Register() {
                 type="button"
                 disabled={!step1Valid}
                 onClick={() => setStep(2)}
-                className="rounded-xl bg-brand py-4 text-center font-heading font-semibold text-ink active:opacity-90 disabled:bg-line disabled:text-disabled-text"
+                className="rounded-xl bg-brand py-4 text-center font-heading font-medium text-ink active:opacity-90 disabled:bg-line disabled:text-disabled-text"
               >
                 Continue
               </button>
@@ -132,7 +132,7 @@ export default function Register() {
               <button
                 type="button"
                 onClick={() => setStep(2)}
-                className="flex items-center justify-center gap-2.5 rounded-xl border border-brand py-4 text-center font-heading font-semibold text-brand-mid active:bg-brand-tint/40"
+                className="flex items-center justify-center gap-2.5 rounded-xl border border-brand py-4 text-center font-heading font-medium text-brand-mid active:bg-brand-tint/40"
               >
                 <GoogleIcon />
                 Sign up with Google
@@ -140,7 +140,7 @@ export default function Register() {
 
               <p className="text-center text-sm text-graphite">
                 Already have an account?{' '}
-                <Link to="/login" className="font-semibold text-brand-mid underline underline-offset-2">
+                <Link to="/login" className="font-medium text-brand-mid underline underline-offset-2">
                   Log in
                 </Link>
               </p>
@@ -150,7 +150,7 @@ export default function Register() {
 
         {step === 2 && (
           <div className="flex flex-1 flex-col">
-            <h1 className="font-heading text-2xl font-semibold text-ink">What do you drive?</h1>
+            <h1 className="font-heading text-2xl font-medium text-ink">What do you drive?</h1>
             <p className="mt-1 text-sm text-graphite">Search for your car's brand.</p>
 
             {!manualEntry ? (
@@ -190,7 +190,7 @@ export default function Register() {
                           }`}>
                             <BrandLogo brand={b} monogram={carBrandMonograms[b] ?? b.slice(0, 2).toUpperCase()} />
                           </span>
-                          <span className={`flex-1 text-sm font-medium ${brand === b ? 'text-brand-mid' : 'text-ink'}`}>
+                          <span className={`flex-1 text-sm font-normal ${brand === b ? 'text-brand-mid' : 'text-ink'}`}>
                             {b}
                           </span>
                         </button>
@@ -202,7 +202,7 @@ export default function Register() {
                 <button
                   type="button"
                   onClick={() => setManualEntry(true)}
-                  className="mt-4 text-center text-sm font-medium text-brand-mid underline underline-offset-2"
+                  className="mt-4 text-center text-sm font-normal text-brand-mid underline underline-offset-2"
                 >
                   Can't find your car? Enter it manually
                 </button>
@@ -210,7 +210,7 @@ export default function Register() {
             ) : (
               <div className="flex flex-1 flex-col gap-2">
                 <label className="mt-6 flex flex-col gap-2">
-                  <span className="text-[11px] font-medium tracking-[0.08em] text-graphite">Car brand</span>
+                  <span className="text-[11px] font-normal tracking-[0.08em] text-graphite">Car brand</span>
                   <input
                     autoFocus
                     value={manualBrand}
@@ -225,7 +225,7 @@ export default function Register() {
                     setManualEntry(false)
                     setManualBrand('')
                   }}
-                  className="mt-2 text-center text-sm font-medium text-brand-mid underline underline-offset-2"
+                  className="mt-2 text-center text-sm font-normal text-brand-mid underline underline-offset-2"
                 >
                   Pick from the list instead
                 </button>
@@ -234,7 +234,7 @@ export default function Register() {
                   type="button"
                   disabled={!step2Valid}
                   onClick={() => setStep(3)}
-                  className="mt-auto rounded-xl bg-brand py-4 text-center font-heading font-semibold text-ink active:opacity-90 disabled:bg-line disabled:text-disabled-text"
+                  className="mt-auto rounded-xl bg-brand py-4 text-center font-heading font-medium text-ink active:opacity-90 disabled:bg-line disabled:text-disabled-text"
                 >
                   Continue
                 </button>
@@ -245,11 +245,11 @@ export default function Register() {
 
         {step === 3 && (
           <div className="flex flex-1 flex-col">
-            <h1 className="font-heading text-2xl font-semibold text-ink">A few more details</h1>
+            <h1 className="font-heading text-2xl font-medium text-ink">A few more details</h1>
             <p className="mt-1 text-sm text-graphite">This helps us match you to the right chargers.</p>
 
             <section className="mt-7">
-              <h2 className="font-heading text-base font-medium text-ink">Vehicle model</h2>
+              <h2 className="font-heading text-base font-normal text-ink">Vehicle model</h2>
               {modelOptions.length > 0 ? (
                 <div className="mt-3 grid grid-cols-2 gap-2.5">
                   {modelOptions.map((m) => (
@@ -266,7 +266,7 @@ export default function Register() {
                       }`}>
                         <CarIcon />
                       </span>
-                      <span className={`flex-1 text-sm font-medium ${carModel === m ? 'text-brand-mid' : 'text-ink'}`}>
+                      <span className={`flex-1 text-sm font-normal ${carModel === m ? 'text-brand-mid' : 'text-ink'}`}>
                         {m}
                       </span>
                     </button>
@@ -283,7 +283,7 @@ export default function Register() {
             </section>
 
             <section className="mt-6">
-              <h2 className="font-heading text-base font-medium text-ink">Charger connector</h2>
+              <h2 className="font-heading text-base font-normal text-ink">Charger connector</h2>
               <div className="mt-3 grid grid-cols-2 gap-2.5">
                 {chargerTypes.map((c) => (
                   <button
@@ -299,7 +299,7 @@ export default function Register() {
                     }`}>
                       <PlugIcon />
                     </span>
-                    <span className={`flex-1 text-sm font-medium ${chargerType === c ? 'text-brand-mid' : 'text-ink'}`}>
+                    <span className={`flex-1 text-sm font-normal ${chargerType === c ? 'text-brand-mid' : 'text-ink'}`}>
                       {c}
                     </span>
                   </button>
@@ -311,7 +311,7 @@ export default function Register() {
               type="button"
               disabled={!step3Valid}
               onClick={finish}
-              className="mt-auto rounded-xl bg-brand py-4 text-center font-heading font-semibold text-ink active:opacity-90 disabled:bg-line disabled:text-disabled-text"
+              className="mt-auto rounded-xl bg-brand py-4 text-center font-heading font-medium text-ink active:opacity-90 disabled:bg-line disabled:text-disabled-text"
             >
               Finish
             </button>
@@ -325,20 +325,20 @@ export default function Register() {
             <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-brand-tint text-brand-mid">
               <PinIcon />
             </span>
-            <h2 className="mt-4 font-heading text-lg font-semibold text-ink">Allow "Circuit" to use your location?</h2>
+            <h2 className="mt-4 font-heading text-lg font-medium text-ink">Allow "Circuit" to use your location?</h2>
             <p className="mt-2 text-sm text-graphite">Used to show nearby charging stations and estimate how long it'll take to get there.</p>
             <div className="mt-6 flex flex-col gap-2">
               <button
                 type="button"
                 onClick={() => navigate('/home')}
-                className="rounded-xl bg-brand py-3.5 font-heading font-semibold text-ink active:opacity-90"
+                className="rounded-xl bg-brand py-3.5 font-heading font-medium text-ink active:opacity-90"
               >
                 Allow While Using App
               </button>
               <button
                 type="button"
                 onClick={() => navigate('/home')}
-                className="rounded-xl py-3.5 font-heading font-semibold text-graphite"
+                className="rounded-xl py-3.5 font-heading font-medium text-graphite"
               >
                 Don't Allow
               </button>

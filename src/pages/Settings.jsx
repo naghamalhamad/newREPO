@@ -26,7 +26,7 @@ export default function Settings() {
               className="flex w-full items-center justify-between px-4 py-4 text-left active:bg-brand-tint/30"
             >
               <span>
-                <span className="block font-medium text-ink">{r.label}</span>
+                <span className="block font-normal text-ink">{r.label}</span>
                 <span className="block text-sm text-graphite">{r.desc}</span>
               </span>
               <span className={`relative h-6 w-10 shrink-0 rounded-pill transition-colors ${r.on ? 'bg-brand' : 'bg-line'}`}>

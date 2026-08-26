@@ -13,20 +13,20 @@ export default function PaymentMethods() {
           {methods.map((m) => (
             <div key={m.id} className="flex items-center justify-between rounded-card border border-line bg-surface p-4">
               <span className="flex items-center gap-3">
-                <span className="flex h-9 w-12 items-center justify-center rounded-lg bg-ink text-[10px] font-semibold text-stone">
+                <span className="flex h-9 w-12 items-center justify-center rounded-lg bg-ink text-[10px] font-medium text-stone">
                   {m.brand.slice(0, 4).toUpperCase()}
                 </span>
                 <span>
-                  <span className="block font-semibold text-ink">•••• {m.last4}</span>
+                  <span className="block font-medium text-ink">•••• {m.last4}</span>
                   <span className="block text-sm text-graphite">Expires {m.expiry}</span>
                 </span>
               </span>
               {m.primary ? (
-                <span className="rounded-pill bg-success-tint px-3 py-1 text-[11px] font-medium text-success">default</span>
+                <span className="rounded-pill bg-success-tint px-3 py-1 text-[11px] font-normal text-success">default</span>
               ) : (
                 <button
                   onClick={() => setMethods((ms) => ms.map((x) => ({ ...x, primary: x.id === m.id })))}
- className="font-heading text-xs font-medium text-brand-mid"
+ className="font-heading text-xs font-normal text-brand-mid"
                 >
                   Make default
                 </button>
@@ -35,7 +35,7 @@ export default function PaymentMethods() {
           ))}
         </div>
 
-        <button className="mt-auto w-full rounded-xl border border-dashed border-line py-4 font-heading font-semibold text-graphite">
+        <button className="mt-auto w-full rounded-xl border border-dashed border-line py-4 font-heading font-medium text-graphite">
           + Add a card
         </button>
       </main>

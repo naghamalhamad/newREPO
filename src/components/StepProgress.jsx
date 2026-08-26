@@ -1,7 +1,7 @@
 export default function StepProgress({ step, total }) {
   return (
     <div>
-      <p className="text-[11px] font-medium tracking-[0.08em] text-graphite">
+      <p className="text-[11px] font-normal tracking-[0.08em] text-graphite">
         Step {step} of {total}
       </p>
       <div className="mt-2 flex gap-1.5">

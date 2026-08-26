@@ -13,7 +13,7 @@ export default function Login() {
       <div className="relative flex flex-1 flex-col px-6 pt-16 pb-10">
         <div className="mb-8 flex flex-col items-center text-center">
           <Logo size={64} />
-          <h1 className="mt-4 font-heading text-2xl font-semibold text-ink">Circuit</h1>
+          <h1 className="mt-4 font-heading text-2xl font-medium text-ink">Circuit</h1>
         </div>
 
         <form
@@ -24,7 +24,7 @@ export default function Login() {
           }}
         >
           <label className="flex flex-col gap-2">
-            <span className="text-[11px] font-medium tracking-[0.08em] text-graphite">Phone number</span>
+            <span className="text-[11px] font-normal tracking-[0.08em] text-graphite">Phone number</span>
             <div className="relative">
               <span className="pointer-events-none absolute inset-y-0 left-4 flex items-center text-mist">
                 <PhoneIcon />
@@ -40,7 +40,7 @@ export default function Login() {
 
           <label className="flex flex-col gap-2">
             <div className="flex items-center justify-between">
-              <span className="text-[11px] font-medium tracking-[0.08em] text-graphite">Password</span>
+              <span className="text-[11px] font-normal tracking-[0.08em] text-graphite">Password</span>
             </div>
             <div className="relative">
               <span className="pointer-events-none absolute inset-y-0 left-4 flex items-center text-mist">
@@ -66,7 +66,7 @@ export default function Login() {
           <div className="mt-auto flex flex-col gap-5">
             <button
               type="submit"
-              className="rounded-xl bg-brand py-4 text-center font-heading font-semibold text-ink active:opacity-90"
+              className="rounded-xl bg-brand py-4 text-center font-heading font-medium text-ink active:opacity-90"
             >
               Log in
             </button>
@@ -80,7 +80,7 @@ export default function Login() {
             <button
               type="button"
               onClick={() => navigate('/home')}
-              className="flex items-center justify-center gap-2.5 rounded-xl border border-brand py-4 text-center font-heading font-semibold text-brand-mid active:bg-brand-tint/40"
+              className="flex items-center justify-center gap-2.5 rounded-xl border border-brand py-4 text-center font-heading font-medium text-brand-mid active:bg-brand-tint/40"
             >
               <GoogleIcon />
               Continue with Google
@@ -90,7 +90,7 @@ export default function Login() {
 
         <p className="mt-6 text-center text-sm text-graphite">
           New here?{' '}
-          <button onClick={() => navigate('/signup')} className="font-semibold text-brand-mid underline underline-offset-2">
+          <button onClick={() => navigate('/signup')} className="font-medium text-brand-mid underline underline-offset-2">
             Create an account
           </button>
         </p>

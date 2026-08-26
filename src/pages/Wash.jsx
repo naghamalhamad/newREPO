@@ -26,8 +26,8 @@ export default function Wash() {
         <div className="rounded-card bg-brand p-5 text-ink">
           <div className="flex items-start justify-between gap-4">
             <div>
-              <p className="text-xs font-semibold text-ink/70">Next booking</p>
-              <p className="mt-1 text-xl font-semibold">{nextBooking.service}</p>
+              <p className="text-xs font-medium text-ink/70">Next booking</p>
+              <p className="mt-1 text-xl font-medium">{nextBooking.service}</p>
               <p className="mt-1 text-sm text-ink/80">{nextBooking.provider}</p>
               <p className="text-sm text-ink/80">{nextBooking.when}</p>
             </div>
@@ -36,7 +36,7 @@ export default function Wash() {
             </span>
           </div>
           <div className="mt-4 flex items-center gap-2 border-t border-white/15 pt-3">
-            <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-white/15 font-mono text-xs font-bold tabular">
+            <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-white/15 font-mono text-xs font-semibold tabular">
               {nextBooking.queuePosition}
             </span>
             <span className="text-sm text-ink/85">people ahead of you in the queue</span>
@@ -44,14 +44,14 @@ export default function Wash() {
         </div>
 
         <div className="mt-3 flex justify-end">
- <Link to="/wash/history" className="font-heading text-xs font-medium text-graphite">
+ <Link to="/wash/history" className="font-heading text-xs font-normal text-graphite">
             View bookings
           </Link>
         </div>
 
         <Link
           to="/wash/rebook?rebook=1"
-          className="mt-2 flex items-center justify-between rounded-card border border-dashed border-brand/40 bg-brand-tint/40 px-4 py-3 font-heading text-sm font-semibold text-brand-mid"
+          className="mt-2 flex items-center justify-between rounded-card border border-dashed border-brand/40 bg-brand-tint/40 px-4 py-3 font-heading text-sm font-medium text-brand-mid"
         >
           Rebook “{nextBooking.service}” in one tap
           <span>›</span>
@@ -62,7 +62,7 @@ export default function Wash() {
           className="mt-3 flex items-center justify-between rounded-card bg-ink px-4 py-4 font-heading text-sm text-stone"
         >
           <span>
-            <span className="block font-semibold">2× per week wash</span>
+            <span className="block font-medium">2× per week wash</span>
             <span className="block text-stone/60">Subscribe & save 20%</span>
           </span>
           <span>›</span>
@@ -70,7 +70,7 @@ export default function Wash() {
 
         {groups.map((g) => (
           <section key={g.label} className="mt-7">
- <h2 className="font-heading text-base font-medium text-ink">{g.label}</h2>
+ <h2 className="font-heading text-base font-normal text-ink">{g.label}</h2>
             <motion.div variants={list} initial="hidden" animate="show" className="mt-3 flex flex-col gap-3">
               {g.items.map((s) => (
                 <motion.div key={s.id} variants={row}>
@@ -79,10 +79,10 @@ export default function Wash() {
                     className="flex items-center justify-between rounded-card border border-line bg-surface p-4 transition-colors active:bg-brand-tint/30"
                   >
                     <span>
-                      <span className="block font-semibold text-ink">{s.name}</span>
+                      <span className="block font-medium text-ink">{s.name}</span>
                       <span className="block text-sm text-graphite">{s.desc} · {s.mins} min</span>
                     </span>
-                    <span className="font-mono text-sm font-semibold text-brand-mid">
+                    <span className="font-mono text-sm font-medium text-brand-mid">
                       {s.priceFrom === 0 ? 'Free' : `from $${s.priceFrom}`}
                     </span>
                   </Link>

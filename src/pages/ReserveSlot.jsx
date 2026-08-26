@@ -33,10 +33,10 @@ export default function ReserveSlot() {
             <path d="m5 13 4 4 10-10" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </span>
-        <h1 className="mt-4 font-heading text-xl font-medium text-ink">Slot reserved</h1>
+        <h1 className="mt-4 font-heading text-xl font-normal text-ink">Slot reserved</h1>
         <p className="mt-2 text-graphite">{station.name} · {day.label}, {time}</p>
         <p className="mt-1 text-sm text-mist">We'll hold a connector for you 10 minutes past your slot.</p>
-        <Link to="/home" className="mt-6 rounded-xl bg-brand px-6 py-3 font-heading font-semibold text-ink">
+        <Link to="/home" className="mt-6 rounded-xl bg-brand px-6 py-3 font-heading font-medium text-ink">
           Back to Home
         </Link>
       </div>
@@ -48,12 +48,12 @@ export default function ReserveSlot() {
       <TopBar title="Reserve a slot" back />
       <main className="mx-auto flex w-full max-w-md flex-1 flex-col px-4 pt-3">
         <div className="rounded-card border border-line bg-surface p-4">
-          <p className="font-heading text-lg font-medium text-ink">{station.name}</p>
+          <p className="font-heading text-lg font-normal text-ink">{station.name}</p>
           <p className="mt-1 text-sm text-graphite">{station.address}</p>
         </div>
 
         <section className="mt-6">
-          <h3 className="font-heading text-base font-medium text-ink">Day</h3>
+          <h3 className="font-heading text-base font-normal text-ink">Day</h3>
           <div className="mt-2 grid grid-cols-5 gap-2">
             {days.map((d) => (
               <button
@@ -63,7 +63,7 @@ export default function ReserveSlot() {
                   day.key === d.key ? 'border-brand bg-brand text-ink' : 'border-line bg-surface text-graphite'
                 }`}
               >
-                <span className="text-xs font-semibold">{d.label}</span>
+                <span className="text-xs font-medium">{d.label}</span>
                 <span className={`text-[11px] ${day.key === d.key ? 'text-ink/70' : 'text-mist'}`}>{d.sub}</span>
               </button>
             ))}
@@ -71,7 +71,7 @@ export default function ReserveSlot() {
         </section>
 
         <section className="mt-6">
-          <h3 className="font-heading text-base font-medium text-ink">Time</h3>
+          <h3 className="font-heading text-base font-normal text-ink">Time</h3>
           <div className="mt-2 grid grid-cols-3 gap-2">
             {timeSlots.map((t) => (
               <button
@@ -94,7 +94,7 @@ export default function ReserveSlot() {
         <button
           disabled={!time}
           onClick={() => setConfirmed(true)}
-          className="mt-auto w-full rounded-xl bg-brand py-4 text-center font-heading font-semibold text-ink active:opacity-90 disabled:bg-line disabled:text-disabled-text"
+          className="mt-auto w-full rounded-xl bg-brand py-4 text-center font-heading font-medium text-ink active:opacity-90 disabled:bg-line disabled:text-disabled-text"
         >
           {time ? `Reserve ${day.label}, ${time}` : 'Pick a time'}
         </button>

@@ -52,7 +52,7 @@ export default function Onboarding() {
       <div className="pointer-events-none absolute inset-x-0 top-0 h-96 bg-linear-to-b from-brand-tint to-stone opacity-70" />
 
       <div className="relative flex justify-end px-5 pt-5">
-        <button onClick={() => navigate('/login')} className="text-sm font-medium text-graphite">
+        <button onClick={() => navigate('/login')} className="text-sm font-normal text-graphite">
           Skip
         </button>
       </div>
@@ -80,7 +80,7 @@ export default function Onboarding() {
             </div>
 
             <motion.div variants={textIn} initial="hidden" animate="show">
-              <motion.h1 variants={textItem} className="mt-6 font-heading text-[22px] font-semibold leading-tight text-ink">
+              <motion.h1 variants={textItem} className="mt-6 font-heading text-[22px] font-medium leading-tight text-ink">
                 {slide.title}
               </motion.h1>
               <motion.p variants={textItem} className="mt-3 text-[15px] leading-relaxed text-graphite">
@@ -108,14 +108,14 @@ export default function Onboarding() {
         {isLast ? (
           <button
             onClick={() => navigate('/login')}
-            className="w-full rounded-xl bg-brand py-4 text-center font-heading font-semibold text-ink active:opacity-90"
+            className="w-full rounded-xl bg-brand py-4 text-center font-heading font-medium text-ink active:opacity-90"
           >
             Get started
           </button>
         ) : (
           <button
             onClick={() => go(index + 1)}
-            className="flex w-full items-center justify-center gap-2 rounded-xl bg-brand py-4 text-center font-heading font-semibold text-ink active:opacity-90"
+            className="flex w-full items-center justify-center gap-2 rounded-xl bg-brand py-4 text-center font-heading font-medium text-ink active:opacity-90"
           >
             Next
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.4}>

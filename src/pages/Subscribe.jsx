@@ -16,9 +16,9 @@ export default function Subscribe() {
     const plan = plans.find((p) => p.id === picked)
     return (
       <div className="flex min-h-dvh flex-col items-center justify-center bg-stone px-6 text-center">
- <h1 className="font-heading text-xl font-medium text-ink">You're subscribed</h1>
+ <h1 className="font-heading text-xl font-normal text-ink">You're subscribed</h1>
         <p className="mt-2 text-graphite">{plan.name} wash package · ${plan.price}/mo</p>
-        <Link to="/wash" className="mt-6 rounded-xl bg-brand px-6 py-3 font-heading font-semibold text-ink">
+        <Link to="/wash" className="mt-6 rounded-xl bg-brand px-6 py-3 font-heading font-medium text-ink">
           Back to Services
         </Link>
       </div>
@@ -40,16 +40,16 @@ export default function Subscribe() {
               }`}
             >
               <span>
-                <span className="block font-semibold text-ink">{p.name}</span>
+                <span className="block font-medium text-ink">{p.name}</span>
                 {p.save && <span className="block text-sm text-brand-mid">Save {p.save}</span>}
               </span>
-              <span className="font-mono font-semibold text-brand-mid">${p.price}/mo</span>
+              <span className="font-mono font-medium text-brand-mid">${p.price}/mo</span>
             </button>
           ))}
         </div>
         <button
           onClick={() => setConfirmed(true)}
-          className="mt-auto w-full rounded-xl bg-brand py-4 text-center font-heading font-semibold text-ink"
+          className="mt-auto w-full rounded-xl bg-brand py-4 text-center font-heading font-medium text-ink"
         >
           Subscribe
         </button>

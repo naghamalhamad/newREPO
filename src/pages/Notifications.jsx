@@ -20,7 +20,7 @@ export default function Notifications() {
                 <span className={`mt-1 h-2 w-2 shrink-0 rounded-full ${n.unread ? k.text.replace('text-', 'bg-') : 'bg-transparent'}`} />
                 <span className="flex-1">
                   <span className="flex items-baseline justify-between gap-2">
-                    <span className="font-semibold text-ink">{n.title}</span>
+                    <span className="font-medium text-ink">{n.title}</span>
                     <span className="whitespace-nowrap text-[11px] text-mist">{n.when}</span>
                   </span>
                   <span className="mt-1 block text-sm text-graphite">{n.body}</span>

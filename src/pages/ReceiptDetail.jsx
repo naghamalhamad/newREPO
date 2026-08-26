@@ -19,14 +19,14 @@ export default function ReceiptDetail() {
       <main className="mx-auto max-w-md px-4 pt-3">
         <div className="rounded-card border border-line bg-surface p-5 text-center">
  <p className="text-[11px] tracking-[0.14em] text-mist">Total charged</p>
-          <p className="mt-1 font-mono text-4xl font-extrabold text-brand-mid">${r.cost.toFixed(2)}</p>
+          <p className="mt-1 font-mono text-4xl font-bold text-brand-mid">${r.cost.toFixed(2)}</p>
         </div>
 
         <div className="mt-4 divide-y divide-line rounded-card border border-line bg-surface">
           {rows.map(([label, value, numeric]) => (
             <div key={label} className="flex items-center justify-between px-4 py-3">
               <span className="text-sm text-graphite">{label}</span>
-              <span className={`text-sm font-medium text-ink ${numeric ? 'font-mono' : ''}`}>{value}</span>
+              <span className={`text-sm font-normal text-ink ${numeric ? 'font-mono' : ''}`}>{value}</span>
             </div>
           ))}
         </div>

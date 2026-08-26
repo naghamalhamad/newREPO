@@ -22,7 +22,7 @@ export default function Vehicles() {
                 </svg>
               </span>
               <span className="flex-1">
-                <span className="block font-semibold text-ink">{v.name}</span>
+                <span className="block font-medium text-ink">{v.name}</span>
                 <span className="block text-sm text-graphite">{v.plate} · {v.connector} · {v.color}</span>
               </span>
             </div>
@@ -51,10 +51,10 @@ export default function Vehicles() {
               />
             </label>
             <div className="flex gap-3">
-              <button type="button" onClick={() => setAdding(false)} className="flex-1 rounded-xl border border-brand py-3 font-heading font-semibold text-brand-mid">
+              <button type="button" onClick={() => setAdding(false)} className="flex-1 rounded-xl border border-brand py-3 font-heading font-medium text-brand-mid">
                 Cancel
               </button>
-              <button type="submit" className="flex-1 rounded-xl bg-brand py-3 font-heading font-semibold text-ink">
+              <button type="submit" className="flex-1 rounded-xl bg-brand py-3 font-heading font-medium text-ink">
                 Add vehicle
               </button>
             </div>
@@ -62,7 +62,7 @@ export default function Vehicles() {
         ) : (
           <button
             onClick={() => setAdding(true)}
-            className="mt-auto w-full rounded-xl border border-dashed border-line py-4 font-heading font-semibold text-graphite"
+            className="mt-auto w-full rounded-xl border border-dashed border-line py-4 font-heading font-medium text-graphite"
           >
             + Add a vehicle
           </button>
