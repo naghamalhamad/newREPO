@@ -27,7 +27,7 @@ export default function BottomNav() {
                 {isActive && (
                   <motion.span
                     layoutId="nav-pill"
-                    className="absolute inset-0 rounded-2xl border border-brand/40 bg-brand/25 backdrop-blur-md"
+                    className="absolute inset-0 rounded-full border border-brand/40 bg-brand/25 backdrop-blur-md"
                     transition={{ type: 'spring', stiffness: 500, damping: 32 }}
                   />
                 )}
