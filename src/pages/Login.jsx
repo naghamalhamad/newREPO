@@ -14,7 +14,6 @@ export default function Login() {
         <div className="mb-8 flex flex-col items-center text-center">
           <Logo size={64} />
           <h1 className="mt-4 font-heading text-2xl font-semibold text-ink">Circuit</h1>
-          <p className="mt-1 text-sm text-graphite">Charge anywhere, anytime.</p>
         </div>
 
         <form
