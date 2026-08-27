@@ -22,7 +22,7 @@ export default function BottomNav() {
                 layout
                 transition={{ type: 'spring', stiffness: 500, damping: 32 }}
                 whileTap={{ scale: 0.92 }}
-                className={`relative flex h-14 items-center justify-center gap-2 rounded-full ${isActive ? 'px-5' : 'w-14'}`}
+                className={`relative flex h-16 items-center justify-center gap-2 rounded-full ${isActive ? 'px-5' : 'w-16'}`}
               >
                 {isActive && (
                   <motion.span
