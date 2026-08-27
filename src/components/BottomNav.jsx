@@ -11,7 +11,7 @@ export default function BottomNav() {
   return (
     <nav
       className="fixed inset-x-0 z-20 flex justify-center px-4"
-      style={{ bottom: 'max(env(safe-area-inset-bottom), 16px)' }}
+      style={{ bottom: 'calc(max(env(safe-area-inset-bottom), 16px) + 12px)' }}
     >
       <div className="relative flex items-center gap-2 overflow-hidden rounded-full border border-white/50 bg-stone/60 p-1 shadow-[0_8px_30px_rgba(20,23,28,0.18)] backdrop-blur-xl">
         <div className="pointer-events-none absolute inset-x-0 top-0 h-1/2 bg-linear-to-b from-white/50 to-transparent" />
