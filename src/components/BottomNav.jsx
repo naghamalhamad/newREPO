@@ -13,7 +13,7 @@ export default function BottomNav() {
       className="fixed inset-x-0 z-20 flex justify-center px-4"
       style={{ bottom: 'calc(max(env(safe-area-inset-bottom), 16px) + 12px)' }}
     >
-      <div className="relative flex items-center gap-3 overflow-hidden rounded-full border border-white/50 bg-stone/60 p-1.5 shadow-[0_8px_30px_rgba(20,23,28,0.18)] backdrop-blur-xl">
+      <div className="relative flex items-center gap-4 overflow-hidden rounded-full border border-white/50 bg-stone/60 p-2 shadow-[0_8px_30px_rgba(20,23,28,0.18)] backdrop-blur-xl">
         <div className="pointer-events-none absolute inset-x-0 top-0 h-1/2 bg-linear-to-b from-white/50 to-transparent" />
         {items.map(({ to, label, icon: Icon }) => (
           <NavLink key={to} to={to} end={to === '/home'} aria-label={label}>
@@ -22,7 +22,7 @@ export default function BottomNav() {
                 layout
                 transition={{ type: 'spring', stiffness: 500, damping: 32 }}
                 whileTap={{ scale: 0.92 }}
-                className={`relative flex h-12 items-center justify-center gap-2 rounded-full ${isActive ? 'px-4' : 'w-12'}`}
+                className={`relative flex h-14 items-center justify-center gap-2 rounded-full ${isActive ? 'px-5' : 'w-14'}`}
               >
                 {isActive && (
                   <motion.span
@@ -48,7 +48,7 @@ export default function BottomNav() {
 
 function HomeIcon({ active }) {
   return (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={active ? 2.2 : 1.6}>
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={active ? 2.2 : 1.6}>
       <path d="M4 11.5 12 4l8 7.5" strokeLinecap="round" strokeLinejoin="round" />
       <path d="M6 10v9h12v-9" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
@@ -56,14 +56,14 @@ function HomeIcon({ active }) {
 }
 function BoltIcon({ active }) {
   return (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill={active ? 'currentColor' : 'none'} stroke="currentColor" strokeWidth={1.6}>
+    <svg width="26" height="26" viewBox="0 0 24 24" fill={active ? 'currentColor' : 'none'} stroke="currentColor" strokeWidth={1.6}>
       <path d="M13 3 5 14h6l-1 7 8-11h-6l1-7Z" strokeLinejoin="round" />
     </svg>
   )
 }
 function UserIcon({ active }) {
   return (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={active ? 2.2 : 1.6}>
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={active ? 2.2 : 1.6}>
       <circle cx="12" cy="8" r="3.4" />
       <path d="M5 20c1.2-4 4-6 7-6s5.8 2 7 6" strokeLinecap="round" />
     </svg>
