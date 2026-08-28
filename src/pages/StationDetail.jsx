@@ -1,16 +1,13 @@
 import { Link, useParams, useNavigate } from 'react-router-dom'
 import TopBar from '../components/TopBar'
 import { stations } from '../data/mock'
-import { stationStatus } from '../utils/station'
 
 export default function StationDetail() {
   const { id } = useParams()
   const navigate = useNavigate()
   const s = stations.find((st) => st.id === id) ?? stations[0]
   const freeSlots = s.total - s.occupied
-  const occupancyPct = (s.occupied / s.total) * 100
   const availableNow = s.etaFreeMin === 0
-  const status = stationStatus(s)
 
   const mapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(s.address)}`
 
@@ -40,12 +37,9 @@ export default function StationDetail() {
           <div className="rounded-card border border-line bg-surface p-3">
             <p className="font-heading text-xs font-normal text-mist">Occupancy</p>
             <p className="mt-1.5 flex items-baseline gap-1 font-mono tabular">
-              <span className="text-3xl font-bold text-ink">{freeSlots}</span>
-              <span className="text-base text-mist">/{s.total} free</span>
+              <span className={`text-sm font-bold ${freeSlots > 0 ? 'text-success' : 'text-danger'}`}>{freeSlots}</span>
+              <span className="text-xs text-mist">/{s.total} free</span>
             </p>
-            <div className="mt-2 h-1.5 w-full overflow-hidden rounded-full bg-line">
-              <div className={`h-full rounded-full ${status.bar} transition-all duration-700`} style={{ width: `${occupancyPct}%` }} />
-            </div>
           </div>
 
           <div className="flex flex-col rounded-card border border-line bg-surface p-3">
@@ -57,7 +51,7 @@ export default function StationDetail() {
                     <path d="m5 13 4 4 10-10" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </span>
-                <p className="font-medium text-success">Available now</p>
+                <p className="text-sm font-bold text-success">Available now</p>
               </div>
             ) : (
               <p className="mt-1.5 font-mono tabular">
