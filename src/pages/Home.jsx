@@ -40,6 +40,9 @@ export default function Home() {
  <motion.p variants={item} className="font-heading text-lg font-normal text-ink">
           {greeting()}, Jordan
         </motion.p>
+        <motion.p variants={item} className="font-heading text-sm font-medium text-brand-mid">
+          {new Date().toLocaleDateString('en-GB', { weekday: 'long' })}, {new Date().getDate()} {new Date().toLocaleDateString('en-GB', { month: 'long' })}
+        </motion.p>
 
         <motion.section variants={item} className="mt-2">
           <div className="relative overflow-hidden rounded-card bg-ink p-5 text-stone">
@@ -62,25 +65,25 @@ export default function Home() {
               <span className="font-heading text-sm font-medium">Battery</span>
             </div>
 
-            <div className="relative mt-4 flex items-end justify-between">
-              <div className="flex items-baseline gap-1 font-mono">
-                <span className="text-5xl font-bold leading-none tabular">{vehicle.batteryPct}</span>
-                <span className="text-sm text-stone/50">%</span>
-              </div>
-              <p className="text-xs text-stone/60">{vehicle.name}</p>
+            <div className="relative mt-4 flex items-baseline gap-1 font-mono">
+              <span className="text-5xl font-bold leading-none tabular">{vehicle.batteryPct}</span>
+              <span className="text-sm text-stone/50">%</span>
             </div>
 
-            <div className="relative mt-4 h-2 w-full overflow-hidden rounded-full bg-white/10">
-              <div
-                className="h-full rounded-full bg-linear-to-r from-brand-light to-brand shadow-[0_0_8px_rgba(41,218,153,0.6)] transition-all duration-700"
-                style={{ width: `${vehicle.batteryPct}%` }}
-              />
+            <div className="relative mt-4 flex items-center gap-3">
+              <div className="h-2 flex-1 overflow-hidden rounded-full bg-white/10">
+                <div
+                  className="h-full rounded-full bg-linear-to-r from-brand-light to-brand shadow-[0_0_8px_rgba(41,218,153,0.6)] transition-all duration-700"
+                  style={{ width: `${vehicle.batteryPct}%` }}
+                />
+              </div>
+              <span className="shrink-0 rounded-pill bg-white/10 px-3 py-1 text-xs text-stone/80">{vehicle.name}</span>
             </div>
           </div>
         </motion.section>
 
         <motion.section variants={item} className="mt-3">
-          <div className="rounded-card border border-line bg-surface p-5">
+          <div className="rounded-card bg-surface p-5">
             <div className="flex items-center gap-2">
               <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-brand-tint text-brand-mid">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
@@ -111,7 +114,7 @@ export default function Home() {
           </div>
           <Link
             to={`/charge/${nearest.id}`}
-            className="mt-3 flex items-center gap-3 rounded-card border border-line bg-surface p-4 transition-colors active:bg-brand-tint/40"
+            className="mt-3 flex items-center gap-3 rounded-card bg-surface p-4 transition-colors active:bg-brand-tint/40"
           >
             <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-brand-tint text-brand-mid">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M13 3 5 14h6l-1 7 8-11h-6l1-7Z" /></svg>
