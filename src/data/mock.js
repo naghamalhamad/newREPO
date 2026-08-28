@@ -4,6 +4,9 @@ export const vehicle = {
   batteryPct: 62,
   rangeMi: 187,
   connector: 'NACS',
+  status: 'Ready to drive',
+  interiorTempF: 72,
+  tirePsi: 42,
 }
 
 // EV brands actually sold/available in the Jordanian market
