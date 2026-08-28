@@ -105,7 +105,7 @@ export default function Home() {
 
             <div className="mt-4 flex flex-col items-start gap-2">
               <span className="font-mono text-2xl font-bold tabular text-ink">{vehicle.rangeMi} mi</span>
-              <span className="rounded-pill bg-brand-tint px-2.5 py-1 font-mono text-xs font-medium text-brand-mid">
+              <span className="rounded-pill bg-brand-tint px-3.5 py-1.5 font-mono text-sm font-medium text-brand-mid">
                 {driveTimeLabel(vehicle.rangeMi)}
               </span>
               <p className="text-sm text-graphite">Remaining distance and time</p>
