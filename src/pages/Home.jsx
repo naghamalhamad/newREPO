@@ -22,7 +22,7 @@ function greeting() {
   return 'Good evening'
 }
 
-const RING_RADIUS = 44
+const RING_RADIUS = 52
 const RING_CIRCUMFERENCE = 2 * Math.PI * RING_RADIUS
 
 const AVG_MPH = 45 // used only to turn remaining range into a rough drive-time estimate
@@ -61,16 +61,16 @@ export default function Home() {
               <span className="font-heading text-sm font-medium">Battery</span>
             </div>
 
-            <div className="relative mx-auto mt-4 flex h-28 w-28 items-center justify-center">
-              <svg width="112" height="112" viewBox="0 0 112 112" className="-rotate-90">
-                <circle cx="56" cy="56" r={RING_RADIUS} fill="none" stroke="white" strokeOpacity="0.1" strokeWidth="9" />
+            <div className="relative mx-auto mt-4 flex h-32 w-32 items-center justify-center">
+              <svg width="128" height="128" viewBox="0 0 128 128" className="-rotate-90">
+                <circle cx="64" cy="64" r={RING_RADIUS} fill="none" stroke="white" strokeOpacity="0.1" strokeWidth="10" />
                 <circle
-                  cx="56"
-                  cy="56"
+                  cx="64"
+                  cy="64"
                   r={RING_RADIUS}
                   fill="none"
                   stroke="url(#batteryRingGradient)"
-                  strokeWidth="9"
+                  strokeWidth="10"
                   strokeLinecap="round"
                   strokeDasharray={RING_CIRCUMFERENCE}
                   strokeDashoffset={RING_CIRCUMFERENCE * (1 - vehicle.batteryPct / 100)}
@@ -84,9 +84,9 @@ export default function Home() {
                 </defs>
               </svg>
               <div className="absolute flex flex-col items-center">
-                <span className="font-mono text-2xl font-bold leading-none tabular">
+                <span className="font-mono text-3xl font-bold leading-none tabular">
                   {vehicle.batteryPct}
-                  <span className="text-sm text-stone/50">%</span>
+                  <span className="text-base text-stone/50">%</span>
                 </span>
               </div>
             </div>
