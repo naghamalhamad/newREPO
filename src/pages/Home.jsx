@@ -103,11 +103,20 @@ export default function Home() {
               <span className="font-heading text-sm font-medium text-ink">Remaining</span>
             </div>
 
-            <div className="mt-4 flex flex-col items-start gap-2">
+            <div className="mt-4 flex flex-col items-start gap-3">
               <span className="font-mono text-2xl font-bold tabular text-ink">{vehicle.rangeMi} mi</span>
-              <span className="rounded-pill bg-brand-tint px-2.5 py-1 font-mono text-xs font-medium text-brand-mid">
-                {driveTimeLabel(vehicle.rangeMi)}
-              </span>
+              <div className="flex items-center gap-2.5">
+                <div className="flex items-end gap-[3px]">
+                  {[6, 10, 14, 18, 22, 26].map((h, i) => (
+                    <span
+                      key={h}
+                      className={`w-1.5 rounded-full ${i < Math.round((vehicle.batteryPct / 100) * 6) ? 'bg-brand' : 'bg-line'}`}
+                      style={{ height: h }}
+                    />
+                  ))}
+                </div>
+                <span className="font-mono text-xs font-medium text-brand-mid">{driveTimeLabel(vehicle.rangeMi)}</span>
+              </div>
             </div>
           </div>
         </motion.section>
