@@ -22,7 +22,7 @@ function greeting() {
   return 'Good evening'
 }
 
-const RING_RADIUS = 70
+const RING_RADIUS = 44
 const RING_CIRCUMFERENCE = 2 * Math.PI * RING_RADIUS
 
 const AVG_MPH = 45 // used only to turn remaining range into a rough drive-time estimate
@@ -47,36 +47,30 @@ export default function Home() {
           {new Date().toLocaleDateString('en-GB', { weekday: 'long' })}, {new Date().getDate()} {new Date().toLocaleDateString('en-GB', { month: 'long' })}
         </motion.p>
 
-        <motion.section variants={item} className="mt-2">
-          <div className="relative overflow-hidden rounded-card bg-ink p-5 text-stone">
-            <div className="pointer-events-none absolute -right-8 -top-10 h-40 w-40 rounded-full bg-brand/20 blur-3xl" />
+        <motion.section variants={item} className="mt-2 grid grid-cols-2 gap-3">
+          <div className="relative overflow-hidden rounded-card bg-ink p-4 text-stone">
+            <div className="pointer-events-none absolute -right-6 -top-8 h-28 w-28 rounded-full bg-brand/20 blur-3xl" />
 
-            <div className="relative flex items-start justify-between">
-              <div>
-                <p className="font-heading text-xs font-medium tracking-wide text-stone/50 uppercase">{vehicle.name}</p>
-                <div className="mt-1 flex items-center gap-1.5">
-                  <span className="h-1.5 w-1.5 rounded-full bg-brand shadow-[0_0_6px_rgba(41,218,153,0.8)]" />
-                  <span className="text-sm font-medium text-stone/90">{vehicle.status}</span>
-                </div>
-              </div>
-              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/10 text-stone/70">
+            <div className="relative flex items-center gap-2">
+              <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-brand/15 text-brand">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
-                  <rect x="5" y="11" width="14" height="9" rx="2" />
-                  <path d="M8 11V8a4 4 0 0 1 8 0v3" strokeLinecap="round" strokeLinejoin="round" />
+                  <rect x="2" y="7" width="18" height="10" rx="2.5" />
+                  <path d="M22 10v4" strokeLinecap="round" />
                 </svg>
               </span>
+              <span className="font-heading text-sm font-medium">Battery</span>
             </div>
 
-            <div className="relative mx-auto mt-5 flex h-44 w-44 items-center justify-center">
-              <svg width="176" height="176" viewBox="0 0 176 176" className="-rotate-90">
-                <circle cx="88" cy="88" r={RING_RADIUS} fill="none" stroke="white" strokeOpacity="0.1" strokeWidth="10" />
+            <div className="relative mx-auto mt-4 flex h-28 w-28 items-center justify-center">
+              <svg width="112" height="112" viewBox="0 0 112 112" className="-rotate-90">
+                <circle cx="56" cy="56" r={RING_RADIUS} fill="none" stroke="white" strokeOpacity="0.1" strokeWidth="9" />
                 <circle
-                  cx="88"
-                  cy="88"
+                  cx="56"
+                  cy="56"
                   r={RING_RADIUS}
                   fill="none"
                   stroke="url(#batteryRingGradient)"
-                  strokeWidth="10"
+                  strokeWidth="9"
                   strokeLinecap="round"
                   strokeDasharray={RING_CIRCUMFERENCE}
                   strokeDashoffset={RING_CIRCUMFERENCE * (1 - vehicle.batteryPct / 100)}
@@ -90,24 +84,30 @@ export default function Home() {
                 </defs>
               </svg>
               <div className="absolute flex flex-col items-center">
-                <span className="font-mono text-4xl font-bold leading-none tabular">
+                <span className="font-mono text-2xl font-bold leading-none tabular">
                   {vehicle.batteryPct}
-                  <span className="text-lg text-stone/50">%</span>
+                  <span className="text-sm text-stone/50">%</span>
                 </span>
               </div>
             </div>
+          </div>
 
-            <div className="relative mt-5">
-              <div className="flex items-baseline justify-between">
-                <span className="font-mono text-xs font-medium text-stone/90">{vehicle.rangeMi} mi remaining</span>
-                <span className="font-mono text-xs font-medium text-brand">{driveTimeLabel(vehicle.rangeMi)}</span>
-              </div>
-              <div className="mt-2 h-1.5 w-full overflow-hidden rounded-full bg-white/10">
-                <div
-                  className="h-full rounded-full bg-linear-to-r from-brand-light to-brand"
-                  style={{ width: `${vehicle.batteryPct}%` }}
-                />
-              </div>
+          <div className="rounded-card bg-surface p-4">
+            <div className="flex items-center gap-2">
+              <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-brand-tint text-brand-mid">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="M12 7v5l3.5 2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </span>
+              <span className="font-heading text-sm font-medium text-ink">Remaining</span>
+            </div>
+
+            <div className="mt-4 flex flex-col items-start gap-2">
+              <span className="font-mono text-2xl font-bold tabular text-ink">{vehicle.rangeMi} mi</span>
+              <span className="rounded-pill bg-brand-tint px-2.5 py-1 font-mono text-xs font-medium text-brand-mid">
+                {driveTimeLabel(vehicle.rangeMi)}
+              </span>
             </div>
           </div>
         </motion.section>
