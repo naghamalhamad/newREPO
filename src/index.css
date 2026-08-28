@@ -8,7 +8,7 @@
   --color-brand-tint: #d8f8ed;   /* light mint — badge/chip fill, active states (kept distinct from the card surface below) */
 
   --color-stone: #ffffff;        /* page background */
-  --color-surface: #e3f7ed;      /* card background */
+  --color-surface: #eaf6f5;      /* card background */
   --color-panel: #f6f8f8;        /* secondary panel background */
 
   --color-ink: #14171c;          /* primary text (text-hi) */
