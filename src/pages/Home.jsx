@@ -85,7 +85,7 @@ export default function Home() {
                   {vehicle.batteryPct}
                   <span className="text-lg text-stone/50">%</span>
                 </span>
-                <span className="mt-2 font-mono text-xs text-brand">{vehicle.rangeMi} mi remaining</span>
+                <span className="mt-2 font-mono text-xs text-brand">{vehicle.rangeMi} remaining</span>
               </div>
             </div>
 
