@@ -25,6 +25,15 @@ function greeting() {
 const RING_RADIUS = 70
 const RING_CIRCUMFERENCE = 2 * Math.PI * RING_RADIUS
 
+const AVG_MPH = 45 // used only to turn remaining range into a rough drive-time estimate
+
+function driveTimeLabel(rangeMi) {
+  const totalMin = Math.round((rangeMi / AVG_MPH) * 60)
+  const h = Math.floor(totalMin / 60)
+  const m = String(totalMin % 60).padStart(2, '0')
+  return `${h}h ${m}m`
+}
+
 export default function Home() {
   const nearest = stations[0]
   return (
@@ -88,17 +97,14 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="relative mt-5 grid grid-cols-2 gap-3">
-              <div className="rounded-xl bg-white/5 p-3 text-center">
-                <p className="font-heading text-[11px] font-medium tracking-wide text-stone/50 uppercase">Interior</p>
-                <p className="mt-1 font-mono text-lg font-semibold tabular">{vehicle.interiorTempF}°F</p>
-              </div>
-              <div className="rounded-xl bg-white/5 p-3 text-center">
-                <p className="font-heading text-[11px] font-medium tracking-wide text-stone/50 uppercase">Tires</p>
-                <p className="mt-1 font-mono text-lg font-semibold tabular">
-                  {vehicle.tirePsi}
-                  <span className="text-xs text-stone/50">psi</span>
-                </p>
+            <div className="relative mt-5 overflow-hidden rounded-full bg-white/5">
+              <div
+                className="absolute inset-y-0 left-0 rounded-full bg-linear-to-r from-brand-light/25 via-brand/25 to-brand-mid/25"
+                style={{ width: `${vehicle.batteryPct}%` }}
+              />
+              <div className="relative flex items-center justify-between px-4 py-3">
+                <span className="font-mono text-xs font-medium text-stone/90">{vehicle.rangeMi} mi remaining</span>
+                <span className="font-mono text-xs font-medium text-brand">{driveTimeLabel(vehicle.rangeMi)}</span>
               </div>
             </div>
           </div>
