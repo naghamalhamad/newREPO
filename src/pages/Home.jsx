@@ -44,6 +44,13 @@ export default function Home() {
         <motion.section variants={item} className="mt-2">
           <div className="relative overflow-hidden rounded-card bg-ink p-5 text-stone">
             <div className="pointer-events-none absolute -right-8 -top-10 h-40 w-40 rounded-full bg-brand/20 blur-3xl" />
+            <svg
+              className="pointer-events-none absolute -bottom-2 -right-4 h-24 w-44 text-stone/[0.07]"
+              viewBox="0 0 220 100"
+              fill="currentColor"
+            >
+              <path d="M14 70c-5 0-9-4-9-9v-6c0-8 6-14 14-15l20-2c10-19 29-31 51-31h24c22 0 41 13 49 33l18 2c8 1 14 7 14 15v4c0 5-4 9-9 9h-6a20 20 0 1 0-40 0H60a20 20 0 1 0-40 0h-6z" />
+            </svg>
 
             <div className="relative flex items-center gap-2">
               <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-brand/15 text-brand">
