@@ -65,19 +65,19 @@ export default function Home() {
               <span className="font-heading text-sm font-medium">Battery</span>
             </div>
 
-            <div className="relative mt-4 flex items-baseline gap-1 font-mono">
-              <span className="text-5xl font-bold leading-none tabular">{vehicle.batteryPct}</span>
-              <span className="text-sm text-stone/50">%</span>
+            <div className="relative mt-4 flex items-end justify-between">
+              <div className="flex items-baseline gap-1 font-mono">
+                <span className="text-5xl font-bold leading-none tabular">{vehicle.batteryPct}</span>
+                <span className="text-sm text-stone/50">%</span>
+              </div>
+              <p className="text-xs text-stone/60">{vehicle.name}</p>
             </div>
 
-            <div className="relative mt-4 flex items-center gap-3">
-              <div className="h-2 flex-1 overflow-hidden rounded-full bg-white/10">
-                <div
-                  className="h-full rounded-full bg-linear-to-r from-brand-light to-brand shadow-[0_0_8px_rgba(41,218,153,0.6)] transition-all duration-700"
-                  style={{ width: `${vehicle.batteryPct}%` }}
-                />
-              </div>
-              <span className="shrink-0 rounded-pill bg-white/10 px-3 py-1 text-xs text-stone/80">{vehicle.name}</span>
+            <div className="relative mt-5 h-2.5 w-full overflow-hidden rounded-full bg-white/10">
+              <div
+                className="h-full rounded-full bg-linear-to-r from-brand-light via-brand to-brand-mid shadow-[0_0_12px_rgba(41,218,153,0.7)] transition-all duration-700"
+                style={{ width: `${vehicle.batteryPct}%` }}
+              />
             </div>
           </div>
         </motion.section>
