@@ -37,8 +37,8 @@ export default function StationDetail() {
           <div className="rounded-card border border-line bg-surface p-3">
             <p className="font-heading text-xs font-normal text-mist">Occupancy</p>
             <p className="mt-1.5 flex items-baseline gap-1 font-mono tabular">
-              <span className={`text-sm font-bold ${freeSlots > 0 ? 'text-success' : 'text-danger'}`}>{freeSlots}</span>
-              <span className="text-xs text-mist">/{s.total} free</span>
+              <span className={`text-3xl font-bold ${freeSlots > 0 ? 'text-success' : 'text-danger'}`}>{freeSlots}</span>
+              <span className="text-base text-mist">/{s.total} free</span>
             </p>
           </div>
 
