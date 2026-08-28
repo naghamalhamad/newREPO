@@ -97,14 +97,16 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="relative mt-5 overflow-hidden rounded-full bg-white/5">
-              <div
-                className="absolute inset-y-0 left-0 rounded-full bg-linear-to-r from-brand-light/25 via-brand/25 to-brand-mid/25"
-                style={{ width: `${vehicle.batteryPct}%` }}
-              />
-              <div className="relative flex items-center justify-between px-4 py-3">
+            <div className="relative mt-5">
+              <div className="flex items-baseline justify-between">
                 <span className="font-mono text-xs font-medium text-stone/90">{vehicle.rangeMi} mi remaining</span>
                 <span className="font-mono text-xs font-medium text-brand">{driveTimeLabel(vehicle.rangeMi)}</span>
+              </div>
+              <div className="mt-2 h-1.5 w-full overflow-hidden rounded-full bg-white/10">
+                <div
+                  className="h-full rounded-full bg-linear-to-r from-brand-light to-brand"
+                  style={{ width: `${vehicle.batteryPct}%` }}
+                />
               </div>
             </div>
           </div>
