@@ -41,7 +41,7 @@ export default function Profile() {
 
         <button
           onClick={() => navigate('/login')}
-          className="mt-auto w-full rounded-xl border border-line py-4 font-heading font-medium text-danger"
+          className="mt-auto w-full rounded-xl border border-danger/30 bg-danger-tint py-4 text-center font-heading font-medium text-danger"
         >
           Log out
         </button>
