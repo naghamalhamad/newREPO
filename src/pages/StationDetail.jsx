@@ -37,31 +37,31 @@ export default function StationDetail() {
         </div>
 
         <div className="mt-4 grid grid-cols-2 gap-3">
-          <div className="rounded-card border border-line bg-surface p-4">
+          <div className="rounded-card border border-line bg-surface p-3">
             <p className="font-heading text-xs font-normal text-mist">Occupancy</p>
-            <p className="mt-2 flex items-baseline gap-1 font-mono tabular">
-              <span className="text-4xl font-bold text-ink">{freeSlots}</span>
+            <p className="mt-1.5 flex items-baseline gap-1 font-mono tabular">
+              <span className="text-3xl font-bold text-ink">{freeSlots}</span>
               <span className="text-base text-mist">/{s.total} free</span>
             </p>
-            <div className="mt-3 h-1.5 w-full overflow-hidden rounded-full bg-line">
+            <div className="mt-2 h-1.5 w-full overflow-hidden rounded-full bg-line">
               <div className={`h-full rounded-full ${status.bar} transition-all duration-700`} style={{ width: `${occupancyPct}%` }} />
             </div>
           </div>
 
-          <div className="flex flex-col rounded-card border border-line bg-surface p-4">
+          <div className="flex flex-col rounded-card border border-line bg-surface p-3">
  <p className="font-heading text-xs font-normal text-mist">Next slot</p>
             {availableNow ? (
-              <div className="mt-2 flex flex-1 flex-col justify-center">
-                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-success-tint text-success">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.4}>
+              <div className="mt-1.5 flex flex-1 items-center gap-2">
+                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-success-tint text-success">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.4}>
                     <path d="m5 13 4 4 10-10" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </span>
-                <p className="mt-2 font-medium text-success">Available now</p>
+                <p className="font-medium text-success">Available now</p>
               </div>
             ) : (
-              <p className="mt-2 font-mono tabular">
-                <span className="text-4xl font-bold text-brand-mid">{s.etaFreeMin}</span>
+              <p className="mt-1.5 font-mono tabular">
+                <span className="text-3xl font-bold text-brand-mid">{s.etaFreeMin}</span>
                 <span className="ml-1 text-base text-mist">min</span>
               </p>
             )}
