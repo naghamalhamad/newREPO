@@ -12,10 +12,6 @@ import ActiveSession from './pages/ActiveSession'
 import SessionSummary from './pages/SessionSummary'
 import ChargingHistory from './pages/ChargingHistory'
 import ReceiptDetail from './pages/ReceiptDetail'
-import Wash from './pages/Wash'
-import BookingFlow from './pages/BookingFlow'
-import Subscribe from './pages/Subscribe'
-import BookingHistory from './pages/BookingHistory'
 import Profile from './pages/Profile'
 import Vehicles from './pages/Vehicles'
 import PaymentMethods from './pages/PaymentMethods'
@@ -42,12 +38,6 @@ export default function App() {
         <Route path="/charge/:id/connect" element={<ChargerConnect />} />
         <Route path="/charge/:id/session" element={<ActiveSession />} />
         <Route path="/charge/:id/summary" element={<SessionSummary />} />
-
-        <Route path="/wash" element={<Wash />} />
-        <Route path="/wash/book/:id" element={<BookingFlow />} />
-        <Route path="/wash/rebook" element={<BookingFlow />} />
-        <Route path="/wash/subscribe" element={<Subscribe />} />
-        <Route path="/wash/history" element={<BookingHistory />} />
 
         <Route path="/profile" element={<Profile />} />
         <Route path="/profile/vehicles" element={<Vehicles />} />

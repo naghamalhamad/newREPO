@@ -2,10 +2,8 @@ import { useState } from 'react'
 import TopBar from '../components/TopBar'
 
 const initialRows = [
-  { id: 'booking', label: 'Booking reminders', desc: 'Before an upcoming wash or service', on: true },
   { id: 'charging', label: 'Charging complete', desc: 'When a charging session finishes', on: true },
   { id: 'slot', label: 'Slot available', desc: 'When a connector opens up nearby', on: true },
-  { id: 'renewal', label: 'Subscription renewal', desc: 'A few days before you’re billed', on: false },
 ]
 
 export default function Settings() {

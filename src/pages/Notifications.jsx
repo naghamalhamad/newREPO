@@ -3,8 +3,6 @@ import { notifications } from '../data/mock'
 
 const kindStyles = {
   charging: { bg: 'bg-brand-tint', text: 'text-brand-mid' },
-  booking: { bg: 'bg-brand-tint', text: 'text-brand-mid' },
-  subscription: { bg: 'bg-brand-tint', text: 'text-brand-mid' },
 }
 
 export default function Notifications() {

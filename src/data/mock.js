@@ -105,23 +105,7 @@ export const stations = [
   },
 ]
 
-export const services = [
-  { id: 'sv-1', name: 'Full Wash', desc: 'Interior + exterior', priceFrom: 28, mins: 45, accent: 'care' },
-  { id: 'sv-2', name: 'Interior Only', desc: 'Vacuum, wipe down, mats', priceFrom: 18, mins: 25, accent: 'care' },
-  { id: 'sv-3', name: 'Exterior Only', desc: 'Hand wash + dry', priceFrom: 16, mins: 20, accent: 'care' },
-  { id: 'sv-4', name: 'Oil Change', desc: 'Synthetic blend, up to 5qt', priceFrom: 59, mins: 30, accent: 'maintenance' },
-  { id: 'sv-5', name: 'Tire Rotation', desc: '4-wheel rotation + inspection', priceFrom: 24, mins: 20, accent: 'maintenance' },
-  { id: 'sv-6', name: 'Brake Inspection', desc: 'Pads, rotors, fluid check', priceFrom: 0, mins: 15, accent: 'maintenance' },
-]
-
 export const timeSlots = ['9:00 AM', '10:30 AM', '1:00 PM', '2:30 PM', '4:00 PM', '5:30 PM']
-
-export const nextBooking = {
-  service: 'Full Wash',
-  provider: 'Suds & Co — Downtown',
-  when: 'Today, 2:30 PM',
-  queuePosition: 2,
-}
 
 export const vehicles = [
   { id: 'v-1', name: 'My Model Y', plate: 'EV 402 CC', connector: 'NACS', color: 'Pearl White' },
@@ -139,18 +123,9 @@ export const chargingHistory = [
   { id: 'rc-3', station: 'Harbor Point Fast Charge', date: 'Aug 9, 2026', kwh: 55.0, cost: 22.0, mins: 44 },
 ]
 
-export const bookingHistory = [
-  { id: 'bk-1', service: 'Full Wash', provider: 'Suds & Co — Downtown', when: 'Today, 2:30 PM', status: 'upcoming', cost: 28 },
-  { id: 'bk-2', service: 'Oil Change', provider: 'QuickTech Auto', when: 'Aug 22, 10:30 AM', status: 'upcoming', cost: 59 },
-  { id: 'bk-3', service: 'Interior Only', provider: 'Suds & Co — Downtown', when: 'Aug 12, 2026', status: 'completed', cost: 18 },
-  { id: 'bk-4', service: 'Full Wash', provider: 'Suds & Co — Downtown', when: 'Aug 5, 2026', status: 'completed', cost: 28 },
-]
-
 export const notifications = [
   { id: 'nt-1', kind: 'charging', title: 'Charging complete', body: 'Cedar Ave Supercharge — 42.6 kWh delivered, $17.89 charged.', when: '2h ago', unread: true },
-  { id: 'nt-2', kind: 'booking', title: 'Booking reminder', body: 'Full Wash at Suds & Co — Downtown starts in 1 hour.', when: '4h ago', unread: true },
   { id: 'nt-3', kind: 'charging', title: 'Slot available', body: 'A connector just opened up at Uptown Parkade EV.', when: 'Yesterday', unread: false },
-  { id: 'nt-4', kind: 'subscription', title: 'Subscription renews soon', body: '2× per week wash renews on Aug 24 — $38.00.', when: '2 days ago', unread: false },
 ]
 
 export const activeSession = {
